@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh Sách Các Trường - StuShare</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">StuShare</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Trang Chủ</a></li>
+                    <li><a href="truong-dai-hoc.html">Trường Đại Học & Học Viện</a></li>
+                    <li><a href="#">Danh Mục</a></li>
+                    <li><a href="#">Giới Thiệu</a></li>
+                    <li><a href="#">Liên Hệ</a></li>
+                </ul>
+            </nav>
+        </div>
+     </header>
+    <nav class="breadcrumb">
+        <div class="container">
+            <ol>
+                <li><a href="index.html">Trang Chủ</a></li>
+                <li class="active">Trường Đại Học & Học Viện</li>
+            </ol>
+        </div>
+    </nav>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Danh Sách Các Trường Đại Học & Học Viện</h1>
+                <p>Chọn trường của bạn để khám phá tài liệu dành riêng.</p>
+            </div>
+        </section>
+
+        <section class="filter-bar">
+            <div class="container">
+                <input type="text" id="searchInput" placeholder="Tìm kiếm tên trường, ví dụ: Bách khoa, Tài chính, PTIT...">
+            </div>
+        </section>
+
+        <section class="university-list">
+            <div class="container">
+
+                <h2 class="region-title">Các trường Đại học & Học viện ở Miền Bắc</h2>
+                <div class="university-grid">
+                    
+                    <a href="#" class="university-card">
+                        <img src="https://upload.wikimedia.org/wikipedia/vi/thumb/8/89/Logo_Tr%C6%B0%E1%BB%9Dng_%C4%90%E1%BA%A1i_h%E1%BB%8Dc_Khoa_h%E1%BB%8Dc_T%E1%BB%B1_nhi%C3%AAn%2C_%C4%90%E1%BA%A1i_h%E1%BB%8Dc_Qu%E1%BB%91c_gia_H%C3%A0_N%E1%BB%99i.svg/250px-Logo_Tr%C6%B0%E1%BB%9Dng_%C4%90%E1%BA%A1i_h%E1%BB%8Dc_Khoa_h%E1%BB%8Dc_T%E1%BB%B1_nhi%C3%AAn%2C_%C4%90%E1%BA%A1i_h%E1%BB%8Dc_Qu%E1%BB%91c_gia_H%C3%A0_N%E1%BB%99i.svg.png?20230306183451" alt="Logo trường" class="university-logo">
+                        <div class="university-info">
+                            <h3>Trường Đại học Khoa học Tự nhiên - Đại học Quốc gia Hà Nội</h3>
+                            <p>VNU-HUS</p>
+                        </div>
+                    </a>
+                    
+                    <a href="uet-subjects.html" class="university-card">
+                        <img src="https://upload.wikimedia.org/wikipedia/vi/thumb/b/bf/Logo_HUET.svg/186px-Logo_HUET.svg.png?20200610051238" alt="Logo trường" class="university-logo">
+                        <div class="university-info">
+                            <h3>Trường Đại học Công nghệ - Đại học Quốc gia Hà Nội</h3>
+                            <p>VNU-UET</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="university-card">
+                        <img src="https://ussh.vnu.edu.vn/uploads/ussh/logo-ussh-2_100_100.png" alt="Logo trường" class="university-logo">
+                        <div class="university-info">
+                            <h3>Trường Đại học Khoa học Xã hội và Nhân văn - Đại học Quốc gia Hà Nội</h3>
+                            <p>VNU-USSH</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="university-card">
+                        <img src="https://ulis.vnu.edu.vn/files/uploads/2024/05/ULIS-logo-ko-nen-2023-1971x2048.png" alt="Logo trường" class="university-logo">
+                        <div class="university-info">
+                            <h3>Trường Đại học Ngoại ngữ - Đại học Quốc gia Hà Nội</h3>
+                            <p>VNU-ULIS</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="university-card">
+                        <img src="https://ueb.edu.vn/Content/images/logo.png" alt="Logo trường" class="university-logo">
+                        <div class="university-info">
+                            <h3>Trường Đại học Kinh tế - Đại học Quốc gia Hà Nội</h3>
+                            <p>VNU-UEB</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="university-card">
+                        <img src="images/logo-placeholder.png" alt="Logo trường" class="university-logo">
+                        <div class="university-info">
+                            <h3>Trường Đại học Điện lực</h3>
+                            <p>EPU</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="university-card">
+                        <img src="images/logo-placeholder.png" alt="Logo trường" class="university-logo">
+                        <div class="university-info">
+                            <h3>Trường Đại học Xây dựng Hà Nội</h3>
+                            <p>HUCE</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="university-card">
+                        <img src="images/logo-placeholder.png" alt="Logo trường" class="university-logo">
+                        <div class="university-info">
+                            <h3>Trường Đại học Sư phạm Hà Nội</h3>
+                            <p>HNUE</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="university-card">
+                        <img src="images/logo-placeholder.png" alt="Logo trường" class="university-logo">
+                        <div class="university-info">
+                            <h3>Trường Đại học Luật Hà Nội</h3>
+                            <p>HLU</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="university-card">
+                        <img src="images/logo-placeholder.png" alt="Logo trường" class="university-logo">
+                        <div class="university-info">
+                            <h3>Trường Đại học Mỹ thuật Công nghiệp</h3>
+                            <p>MTCN</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="university-card">
+                        <img src="images/logo-placeholder.png" alt="Logo trường" class="university-logo">
+                        <div class="university-info">
+                            <h3>Trường Đại học Mỹ thuật Việt Nam</h3>
+                            <p>VNUFA</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="university-card">
+                        <img src="images/logo-placeholder.png" alt="Logo trường" class="university-logo">
+                        <div class="university-info">
+                            <h3>Trường Đại học Thương mại</h3>
+                            <p>TMU</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="university-card">
+                        <img src="images/logo-placeholder.png" alt="Logo trường" class="university-logo">
+                        <div class="university-info">
+                            <h3>Trường Đại học Thủy lợi</h3>
+                            <p>TLU</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="university-card">
+                        <img src="images/logo-placeholder.png" alt="Logo trường" class="university-logo">
+                        <div class="university-info">
+                            <h3>Trường Đại học Tài nguyên & Môi trường Hà Nội</h3>
+                            <p>HUNRE</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="university-card">
+                        <img src="images/logo-placeholder.png" alt="Logo trường" class="university-logo">
+                        <div class="university-info">
+                            <h3>Trường Đại học Công nghiệp Hà Nội</h3>
+                            <p>HaUI</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="university-card">
+                        <img src="images/logo-placeholder.png" alt="Logo trường" class="university-logo">
+                        <div class="university-info">
+                            <h3>Trường Đại học Công nghiệp Dệt may Hà Nội</h3>
+                            <p>HTU</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="university-card">
+                        <img src="images/logo-placeholder.png" alt="Logo trường" class="university-logo">
+                        <div class="university-info">
+                            <h3>Đại học Thái Nguyên</h3>
+                            <p>TNU</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="university-card">
+                        <img src="images/logo-placeholder.png" alt="Logo trường" class="university-logo">
+                        <div class="university-info">
+                            <h3>Trường Đại học Công nghệ Thông tin & Truyền thông – ĐH Thái Nguyên</h3>
+                            <p>ICTU</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="university-card">
+                        <img src="images/logo-placeholder.png" alt="Logo trường" class="university-logo">
+                        <div class="university-info">
+                            <h3>Trường Đại học Công nghiệp Quảng Ninh</h3>
+                            <p>QUI</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="university-card">
+                        <img src="images/logo-placeholder.png" alt="Logo trường" class="university-logo">
+                        <div class="university-info">
+                            <h3>Trường Đại học Công nghiệp Việt Trì</h3>
+                            <p>VUI</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="university-card">
+                        <img src="images/logo-placeholder.png" alt="Logo trường" class="university-logo">
+                        <div class="university-info">
+                            <h3>Trường Đại học Hạ Long</h3>
+                            <p>UHL</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="university-card">
+                        <img src="images/logo-placeholder.png" alt="Logo trường" class="university-logo">
+                        <div class="university-info">
+                            <h3>Trường Đại học Hải Phòng</h3>
+                            <p>HPU</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="university-card">
+                        <img src="images/logo-placeholder.png" alt="Logo trường" class="university-logo">
+                        <div class="university-info">
+                            <h3>Trường Đại học Hàng Hải Việt Nam</h3>
+                            <p>VIMARU</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="university-card">
+                        <img src="images/logo-placeholder.png" alt="Logo trường" class="university-logo">
+                        <div class="university-info">
+                            <h3>Trường Đại học Hoa Lư</h3>
+                            <p>HLUV</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="university-card">
+                        <img src="images/logo-placeholder.png" alt="Logo trường" class="university-logo">
+                        <div class="university-info">
+                            <h3>Trường Đại học Hùng Vương</h3>
+                            <p>HVU</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="university-card">
+                        <img src="images/logo-placeholder.png" alt="Logo trường" class="university-logo">
+                        <div class="university-info">
+                            <h3>Trường Đại học Kinh tế & Quản trị Kinh doanh – ĐH Thái Nguyên</h3>
+                            <p>TUEBA</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="university-card">
+                        <img src="images/logo-placeholder.png" alt="Logo trường" class="university-logo">
+                        <div class="university-info">
+                            <h3>Trường Đại học Kỹ thuật Công nghiệp – ĐH Thái Nguyên</h3>
+                            <p>TNUT</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="university-card">
+                        <img src="images/logo-placeholder.png" alt="Logo trường" class="university-logo">
+                        <div class="university-info">
+                            <h3>Trường Đại học Kỹ thuật Y tế Hải Dương</h3>
+                            <p>HMTU</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="university-card">
+                        <img src="images/logo-placeholder.png" alt="Logo trường" class="university-logo">
+                        <div class="university-info">
+                            <h3>Trường Đại học Nông Lâm Bắc Giang</h3>
+                            <p>BAFU</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="university-card">
+                        <img src="images/logo-placeholder.png" alt="Logo trường" class="university-logo">
+                        <div class="university-info">
+                            <h3>Trường Đại học Nông Lâm - Đại học Thái Nguyên</h3>
+                            <p>TUAF</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="university-card">
+                        <img src="images/logo-placeholder.png" alt="Logo trường" class="university-logo">
+                        <div class="university-info">
+                            <h3>Trường Đại học Ngoại thương – Cơ sở Quảng Ninh</h3>
+                            <p>FTU QN</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="university-card">
+                        <img src="images/logo-placeholder.png" alt="Logo trường" class="university-logo">
+                        <div class="university-info">
+                            <h3>Trường Đại học Quản lý & Công nghệ Hải Phòng</h3>
+                            <p>HPMU</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="university-card">
+                        <img src="images/logo-placeholder.png" alt="Logo trường" class="university-logo">
+                        <div class="university-info">
+                            <h3>Trường Đại học Sao Đỏ</h3>
+                            <p>SDU</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="university-card">
+                        <img src="images/logo-placeholder.png" alt="Logo trường" class="university-logo">
+                        <div class="university-info">
+                            <h3>Trường Đại học Sư phạm - Đại học Thái Nguyên</h3>
+                            <p>TNUE</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="university-card">
+                        <img src="images/logo-placeholder.png" alt="Logo trường" class="university-logo">
+                        <div class="university-info">
+                            <h3>Trường Đại học Sư phạm Kỹ thuật Hưng Yên</h3>
+                            <p>UTEHY</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="university-card">
+                        <img src="images/logo-placeholder.png" alt="Logo trường" class="university-logo">
+                        <div class="university-info">
+                            <h3>Trường Đại học Sư phạm Kỹ thuật Nam Định</h3>
+                            <p>NUTE</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="university-card">
+                        <img src="images/logo-placeholder.png" alt="Logo trường" class="university-logo">
+                        <div class="university-info">
+                            <h3>Trường Đại học Tài chính – Quản trị Kinh doanh</h3>
+                            <p>UFA</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="university-card">
+                        <img src="images/logo-placeholder.png" alt="Logo trường" class="university-logo">
+                        <div class="university-info">
+                            <h3>Trường Đại học Tân Trào</h3>
+                            <p>TQU</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="university-card">
+                        <img src="images/logo-placeholder.png" alt="Logo trường" class="university-logo">
+                        <div class="university-info">
+                            <h3>Trường Đại học Tây Bắc</h3>
+                            <p>UTB</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="university-card">
+                        <img src="images/logo-placeholder.png" alt="Logo trường" class="university-logo">
+                        <div class="university-info">
+                            <h3>Trường Đại học Thái Bình</h3>
+                            <p>TBU</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="university-card">
+                        <img src="images/logo-placeholder.png" alt="Logo trường" class="university-logo">
+                        <div class="university-info">
+                            <h3>Trường Đại học Thể dục Thể thao Bắc Ninh</h3>
+                            <p>UPES1</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="university-card">
+                        <img src="images/logo-placeholder.png" alt="Logo trường" class="university-logo">
+                        <div class="university-info">
+                            <h3>Trường Đại học Y Dược - Đại học Thái Nguyên</h3>
+                            <p>TNUMP</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="university-card">
+                        <img src="images/logo-placeholder.png" alt="Logo trường" class="university-logo">
+                        <div class="university-info">
+                            <h3>Trường Đại học Y Dược Hải Phòng</h3>
+                            <p>HPMU</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="university-card">
+                        <img src="images/logo-placeholder.png" alt="Logo trường" class="university-logo">
+                        <div class="university-info">
+                            <h3>Trường Đại học Y Dược Thái Bình</h3>
+                            <p>TBUMP</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="university-card">
+                        <img src="images/logo-placeholder.png" alt="Logo trường" class="university-logo">
+                        <div class="university-info">
+                            <h3>Trường Đại học Y khoa Tokyo Việt Nam</h3>
+                            <p>THUV</p>
+                        </div>
+                    </a>
+                    
+                </div> <h2 class="region-title">Các trường Đại học & Học viện ở Miền Trung</h2>
+                <div class="university-grid">
+                    
+                    <a href="#" class="university-card">
+                        <img src="https://upload.wikimedia.org/wikipedia/vi/thumb/7/72/Tr%C6%B0%E1%BB%9Dng_%C4%90%E1%BA%A1i_h%E1%BB%8Dc_B%C3%A1ch_khoa%2C_%C4%90%E1%BA%A1i_h%E1%BB%8Dc_%C4%90%C3%A0_N%E1%BA%B5ng.svg/2048px-Tr%C6%B0%E1%BB%9Dng_%C4%90%E1%BA%A1i_h%E1%BB%8Dc_B%C3%A1ch_khoa%2C_%C4%90%E1%BA%A1i_h%E1%BB%8Dc_%C4%90%C3%A0_N%E1%BA%B5ng.svg.png" alt="Logo trường" class="university-logo">
+                        <div class="university-info">
+                            <h3>Trường Đại Học Bách Khoa - Đại học Đà Nẵng</h3>
+                            <p>DUT-UDN</p>
+                        </div>
+                    </a>
+                    <a href="#" class="university-card">
+                        <img src="images/logo-placeholder.png" alt="Logo trường" class="university-logo">
+                        <div class="university-info">
+                            <h3>Đại học Huế</h3>
+                            <p>HU</p>
+                        </div>
+                    </a>
+                    
+                </div> <h2 class="region-title">Các trường Đại học & Học viện ở Miền Nam</h2>
+                <div class="university-grid">
+                    
+                    <a href="#" class="university-card">
+                        <img src="images/logo-placeholder.png" alt="Logo trường" class="university-logo">
+                        <div class="university-info">
+                            <h3>Đại học Quốc gia TP.HCM</h3>
+                            <p>VNUHCM</p>
+                        </div>
+                    </a>
+                    <a href="#" class="university-card">
+                        <img src="images/logo-placeholder.png" alt="Logo trường" class="university-logo">
+                        <div class="university-info">
+                            <h3>Đại học Cần Thơ</h3>
+                            <p>CTU</p>
+                        </div>
+                    </a>
+                    
+                </div> </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-col">
+                <h3>StuShare</h3>
+                <p>Nền tảng chia sẻ tài liệu học tập, kết nối cộng đồng sinh viên Việt Nam.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Liên Kết Nhanh</h4>
+                <ul>
+                    <li><a href="#">Về chúng tôi</a></li>
+                    <li><a href="#">Câu hỏi thường gặp</a></li>
+                    <li><a href="#">Điều khoản dịch vụ</a></li>
+                    <li><a href="#">Chính sách bảo mật</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Theo Dõi Chúng Tôi</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 StuShare. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Đợi cho toàn bộ nội dung trang web được tải xong
+        document.addEventListener('DOMContentLoaded', function () {
+            
+            // Lấy ra ô input và tất cả các thẻ trường đại học
+            const searchInput = document.getElementById('searchInput');
+            const universityCards = document.querySelectorAll('.university-card');
+            const universityGrids = document.querySelectorAll('.university-grid');
+
+            // Thêm sự kiện 'input' để theo dõi mỗi khi người dùng gõ chữ
+            searchInput.addEventListener('input', function () {
+                // Lấy giá trị tìm kiếm, chuyển thành chữ thường và loại bỏ khoảng trắng thừa
+                const searchTerm = searchInput.value.toLowerCase().trim();
+
+                // Lặp qua từng thẻ trường đại học
+                universityCards.forEach(function (card) {
+                    // Lấy ra tên và tên viết tắt của trường, cũng chuyển thành chữ thường
+                    const universityName = card.querySelector('h3').textContent.toLowerCase();
+                    const universityAcronym = card.querySelector('p').textContent.toLowerCase();
+
+                    // Kiểm tra xem tên hoặc tên viết tắt có chứa từ khóa tìm kiếm không
+                    if (universityName.includes(searchTerm) || universityAcronym.includes(searchTerm)) {
+                        card.style.display = 'flex'; // Nếu có, hiển thị thẻ
+                    } else {
+                        card.style.display = 'none'; // Nếu không, ẩn thẻ đi
+                    }
+                });
+
+                // Xử lý ẩn/hiện tiêu đề khu vực (Miền Bắc, Trung, Nam)
+                universityGrids.forEach(function(grid) {
+                    // Tìm tiêu đề (h2) ngay phía trước của mỗi grid
+                    const regionTitle = grid.previousElementSibling;
+                    
+                    // Lấy tất cả các thẻ đang được hiển thị bên trong grid này
+                    const visibleCardsInGrid = grid.querySelectorAll('.university-card[style*="display: flex"]');
+                    
+                    // Nếu không có thẻ nào được hiển thị, ẩn luôn cả tiêu đề khu vực
+                    if (visibleCardsInGrid.length === 0) {
+                        regionTitle.style.display = 'none';
+                    } else {
+                        regionTitle.style.display = 'block'; // Ngược lại, hiển thị tiêu đề
+                    }
+                });
+            });
+        });
+    </script>
+    
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const header = document.querySelector('.header');
+    const breadcrumb = document.querySelector('.breadcrumb');
+
+    function applyScrollState() {
+      const isScrolled = window.scrollY > 80;
+      if (header) header.classList.toggle('scrolled', isScrolled);
+      if (breadcrumb) breadcrumb.classList.toggle('compact', isScrolled);
+    }
+
+    applyScrollState(); // áp trạng thái ngay khi load (nếu mở giữa trang)
+    window.addEventListener('scroll', applyScrollState, { passive: true });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,967 @@
+/* =================================================================== */
+/* --- PHẦN 1: TOÀN BỘ CSS CŨ ĐƯỢC GIỮ LẠI --- */
+/* =================================================================== */
+:root {
+    --primary-color: #4A90E2;
+    --secondary-color: #50E3C2;
+    --dark-color: #333;
+    --light-color: #f4f4f4;
+    --text-color: #555;
+    --border-color: #ddd;
+    --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    --border-radius: 8px;
+    --header-height: 75px;
+    --breadcrumb-height: 41px;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+h1, h2, h3 {
+    color: var(--dark-color);
+    margin-bottom: 15px;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; text-align: center; }
+
+ul {
+    list-style: none;
+}
+
+/* --- Các thành phần cũ --- */
+.header .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    transition: font-size 0.3s ease;
+}
+.header.scrolled .logo {
+    font-size: 1.5rem;
+}
+.header .main-nav {
+    margin-left: auto;
+}
+.header .main-nav ul {
+    display: flex;
+}
+.header .main-nav ul li {
+    margin-left: 25px;
+}
+.header .main-nav ul li a {
+    color: var(--dark-color);
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.breadcrumb {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.9rem;
+    height: var(--breadcrumb-height);
+    display: flex;
+    align-items: center;
+}
+.breadcrumb .container {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.breadcrumb ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.breadcrumb li {
+    display: flex;
+    align-items: center;
+    max-width: 250px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.breadcrumb li a {
+    color: var(--primary-color);
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.breadcrumb li a:hover {
+    text-decoration: underline;
+}
+.breadcrumb li::after {
+    content: '›';
+    margin: 0 10px;
+    color: #999;
+}
+.breadcrumb li:last-child {
+    max-width: 400px;
+    flex-shrink: 0;
+}
+.breadcrumb li:last-child::after {
+    content: '';
+}
+.breadcrumb li.active {
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+/* --- Trang Các Trường (truong-dai-hoc.html) --- */
+.page-header {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 50px 0;
+}
+.page-header h1 { color: white; }
+.filter-bar {
+    padding: 30px 0;
+    background: #fff;
+    border-bottom: 1px solid var(--border-color);
+}
+.filter-bar input {
+    width: 100%;
+    padding: 15px;
+    font-size: 1rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+}
+.university-list {
+    padding: 40px 0 80px 0;
+}
+.region-title, .faculty-title, .section-title {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    position: relative;
+    color: var(--dark-color);
+}
+.region-title::after, .faculty-title::after, .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+.university-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+}
+@media (min-width: 1024px) {
+    .university-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+.university-card {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    background: #fff;
+    border-radius: var(--border-radius);
+    padding: 20px;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #eee;
+    color: inherit;
+}
+.university-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(74, 144, 226, 0.2);
+}
+.university-logo {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    margin-right: 20px;
+    border-radius: var(--border-radius);
+    border: 1px solid #f0f0f0;
+    flex-shrink: 0;
+    background-color: #fff;
+}
+.university-info {
+    flex-grow: 1;
+    overflow: hidden;
+}
+.university-card h3 {
+    font-size: 1rem;
+    color: var(--dark-color);
+    margin-bottom: 3px;
+    white-space: normal;
+    line-height: 1.3;
+}
+.university-card p {
+    font-size: 0.85rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* --- Trang Môn Học (uet-subjects.html) --- */
+.university-hero {
+    background: var(--light-color);
+    padding: 40px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+.university-hero .container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.university-hero-logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+.university-hero-info h1 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+.university-hero-info p {
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+.subjects-list {
+    padding: 40px 0 80px 0;
+}
+.subject-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+.subject-card {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: inherit;
+    border: 1px solid #eee;
+}
+.subject-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(74, 144, 226, 0.2);
+}
+.subject-icon {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-right: 15px;
+    width: 40px;
+    text-align: center;
+}
+.subject-info h3 {
+    font-size: 1.1rem;
+    color: var(--dark-color);
+    margin-bottom: 5px;
+}
+.subject-info .subject-code {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* --- Trang Giảng Viên (csdl-cntt-teachers.html) --- */
+.subject-hero-icon {
+    font-size: 4rem;
+    color: var(--primary-color);
+}
+.teachers-list {
+    padding: 40px 0 80px 0;
+}
+.teacher-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+.teacher-card {
+    display: block;
+    background: #fff;
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: var(--dark-color);
+    border: 1px solid var(--border-color);
+}
+.teacher-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(74, 144, 226, 0.2);
+    border-color: var(--primary-color);
+}
+.teacher-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--dark-color);
+}
+.teacher-card .teacher-action {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+.teacher-card:hover .teacher-action {
+    text-decoration: underline;
+}
+
+/* --- Trang Tài Liệu Giảng Viên (nguyenvana-documents.html) --- */
+.document-list-container {
+    padding: 40px 0 80px 0;
+}
+.document-section {
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+.section-header {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    cursor: pointer;
+    background-color: var(--light-color);
+}
+.section-header:hover {
+    background-color: #e9e9e9;
+}
+.section-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+.section-header i {
+    font-size: 1rem;
+    margin-right: 15px;
+    transition: transform 0.3s ease;
+}
+.document-section.active .section-header i {
+    transform: rotate(0deg);
+}
+.document-section:not(.active) .section-header i {
+    transform: rotate(-90deg);
+}
+.section-content {
+    padding: 10px 0;
+    display: none;
+}
+.document-section.active .section-content {
+    display: block;
+}
+.document-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px 12px 50px;
+    color: var(--dark-color);
+    text-decoration: none;
+    font-size: 1rem;
+}
+a.document-item:hover {
+    background-color: #f5f5f5;
+    color: var(--primary-color);
+}
+.document-item i {
+    margin-right: 15px;
+    color: var(--text-color);
+    width: 20px;
+    text-align: center;
+}
+.document-item i.fa-file-powerpoint { color: #D24726; }
+.document-item i.fa-file-pdf { color: #D93025; }
+.document-item i.fa-file-word { color: #4285F4; }
+.document-item i.fa-link { color: #6e6e6e; }
+.document-item i.fa-edit { color: #7c4dff; }
+.document-item.assignment {
+    color: var(--dark-color);
+}
+.document-item .meta-info {
+    margin-left: auto;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    background-color: var(--light-color);
+    padding: 3px 8px;
+    border-radius: 4px;
+}
+
+/* --- Trang Trình Chiếu Tài Liệu (c1-viewer.html, etc.) --- */
+.document-viewer-section {
+    padding: 0;
+}
+.document-viewer {
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    height: calc(100vh - var(--header-height) - var(--breadcrumb-height));
+    transition: height 0.3s ease;
+}
+.document-viewer iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* =================================================================== */
+/* --- PHẦN 2: BỔ SUNG CSS MỚI (SẼ GHI ĐÈ CÁC STYLE CHUNG) --- */
+/* =================================================================== */
+:root {
+    --primary-color: #007BFF; /* Xanh dương hiện đại, năng động */
+    --primary-dark: #0056b3;
+    --accent-color: #FFA500; /* Cam làm điểm nhấn */
+    --accent-dark: #cc8400;
+    --dark-color: #212529;
+    --light-color: #f8f9fa;
+    --text-color: #495057;
+    --border-color: #dee2e6;
+    --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --border-radius: 12px; /* Bo góc mềm mại hơn */
+    --header-height: 75px;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.7;
+    background-color: #fff; /* Nền trắng sạch sẽ */
+    color: var(--text-color);
+}
+
+a {
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+a:hover {
+    color: var(--primary-dark);
+}
+
+h1, h2, h3 {
+    color: var(--dark-color);
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+h1 { font-size: 3rem; line-height: 1.2; }
+h2 { font-size: 2.25rem; text-align: center; }
+h3 { font-size: 1.25rem; }
+
+/* Nút bấm chung */
+.btn, .btn-primary, .btn-secondary, .btn-upload {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 50px; /* Bo tròn hoàn toàn */
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+}
+.btn-secondary {
+    background-color: #fff;
+    color: var(--primary-color);
+    border: 1px solid var(--border-color);
+}
+.btn-secondary:hover {
+    background-color: var(--light-color);
+    color: var(--primary-dark);
+}
+
+/* --- Header --- */
+.header {
+    background: #fff;
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid transparent;
+}
+.header.scrolled {
+    --header-height: 65px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-bottom: 1px solid var(--border-color);
+}
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.header .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+.header .main-nav ul {
+    display: flex;
+}
+.header .main-nav ul li {
+    margin-left: 30px;
+}
+.header .main-nav ul li a {
+    color: var(--dark-color);
+    font-weight: 500;
+    position: relative;
+    padding: 5px 0;
+}
+.header .main-nav ul li a.active,
+.header .main-nav ul li a:hover {
+    color: var(--primary-color);
+}
+.header .main-nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width 0.3s ease;
+}
+.header .main-nav ul li a:hover::after,
+.header .main-nav ul li a.active::after {
+    width: 100%;
+}
+
+/* --- Footer --- */
+.footer {
+    background: var(--dark-color);
+    color: #ccc;
+    padding: 60px 0 0;
+    margin-top: 100px;
+}
+.footer .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+.footer h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+.footer h4 {
+    color: #fff;
+    margin-bottom: 20px;
+}
+.footer-col ul li {
+    margin-bottom: 12px;
+}
+.footer-col ul li a:hover {
+    color: #fff;
+    padding-left: 5px;
+}
+.footer .social-links a {
+    display: inline-flex;
+    height: 40px;
+    width: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    margin-right: 10px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+.footer .social-links a:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-3px);
+}
+.copyright {
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+    border-top: 1px solid #444;
+    font-size: 0.9rem;
+}
+
+/* --- STYLES TRANG CHỦ --- */
+/* --- Hero Section --- */
+.hero-section {
+    background: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070&auto=format&fit=crop') center center/cover no-repeat;
+    color: #fff;
+    text-align: center;
+    padding: 120px 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 123, 255, 0.85), rgba(0, 86, 179, 0.95));
+}
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.hero-section h1 {
+    color: #fff;
+    font-size: 3.5rem;
+}
+.hero-section p {
+    font-size: 1.25rem;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+.search-bar {
+    display: flex;
+    max-width: 650px;
+    margin: 0 auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    border-radius: 50px;
+}
+.search-bar input {
+    width: 100%;
+    padding: 18px 25px;
+    border: none;
+    border-radius: 50px 0 0 50px;
+    font-size: 1rem;
+    font-family: var(--font-family);
+}
+.search-bar input:focus {
+    outline: none;
+}
+.search-bar button {
+    padding: 0 30px;
+    border: none;
+    background: var(--accent-color);
+    color: #fff;
+    cursor: pointer;
+    border-radius: 0 50px 50px 0;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s ease;
+}
+.search-bar button:hover {
+    background: var(--accent-dark);
+}
+.hero-cta {
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+.hero-cta span {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.8);
+}
+.btn-upload {
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.5);
+}
+.btn-upload:hover {
+    background: rgba(255,255,255,0.3);
+    border-color: #fff;
+}
+
+/* --- Features Section --- */
+.features-section {
+    padding: 100px 0;
+}
+.features-section .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    text-align: center;
+}
+.feature-icon {
+    display: inline-flex;
+    width: 80px;
+    height: 80px;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-color), #00A9FF);
+    border-radius: 50%;
+    color: #fff;
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+}
+.feature-item h3 {
+    margin-bottom: 10px;
+}
+
+/* --- Documents Section --- */
+.documents-section {
+    padding: 80px 0;
+    background: var(--light-color);
+}
+.document-bento-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: minmax(230px, auto);
+    gap: 25px;
+}
+.document-card {
+    background: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    display: flex; 
+}
+.document-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+.document-card.card-large {
+    grid-row: span 2;
+}
+.document-card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+.document-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    width: 45px;
+}
+.document-icon.pdf { color: #D93025; }
+.document-icon.ppt { color: #F29900; }
+.document-icon.doc { color: #4285F4; }
+.document-info h3 { font-size: 1.1rem; margin-bottom: 5px;}
+.document-info p { font-size: 0.9rem; color: #777; margin-bottom: 10px; }
+.tag {
+    display: inline-block;
+    background-color: #eaf2ff;
+    color: var(--primary-color);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+.document-stats {
+    margin-top: auto; /* Đẩy xuống cuối */
+    padding-top: 15px;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    gap: 20px;
+    font-size: 0.9rem;
+    color: #777;
+}
+.view-all-link {
+    text-align: center;
+    margin-top: 40px;
+}
+.view-all-link .btn-secondary i {
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+.view-all-link .btn-secondary:hover i {
+    transform: translateX(5px);
+}
+
+/* --- Upload Section --- */
+.upload-section {
+    padding: 100px 0;
+    text-align: center;
+}
+#upload-section .container {
+    max-width: 700px;
+}
+.upload-section h2 {
+    color: var(--dark-color);
+}
+.upload-section > .container > p {
+    margin-bottom: 30px;
+}
+.upload-box {
+    border: 3px dashed var(--border-color);
+    border-radius: 20px;
+    padding: 50px;
+    background: var(--light-color);
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+.upload-box:hover {
+    border-color: var(--primary-color);
+    background-color: #f1f7ff;
+}
+.upload-box i {
+    font-size: 4rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+.upload-box p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--dark-color);
+    margin-bottom: 10px;
+}
+.upload-box span {
+    display: block;
+    margin-bottom: 30px;
+    font-size: 0.9rem;
+}
+.upload-box .btn-primary {
+    padding: 15px 35px;
+}
+/* --- FIX: Đổi màu icon trong nút bấm thành màu trắng --- */
+.btn-primary i {
+    color: #fff !important;
+}
+.form-fields input[type="text"],
+.form-fields textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    font-size: 1rem;
+    font-family: var(--font-family);
+}
+.form-fields textarea {
+    resize: vertical;
+}
+
+/* =================================================================== */
+/* --- CSS CHO POPUP THÔNG BÁO THÀNH CÔNG --- */
+/* =================================================================== */
+
+/* Lớp phủ nền mờ */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1010;
+    display: none; /* Mặc định ẩn đi */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Nội dung Popup */
+.popup-content {
+    background-color: #fff;
+    padding: 30px 40px;
+    border-radius: 16px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+    text-align: center;
+    max-width: 400px;
+    position: relative;
+    transform: scale(0.9);
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28); /* Hiệu ứng nảy lên */
+}
+
+/* Hiển thị popup */
+.popup-overlay.active {
+    display: flex;
+}
+.popup-overlay.active .popup-content {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* Ảnh GIF trong popup */
+.popup-content img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 3px solid var(--primary-color);
+}
+
+/* Tiêu đề popup */
+.popup-content h3 {
+    font-size: 1.8rem;
+    color: var(--dark-color);
+    margin: 0;
+}
+
+/* Nút đóng (X) */
+.popup-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #aaa;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+.popup-close:hover {
+    color: var(--dark-color);
+}
+
+/* =================================================================== */
+/* --- CSS CHO VALIDATION FORM --- */
+/* =================================================================== */
+
+/* Định dạng cho ô input bị lỗi */
+.form-fields input.input-error,
+.form-fields textarea.input-error {
+    border-color: #D93025 !important; /* Màu đỏ của Google */
+    background-color: #fdf уют2e2;
+}
+
+/* Định dạng cho thông báo lỗi */
+.error-message {
+    color: #D93025;
+    font-size: 0.875rem; /* Cỡ chữ nhỏ hơn một chút */
+    text-align: left;
+    margin-top: -5px; /* Kéo lên gần ô input hơn */
+    margin-bottom: 10px;
+    display: none; /* Mặc định ẩn đi */
+}
+
+/* Lớp để hiển thị thông báo lỗi */
+.error-message.active {
+    display: block;
+}

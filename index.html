@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StuHub - Chia Sẻ Tri Thức, Kiến Tạo Tương Lai</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">StuHub</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="active">Trang Chủ</a></li>
+                    <li><a href="truong-dai-hoc.html">Trường Đại Học & Học Viện</a></li>
+                    <li><a href="#">Danh Mục</a></li>
+                    <li><a href="#">Giới Thiệu</a></li>
+                    <li><a href="#">Liên Hệ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-overlay"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Chia Sẻ Tri Thức<br>Kiến Tạo Tương Lai</h1>
+                    <p>Nền tảng tìm kiếm và chia sẻ tài liệu học tập dành cho toàn&nbsp;thể&nbsp;sinh&nbsp;viên&nbsp;Việt&nbsp;Nam.</p>
+                    <div class="search-bar">
+                        <input type="text" placeholder="Tìm kiếm tài liệu, môn học, đề thi...">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="hero-cta">
+                        <span>Hoặc</span>
+                        <a href="#upload-section" class="btn btn-upload"><i class="fas fa-upload"></i> Tải Lên Tài Liệu</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features-section">
+            <div class="container">
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-book-open"></i></div>
+                    <h3>Tài Liệu Đa Dạng</h3>
+                    <p>Hàng ngàn tài liệu từ sách, giáo trình đến đề thi được cập nhật liên tục.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-users"></i></div>
+                    <h3>Cộng Đồng Năng Động</h3>
+                    <p>Tham gia cộng đồng sinh viên ham học hỏi, cùng nhau tiến bộ.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-cloud-arrow-up"></i></div>
+                    <h3>Chia Sẻ Dễ Dàng</h3>
+                    <p>Chia sẻ tài liệu của bạn đến với mọi người chỉ với vài cú nhấp chuột.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="documents-section">
+            <div class="container">
+                <h2>Khám Phá Tài Liệu Mới</h2>
+                <div class="document-bento-grid">
+                    <a href="#" class="document-card card-large">
+                        <div class="document-card-content">
+                            <div>
+                                <div class="document-icon pdf"><i class="fas fa-file-pdf"></i></div>
+                                <div class="document-info">
+                                    <h3>Giáo trình Giải tích I - Đại học Bách Khoa</h3>
+                                    <p>Tác giả: Nguyễn Văn A</p>
+                                    <span class="tag">Toán cao cấp</span>
+                                </div>
+                            </div>
+                            <div class="document-stats">
+                                <span><i class="fas fa-download"></i> 1,250</span>
+                                <span><i class="fas fa-calendar-alt"></i> 22/09/2025</span>
+                            </div>
+                        </div>
+                    </a>
+                     <a href="#" class="document-card">
+                         <div class="document-card-content">
+                            <div class="document-icon ppt"><i class="fas fa-file-powerpoint"></i></div>
+                            <div class="document-info">
+                                <h3>Slide Marketing Căn bản</h3>
+                                <p>ĐH Kinh tế Quốc dân</p>
+                                <span class="tag">Marketing</span>
+                            </div>
+                        </div>
+                    </a>
+                     <a href="#" class="document-card">
+                        <div class="document-card-content">
+                           <div class="document-icon doc"><i class="fas fa-file-word"></i></div>
+                           <div class="document-info">
+                               <h3>Đề thi cuối kỳ Lập trình C++</h3>
+                               <p>ĐH Công nghệ - ĐHQGHN</p>
+                               <span class="tag">Lập trình</span>
+                           </div>
+                       </div>
+                   </a>
+                </div>
+                 <div class="view-all-link">
+                    <a href="#" class="btn btn-secondary">Xem tất cả tài liệu <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section id="upload-section" class="upload-section">
+             <div class="container">
+                <h2>Chung Tay Xây Dựng Cộng Đồng Tri Thức</h2>
+                <p>Mỗi tài liệu bạn chia sẻ là một đóng góp quý giá cho cộng đồng.</p>
+                <form id="upload-form" class="upload-box">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <p>Kéo và thả tệp hoặc nhấp để chọn tệp</p>
+                    <span>Hỗ trợ các định dạng PDF, DOCX, PPTX,...</span>
+                    <label for="file-upload" class="btn btn-primary">Chọn Tệp (Có thể chọn nhiều)</label>
+                    <input type="file" id="file-upload" required style="display: none;" multiple>
+                    
+                    <div class="form-fields" style="display: none; margin-top: 20px; text-align: left;">
+    <input type="text" id="university" name="university" placeholder="Tên trường đại học..." required>
+    <span class="error-message" id="university-error"></span>
+
+    <input type="text" id="subject" name="subject" placeholder="Tên môn học..." required>
+    <span class="error-message" id="subject-error"></span>
+    
+    <input type="text" id="teacher" name="teacher" placeholder="Tên giảng viên hoặc khoa..." required>
+    <span class="error-message" id="teacher-error"></span>
+
+    <textarea id="description" name="description" placeholder="Mô tả ngắn về tài liệu..." rows="3"></textarea>
+    
+    <button type="submit" class="btn btn-primary" id="submit-btn" style="width: 100%; margin-top: 10px;">
+        <i class="fas fa-upload"></i> Tải Lên
+    </button>
+</div>
+                    
+                    <div id="upload-status" style="margin-top: 20px;"></div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-col">
+                <h3>StuHub</h3>
+                <p>Nền tảng chia sẻ tài liệu học tập, kết nối cộng đồng sinh viên Việt Nam.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Liên Kết Nhanh</h4>
+                <ul>
+                    <li><a href="#">Về chúng tôi</a></li>
+                    <li><a href="#">Câu hỏi thường gặp</a></li>
+                    <li><a href="#">Điều khoản dịch vụ</a></li>
+                    <li><a href="#">Chính sách bảo mật</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Theo Dõi Chúng Tôi</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 StuHub. All Rights Reserved.</p>
+        </div>
+        <div id="success-popup" class="popup-overlay">
+        <div class="popup-content">
+            <button id="popup-close-btn" class="popup-close">&times;</button>
+            <img src="https://i.pinimg.com/originals/c3/00/45/c30045e7f17b6a7114b537651a1a7a42.gif" alt="Mèo đa tạ">
+            <h3>Đa tạ sư huynh!</h3>
+        </div>
+    </div>
+    </footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // --- PHẦN 1: CÁC BIẾN ---
+    const header = document.querySelector('.header');
+    const fileInput = document.getElementById('file-upload');
+    const uploadForm = document.getElementById('upload-form');
+    const statusDiv = document.getElementById('upload-status');
+    const submitBtn = document.getElementById('submit-btn');
+    const uploadBoxText = document.querySelector('.upload-box > p');
+    const originalUploadText = uploadBoxText.textContent;
+    const formFields = document.querySelector('.form-fields');
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyV3FasM4ecK7O6Li0lM6_v3q76eQtUEGjHh6ao_vg_Bh6uy_XflxjEEqC3EduZ-UA7/exec";
+
+    // Lấy các element cho việc validation
+    const universityInput = document.getElementById('university');
+    const subjectInput = document.getElementById('subject');
+    const teacherInput = document.getElementById('teacher');
+    
+    const universityError = document.getElementById('university-error');
+    const subjectError = document.getElementById('subject-error');
+    const teacherError = document.getElementById('teacher-error');
+    
+    const inputsToValidate = [universityInput, subjectInput, teacherInput];
+
+    // --- PHẦN 2: CÁC HÀM ---
+    
+    // Hàm hiển thị/ẩn popup (không đổi)
+    const successPopup = document.getElementById('success-popup');
+    const popupCloseBtn = document.getElementById('popup-close-btn');
+    const popupImage = successPopup.querySelector('img');
+    const popupText = successPopup.querySelector('h3');
+    const popupOptions = [ { text: "Đa tạ sư huynh!", imageUrl: "https://i.pinimg.com/236x/27/10/92/2710921c9b5c92e7ddc40925c3373b35.jpg" }, { text: "Tài liệu vip quá hai ơi!", imageUrl: "https://i.pinimg.com/236x/76/c8/8c/76c88cf777792e85badbbd8e002a2082.jpg" }, { text: "Bắn Tym <3", imageUrl: "https://i.pinimg.com/474x/2a/e6/5f/2ae65f442640ad7baf112f65fad61530.jpg" }, { text: "Uầy!", imageUrl: "https://cdn2.fptshop.com.vn/unsafe/meme_da_ta_16_4e907df585.jpg" } ];
+    function showPopup() { if (successPopup && popupImage && popupText) { const randomIndex = Math.floor(Math.random() * popupOptions.length); const selectedPopup = popupOptions[randomIndex]; popupText.textContent = selectedPopup.text; popupImage.src = selectedPopup.imageUrl; successPopup.classList.add('active'); } }
+    function hidePopup() { if (successPopup) { successPopup.classList.remove('active'); } }
+
+    // Hàm đọc file (không đổi)
+    function readFileAsBase64(file) { return new Promise((resolve, reject) => { const reader = new FileReader(); reader.onload = () => { const fileData = reader.result; const fileInfo = { fileName: file.name, mimeType: file.type, file: fileData }; resolve(fileInfo); }; reader.onerror = (error) => reject(error); reader.readAsDataURL(file); }); }
+    
+    // --- HÀM MỚI: Kiểm tra form ---
+    function validateForm() {
+        let isValid = true;
+        // Xóa các lỗi cũ trước khi kiểm tra
+        universityInput.classList.remove('input-error');
+        universityError.classList.remove('active');
+        subjectInput.classList.remove('input-error');
+        subjectError.classList.remove('active');
+        teacherInput.classList.remove('input-error');
+        teacherError.classList.remove('active');
+
+        if (universityInput.value.trim() === '') {
+            universityInput.classList.add('input-error');
+            universityError.textContent = 'Vui lòng nhập tên trường.';
+            universityError.classList.add('active');
+            isValid = false;
+        }
+        if (subjectInput.value.trim() === '') {
+            subjectInput.classList.add('input-error');
+            subjectError.textContent = 'Vui lòng nhập tên môn học.';
+            subjectError.classList.add('active');
+            isValid = false;
+        }
+        if (teacherInput.value.trim() === '') {
+            teacherInput.classList.add('input-error');
+            teacherError.textContent = 'Vui lòng nhập tên giảng viên/khoa.';
+            teacherError.classList.add('active');
+            isValid = false;
+        }
+        return isValid;
+    }
+
+    // --- PHẦN 3: GÁN SỰ KIỆN ---
+    
+    // Sự kiện cho popup (không đổi)
+    if(popupCloseBtn) { popupCloseBtn.addEventListener('click', hidePopup); }
+    if(successPopup) { successPopup.addEventListener('click', function(event) { if (event.target === successPopup) { hidePopup(); } }); }
+    
+    // Sự kiện cuộn trang (không đổi)
+    window.addEventListener('scroll', function() { if (window.scrollY > 50) { header.classList.add('scrolled'); } else { header.classList.remove('scrolled'); } });
+
+    // Sự kiện thay đổi file input (không đổi)
+    fileInput.addEventListener('change', function() { if (fileInput.files.length > 0) { uploadBoxText.textContent = `${fileInput.files.length} tệp đã được chọn`; if (formFields) { formFields.style.display = 'block'; } } else { uploadBoxText.textContent = originalUploadText; if (formFields) { formFields.style.display = 'none'; } } });
+    
+    // Xóa lỗi khi người dùng bắt đầu nhập
+    inputsToValidate.forEach(input => {
+        input.addEventListener('input', () => {
+            if (input.value.trim() !== '') {
+                input.classList.remove('input-error');
+                // Tìm error span tương ứng và ẩn đi
+                const errorSpan = document.getElementById(`${input.id}-error`);
+                if (errorSpan) {
+                    errorSpan.classList.remove('active');
+                }
+            }
+        });
+    });
+
+    // Sự kiện Submit Form (ĐÃ CẬP NHẬT)
+    uploadForm.addEventListener('submit', async function(event) {
+        event.preventDefault();
+        
+        // **BƯỚC KIỂM TRA MỚI ĐƯỢC THÊM VÀO ĐÂY**
+        const isFormValid = validateForm();
+        if (!isFormValid) {
+            return; // Dừng lại nếu form không hợp lệ
+        }
+
+        const files = fileInput.files;
+        if (files.length > 0) {
+            submitBtn.disabled = true;
+            statusDiv.innerHTML = `<p style="color: blue;">Đang chuẩn bị tải lên ${files.length} tệp...</p>`;
+
+            try {
+                const filePromises = Array.from(files).map(readFileAsBase64);
+                const filesArray = await Promise.all(filePromises);
+                const payload = { files: filesArray, university: universityInput.value, subject: subjectInput.value, teacher: teacherInput.value, description: document.getElementById('description').value };
+                
+                statusDiv.innerHTML = `<p style="color: blue;">Đang tải lên ${files.length} tệp...</p>`;
+                
+                const response = await fetch(SCRIPT_URL, { method: 'POST', body: JSON.stringify(payload) });
+                const data = await response.json();
+                
+                if (data.status === 'success') {
+                    showPopup(); 
+                    statusDiv.innerHTML = ''; 
+                } else {
+                    statusDiv.innerHTML = `<p style="color: red;">Lỗi: ${data.message}</p>`;
+                }
+            } catch (error) {
+                console.error('Lỗi khi xử lý tệp:', error);
+                statusDiv.innerHTML = '<p style="color: red;">Đã xảy ra lỗi khi đọc tệp.</p>';
+            } finally {
+                uploadForm.reset(); 
+                submitBtn.disabled = false;
+                uploadBoxText.textContent = originalUploadText;
+                if (formFields) { formFields.style.display = 'none'; }
+            }
+        }
+    });
+});
+</script>
+</body>
+</html>

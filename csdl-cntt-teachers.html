@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giảng viên CSDL (CNTT) - StuShare</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">StuShare</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Trang Chủ</a></li>
+                    <li><a href="truong-dai-hoc.html" class="active">Trường Đại Học & Học Viện</a></li>
+                    <li><a href="#">Danh Mục</a></li>
+                    <li><a href="#">Giới Thiệu</a></li>
+                    <li><a href="#">Liên Hệ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+<nav class="breadcrumb">
+    <div class="container">
+        <ol>
+            <li><a href="index.html">Trang Chủ</a></li>
+            <li><a href="truong-dai-hoc.html">Trường ĐH & HV</a></li>
+            <li><a href="uet-subjects.html">ĐH Công nghệ</a></li>
+            <li class="active">Giảng viên môn Cơ sở dữ liệu</li>
+        </ol>
+    </div>
+</nav>
+
+    <main>
+        <section class="university-hero">
+            <div class="container">
+                <i class="fas fa-chalkboard-teacher subject-hero-icon"></i>
+                <div class="university-hero-info">
+                    <h1>Giảng viên môn Cơ sở dữ liệu</h1>
+                    <p>Thuộc Khoa Công nghệ Thông tin</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="teachers-list">
+            <div class="container">
+                <div class="teacher-grid">
+                    <a href="nguyenvana-documents.html" class="teacher-card">
+                        <h3>GV Khoa Công Nghệ Thông Tin</h3>
+                        <p class="teacher-action">Xem tài liệu</p>
+                    </a>
+                    <a href="#" class="teacher-card">
+                        <h3>ThS. Trần Thị B</h3>
+                        <p class="teacher-action">Xem tài liệu</p>
+                    </a>
+                    <a href="#" class="teacher-card">
+                        <h3>TS. Lê Minh C</h3>
+                        <p class="teacher-action">Xem tài liệu</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-col">
+                <h3>StuShare</h3>
+                <p>Nền tảng chia sẻ tài liệu học tập, kết nối cộng đồng sinh viên Việt Nam.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Liên Kết Nhanh</h4>
+                <ul>
+                    <li><a href="#">Về chúng tôi</a></li>
+                    <li><a href="#">Câu hỏi thường gặp</a></li>
+                    <li><a href="#">Điều khoản dịch vụ</a></li>
+                    <li><a href="#">Chính sách bảo mật</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Theo Dõi Chúng Tôi</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 StuShare. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const header = document.querySelector('.header');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    });
+</script>
+</body>
+</html>

@@ -8,21 +8,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
-
-    <header class="header">
-        <div class="container">
-            <a href="index.html" class="logo">StuHub</a>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html" class="active">Trang Chủ</a></li>
-                    <li><a href="truong-dai-hoc.html">Trường Đại Học & Học Viện</a></li>
-                    <li><a href="#">Danh Mục</a></li>
-                    <li><a href="#">Giới Thiệu</a></li>
-                    <li><a href="#">Liên Hệ</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <!-- Thanh công cụ dùng chung -->
+    <div id="header-placeholder"></div>
+    <script>
+      fetch('/StuShare/header.html')
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById('header-placeholder').innerHTML = data;
+        });
+    </script>
 
     <main>
         <section class="hero-section">
@@ -122,21 +116,21 @@
                     <input type="file" id="file-upload" required style="display: none;" multiple>
                     
                     <div class="form-fields" style="display: none; margin-top: 20px; text-align: left;">
-    <input type="text" id="university" name="university" placeholder="Tên trường đại học..." required>
-    <span class="error-message" id="university-error"></span>
+                        <input type="text" id="university" name="university" placeholder="Tên trường đại học..." required>
+                        <span class="error-message" id="university-error"></span>
 
-    <input type="text" id="subject" name="subject" placeholder="Tên môn học..." required>
-    <span class="error-message" id="subject-error"></span>
-    
-    <input type="text" id="teacher" name="teacher" placeholder="Tên giảng viên hoặc khoa..." required>
-    <span class="error-message" id="teacher-error"></span>
+                        <input type="text" id="subject" name="subject" placeholder="Tên môn học..." required>
+                        <span class="error-message" id="subject-error"></span>
+                        
+                        <input type="text" id="teacher" name="teacher" placeholder="Tên giảng viên hoặc khoa..." required>
+                        <span class="error-message" id="teacher-error"></span>
 
-    <textarea id="description" name="description" placeholder="Mô tả ngắn về tài liệu..." rows="3"></textarea>
-    
-    <button type="submit" class="btn btn-primary" id="submit-btn" style="width: 100%; margin-top: 10px;">
-        <i class="fas fa-upload"></i> Tải Lên
-    </button>
-</div>
+                        <textarea id="description" name="description" placeholder="Mô tả ngắn về tài liệu..." rows="3"></textarea>
+                        
+                        <button type="submit" class="btn btn-primary" id="submit-btn" style="width: 100%; margin-top: 10px;">
+                            <i class="fas fa-upload"></i> Tải Lên
+                        </button>
+                    </div>
                     
                     <div id="upload-status" style="margin-top: 20px;"></div>
                 </form>
@@ -144,46 +138,18 @@
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-col">
-                <h3>StuHub</h3>
-                <p>Nền tảng chia sẻ tài liệu học tập, kết nối cộng đồng sinh viên Việt Nam.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Liên Kết Nhanh</h4>
-                <ul>
-                    <li><a href="#">Về chúng tôi</a></li>
-                    <li><a href="#">Câu hỏi thường gặp</a></li>
-                    <li><a href="#">Điều khoản dịch vụ</a></li>
-                    <li><a href="#">Chính sách bảo mật</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Theo Dõi Chúng Tôi</h4>
-                <div class="social-links">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="copyright">
-            <p>&copy; 2025 StuHub. All Rights Reserved.</p>
-        </div>
+    <div id="footer-placeholder"></div>
         <div id="success-popup" class="popup-overlay">
-        <div class="popup-content">
-            <button id="popup-close-btn" class="popup-close">&times;</button>
-            <img src="https://i.pinimg.com/originals/c3/00/45/c30045e7f17b6a7114b537651a1a7a42.gif" alt="Mèo đa tạ">
-            <h3>Đa tạ sư huynh!</h3>
+            <div class="popup-content">
+                <button id="popup-close-btn" class="popup-close">&times;</button>
+                <img src="https://i.pinimg.com/originals/c3/00/45/c30045e7f17b6a7114b537651a1a7a42.gif" alt="Mèo đa tạ">
+                <h3>Đa tạ sư huynh!</h3>
+            </div>
         </div>
-    </div>
-    </footer>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // --- PHẦN 1: CÁC BIẾN ---
-    const header = document.querySelector('.header');
+    // --- PHẦN UPLOAD FORM - GIỮ NGUYÊN ---
     const fileInput = document.getElementById('file-upload');
     const uploadForm = document.getElementById('upload-form');
     const statusDiv = document.getElementById('upload-status');
@@ -193,35 +159,57 @@ document.addEventListener('DOMContentLoaded', function() {
     const formFields = document.querySelector('.form-fields');
     const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyV3FasM4ecK7O6Li0lM6_v3q76eQtUEGjHh6ao_vg_Bh6uy_XflxjEEqC3EduZ-UA7/exec";
 
-    // Lấy các element cho việc validation
+    // Validation elements
     const universityInput = document.getElementById('university');
     const subjectInput = document.getElementById('subject');
     const teacherInput = document.getElementById('teacher');
-    
     const universityError = document.getElementById('university-error');
     const subjectError = document.getElementById('subject-error');
     const teacherError = document.getElementById('teacher-error');
-    
     const inputsToValidate = [universityInput, subjectInput, teacherInput];
 
-    // --- PHẦN 2: CÁC HÀM ---
-    
-    // Hàm hiển thị/ẩn popup (không đổi)
+    // Popup functions
     const successPopup = document.getElementById('success-popup');
     const popupCloseBtn = document.getElementById('popup-close-btn');
     const popupImage = successPopup.querySelector('img');
     const popupText = successPopup.querySelector('h3');
-    const popupOptions = [ { text: "Đa tạ sư huynh!", imageUrl: "https://i.pinimg.com/236x/27/10/92/2710921c9b5c92e7ddc40925c3373b35.jpg" }, { text: "Tài liệu vip quá hai ơi!", imageUrl: "https://i.pinimg.com/236x/76/c8/8c/76c88cf777792e85badbbd8e002a2082.jpg" }, { text: "Bắn Tym <3", imageUrl: "https://i.pinimg.com/474x/2a/e6/5f/2ae65f442640ad7baf112f65fad61530.jpg" }, { text: "Uầy!", imageUrl: "https://cdn2.fptshop.com.vn/unsafe/meme_da_ta_16_4e907df585.jpg" } ];
-    function showPopup() { if (successPopup && popupImage && popupText) { const randomIndex = Math.floor(Math.random() * popupOptions.length); const selectedPopup = popupOptions[randomIndex]; popupText.textContent = selectedPopup.text; popupImage.src = selectedPopup.imageUrl; successPopup.classList.add('active'); } }
-    function hidePopup() { if (successPopup) { successPopup.classList.remove('active'); } }
+    const popupOptions = [ 
+        { text: "Đa tạ sư huynh!", imageUrl: "https://i.pinimg.com/236x/27/10/92/2710921c9b5c92e7ddc40925c3373b35.jpg" }, 
+        { text: "Tài liệu vip quá hai ơi!", imageUrl: "https://i.pinimg.com/236x/76/c8/8c/76c88cf777792e85badbbd8e002a2082.jpg" }, 
+        { text: "Bắn Tym <3", imageUrl: "https://i.pinimg.com/474x/2a/e6/5f/2ae65f442640ad7baf112f65fad61530.jpg" }, 
+        { text: "Uầy!", imageUrl: "https://cdn2.fptshop.com.vn/unsafe/meme_da_ta_16_4e907df585.jpg" } 
+    ];
 
-    // Hàm đọc file (không đổi)
-    function readFileAsBase64(file) { return new Promise((resolve, reject) => { const reader = new FileReader(); reader.onload = () => { const fileData = reader.result; const fileInfo = { fileName: file.name, mimeType: file.type, file: fileData }; resolve(fileInfo); }; reader.onerror = (error) => reject(error); reader.readAsDataURL(file); }); }
+    function showPopup() { 
+        if (successPopup && popupImage && popupText) { 
+            const randomIndex = Math.floor(Math.random() * popupOptions.length); 
+            const selectedPopup = popupOptions[randomIndex]; 
+            popupText.textContent = selectedPopup.text; 
+            popupImage.src = selectedPopup.imageUrl; 
+            successPopup.classList.add('active'); 
+        } 
+    }
+    function hidePopup() { 
+        if (successPopup) { 
+            successPopup.classList.remove('active'); 
+        } 
+    }
+
+    function readFileAsBase64(file) { 
+        return new Promise((resolve, reject) => { 
+            const reader = new FileReader(); 
+            reader.onload = () => { 
+                const fileData = reader.result; 
+                const fileInfo = { fileName: file.name, mimeType: file.type, file: fileData }; 
+                resolve(fileInfo); 
+            }; 
+            reader.onerror = (error) => reject(error); 
+            reader.readAsDataURL(file); 
+        }); 
+    }
     
-    // --- HÀM MỚI: Kiểm tra form ---
     function validateForm() {
         let isValid = true;
-        // Xóa các lỗi cũ trước khi kiểm tra
         universityInput.classList.remove('input-error');
         universityError.classList.remove('active');
         subjectInput.classList.remove('input-error');
@@ -250,24 +238,24 @@ document.addEventListener('DOMContentLoaded', function() {
         return isValid;
     }
 
-    // --- PHẦN 3: GÁN SỰ KIỆN ---
-    
-    // Sự kiện cho popup (không đổi)
+    // Event listeners
     if(popupCloseBtn) { popupCloseBtn.addEventListener('click', hidePopup); }
     if(successPopup) { successPopup.addEventListener('click', function(event) { if (event.target === successPopup) { hidePopup(); } }); }
     
-    // Sự kiện cuộn trang (không đổi)
-    window.addEventListener('scroll', function() { if (window.scrollY > 50) { header.classList.add('scrolled'); } else { header.classList.remove('scrolled'); } });
-
-    // Sự kiện thay đổi file input (không đổi)
-    fileInput.addEventListener('change', function() { if (fileInput.files.length > 0) { uploadBoxText.textContent = `${fileInput.files.length} tệp đã được chọn`; if (formFields) { formFields.style.display = 'block'; } } else { uploadBoxText.textContent = originalUploadText; if (formFields) { formFields.style.display = 'none'; } } });
+    fileInput.addEventListener('change', function() { 
+        if (fileInput.files.length > 0) { 
+            uploadBoxText.textContent = `${fileInput.files.length} tệp đã được chọn`; 
+            if (formFields) { formFields.style.display = 'block'; } 
+        } else { 
+            uploadBoxText.textContent = originalUploadText; 
+            if (formFields) { formFields.style.display = 'none'; } 
+        } 
+    });
     
-    // Xóa lỗi khi người dùng bắt đầu nhập
     inputsToValidate.forEach(input => {
         input.addEventListener('input', () => {
             if (input.value.trim() !== '') {
                 input.classList.remove('input-error');
-                // Tìm error span tương ứng và ẩn đi
                 const errorSpan = document.getElementById(`${input.id}-error`);
                 if (errorSpan) {
                     errorSpan.classList.remove('active');
@@ -276,14 +264,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Sự kiện Submit Form (ĐÃ CẬP NHẬT)
     uploadForm.addEventListener('submit', async function(event) {
         event.preventDefault();
         
-        // **BƯỚC KIỂM TRA MỚI ĐƯỢC THÊM VÀO ĐÂY**
         const isFormValid = validateForm();
         if (!isFormValid) {
-            return; // Dừng lại nếu form không hợp lệ
+            return;
         }
 
         const files = fileInput.files;
@@ -294,7 +280,13 @@ document.addEventListener('DOMContentLoaded', function() {
             try {
                 const filePromises = Array.from(files).map(readFileAsBase64);
                 const filesArray = await Promise.all(filePromises);
-                const payload = { files: filesArray, university: universityInput.value, subject: subjectInput.value, teacher: teacherInput.value, description: document.getElementById('description').value };
+                const payload = { 
+                    files: filesArray, 
+                    university: universityInput.value, 
+                    subject: subjectInput.value, 
+                    teacher: teacherInput.value, 
+                    description: document.getElementById('description').value 
+                };
                 
                 statusDiv.innerHTML = `<p style="color: blue;">Đang tải lên ${files.length} tệp...</p>`;
                 
@@ -320,5 +312,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
+  <script src="assets/js/layout.js"></script>
 </body>
 </html>

@@ -1,0 +1,42 @@
+<header class="header">
+    <div class="container">
+        <a href="/StuShare/index.html" class="logo">StuHub</a>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="/StuShare/index.html">Trang Chủ</a></li>
+                <li><a href="/StuShare/truong-dai-hoc.html">Trường Đại Học & Học Viện</a></li>
+                <li><a href="#">Danh Mục</a></li>
+                <li><a href="#">Giới Thiệu</a></li>
+                <li><a href="#">Liên Hệ</a></li>
+            </ul>
+        </nav>
+    </div>
+    <script>
+  (function () {
+    function onReady(fn){ 
+      if (document.readyState !== 'loading') fn();
+      else document.addEventListener('DOMContentLoaded', fn);
+    }
+    onReady(function () {
+      const header = document.querySelector('.header');
+      if (!header) return;
+      
+      // Hàm này sẽ được gọi mỗi khi người dùng cuộn trang
+      function toggle() {
+        // Nếu người dùng cuộn xuống hơn 50 pixels
+        if (window.scrollY > 50) {
+          // Thêm class 'scrolled' vào thẻ header
+          header.classList.add('scrolled');
+        } else {
+          // Nếu ở trên cùng, xóa class 'scrolled' đi
+          header.classList.remove('scrolled');
+        }
+      }
+      
+      toggle(); // Chạy 1 lần khi tải trang để kiểm tra trạng thái ban đầu
+      window.addEventListener('scroll', toggle, { passive: true }); // Lắng nghe sự kiện cuộn trang
+    });
+  })();
+</script>
+
+</header>

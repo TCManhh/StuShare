@@ -4,34 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Môn học - Đại học Công nghệ (UET) - StuShare</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/StuShare/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
-<body>
+<body class="has-fixed-breadcrumb">
 
-    <header class="header">
-        <div class="container">
-            <a href="index.html" class="logo">StuShare</a>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html">Trang Chủ</a></li>
-                    <li><a href="truong-dai-hoc.html" class="active">Trường Đại Học & Học Viện</a></li>
-                    <li><a href="#">Danh Mục</a></li>
-                    <li><a href="#">Giới Thiệu</a></li>
-                    <li><a href="#">Liên Hệ</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-<nav class="breadcrumb">
-    <div class="container">
-        <ol>
-            <li><a href="index.html">Trang Chủ</a></li>
-            <li><a href="truong-dai-hoc.html">Trường Đại Học & Học Viện</a></li>
-            <li class="active">Đại học Công nghệ - ĐHQGHN</li>
-        </ol>
-    </div>
-</nav>
+    <!-- Thanh công cụ (Header) -->
+    <div id="header-placeholder"></div>
+    <script>
+      fetch('/StuShare/header.html')
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById('header-placeholder').innerHTML = data;
+        });
+    </script>
+
+    <!-- Breadcrumb nếu cần -->
+    <div id="breadcrumb-placeholder"></div>
 
     <main>
         <section class="university-hero">
@@ -68,7 +57,7 @@
                             <p class="subject-code">INT2201</p>
                         </div>
                     </a>
-                    <a href="csdl-cntt-teachers.html" class="subject-card">
+                    <a href="\StuShare\truong-dai-hoc\uet-subjects\cntt-csdl.html" class="subject-card">
                         <i class="fas fa-database subject-icon"></i>
                         <div class="subject-info">
                             <h3>Cơ sở dữ liệu</h3>
@@ -80,6 +69,13 @@
                         <div class="subject-info">
                             <h3>Mạng máy tính</h3>
                             <p class="subject-code">INT2203</p>
+                        </div>
+                    </a>
+                    <a href="\StuShare\truong-dai-hoc\uet-subjects\cntt-xstk.html" class="subject-card">
+                        <i class="fas fa-chart-bar subject-icon"></i>
+                        <div class="subject-info">
+                            <h3>Xác suất thống kê</h3>
+                            <p class="subject-code">INT1101</p>
                         </div>
                     </a>
                 </div>
@@ -112,34 +108,15 @@
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-col">
-                <h3>StuShare</h3>
-                <p>Nền tảng chia sẻ tài liệu học tập, kết nối cộng đồng sinh viên Việt Nam.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Liên Kết Nhanh</h4>
-                <ul>
-                    <li><a href="#">Về chúng tôi</a></li>
-                    <li><a href="#">Câu hỏi thường gặp</a></li>
-                    <li><a href="#">Điều khoản dịch vụ</a></li>
-                    <li><a href="#">Chính sách bảo mật</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Theo Dõi Chúng Tôi</h4>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="copyright">
-            <p>&copy; 2025 StuShare. All Rights Reserved.</p>
-        </div>
-    </footer>
+    <!-- Phần dưới cùng (Footer) -->
+    <div id="footer-placeholder"></div>
+    <script>
+      fetch('/StuShare/footer.html')
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById('footer-placeholder').innerHTML = data;
+        });
+    </script>
 
     <script>
         // Chức năng tìm kiếm môn học
@@ -175,21 +152,21 @@
             });
         });
     </script>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const header = document.querySelector('.header');
-    const breadcrumb = document.querySelector('.breadcrumb');
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const header = document.querySelector('.header');
+        const breadcrumb = document.querySelector('.breadcrumb');
 
-    function applyScrollState() {
-      const isScrolled = window.scrollY > 80;
-      if (header) header.classList.toggle('scrolled', isScrolled);
-      if (breadcrumb) breadcrumb.classList.toggle('compact', isScrolled);
-    }
+        function applyScrollState() {
+          const isScrolled = window.scrollY > 80;
+          if (header) header.classList.toggle('scrolled', isScrolled);
+          if (breadcrumb) breadcrumb.classList.toggle('compact', isScrolled);
+        }
 
-    applyScrollState(); // áp trạng thái ngay khi load (nếu mở giữa trang)
-    window.addEventListener('scroll', applyScrollState, { passive: true });
-  });
-</script>
-
+        applyScrollState(); 
+        window.addEventListener('scroll', applyScrollState, { passive: true });
+      });
+    </script>
+    <script src="/StuShare/assets/js/layout.js"></script>
 </body>
 </html>

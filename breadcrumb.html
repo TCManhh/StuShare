@@ -1,0 +1,94 @@
+<nav class="breadcrumb">
+    <div class="container">
+        <ol id="breadcrumb-list"></ol>
+    </div>
+</nav>
+
+<script>
+(function() {
+    // Bảng tra cứu tên (giữ nguyên)
+    const map = {
+        "StuShare": "Trang chủ",
+        "index.html": "Trang chủ",
+        "truong-dai-hoc": "Trường Đại học & Học viện",
+        "truong-dai-hoc.html": "Trường Đại học & Học viện",
+        "uet-subjects.html": "Trường Đại học Công nghệ",
+        "uet-subjects": "Trường Đại học Công nghệ",
+        "cntt-csdl.html": "Cơ sở dữ liệu",
+        "cntt-csdl": "Cơ sở dữ liệu",
+        "GVkhoaCNTT-documents": "GV Khoa Công Nghệ Thông Tin",
+        "GVkhoaCNTT-documents.html": "GV Khoa Công Nghệ Thông Tin",
+        "cntt-xstk.html": "Xác suất thống kê",
+        "cntt-xstk": "Xác suất thống kê",
+        "csdl-cntt-teachers.html": "Giảng viên",
+        "c1-viewer.html": "C1.pptx",
+        "c1-viewer": "C1.pptx",
+        "c2-1-viewer.html": "C2_1.pptx",
+        "c2-1-viewer": "C2_1.pptx",
+        "c2-2-viewer.html": "C2_2.pptx",
+        "c2-2-viewer": "C2_2.pptx",
+        "classmodel-viewer.html": "ClassModel.pdf",
+        "th-template-viewer.html": "[TH] Template Nộp Bài Tập.docx",
+        "thuchanh-csdl-viewer.html": "TH_CSDL_Jul_2025.pdf",
+        "le-sy-vinh-documents.html": "GS. Lê Sỹ Vinh",
+        "le-sy-vinh-documents": "GS. Lê Sỹ Vinh",
+        "xac-suat-thong-ke-week-1-viewer.html": "Tuần 1: Biến cố và xác suất của biến cố (P1)",
+        "xac-suat-thong-ke-week-2-viewer.html": "Tuần 2: Biến cố và xác suất của biến cố (P2)",
+        "xac-suat-thong-ke-week-3-viewer.html": "Tuần 3: Đại lượng ngẫu nhiên rời rạc",
+        "xac-suat-thong-ke-week-5-6-viewer.html": "Tuần 5 & 6: Đại lượng ngẫu nhiên liên tục",
+        "xac-suat-thong-ke-week-6-viewer.html": "Tuần 6: Luật số lớn & Định lý giới hạn trung tâm",
+        "xac-suat-thong-ke-week-7-viewer.html": "Tuần 7: Giới thiệu thống kê & Khoảng tin cậy",
+        "xac-suat-thong-ke-week-8-viewer.html": "Tuần 8: Kiểm định giả thuyết",
+        "xac-suat-thong-ke-week-9-viewer.html": "Tuần 9: Kiểm định – P-value",
+        "xac-suat-thong-ke-week-10-viewer.html": "Tuần 10: Phân tích tương quan & Hồi quy",
+        "xac-suat-thong-ke-week-11-viewer.html": "Tuần 11: Công thức Bayes"
+    };
+
+    const breadcrumbList = document.getElementById('breadcrumb-list');
+    let pathSegments = window.location.pathname.replace(/^\/+|\/+$/g, '').split('/');
+    
+    if (pathSegments[0] === 'StuShare') {
+        pathSegments.shift(); 
+    }
+    
+    let cumulativePath = '/StuShare';
+
+    pathSegments.forEach((segment, index) => {
+        const isLast = index === pathSegments.length - 1;
+        
+        if (!segment) return;
+        
+        const name = map[segment] || segment.replace('.html', '').replace(/-/g, ' ');
+        const listItem = document.createElement('li');
+        
+        if (isLast) {
+            listItem.classList.add('active');
+            listItem.textContent = name;
+        } else {
+            const link = document.createElement('a');
+            
+            // --- LOGIC SỬA LỖI TẠO LINK ---
+            let linkHref = cumulativePath + '/' + segment;
+            
+            // Nếu segment không chứa dấu '.', giả định nó là file và cần đuôi .html
+            if (!segment.includes('.')) {
+                linkHref += '.html';
+            }
+            
+            // Xử lý riêng cho trang chủ
+            if (name === 'Trang chủ' || segment === 'index.html') {
+                linkHref = '/StuShare/index.html';
+            }
+
+            link.href = linkHref;
+            link.textContent = name;
+            listItem.appendChild(link);
+        }
+        
+        // Cập nhật đường dẫn cho vòng lặp tiếp theo
+        cumulativePath += '/' + segment;
+        
+        breadcrumbList.appendChild(listItem);
+    });
+})();
+</script>

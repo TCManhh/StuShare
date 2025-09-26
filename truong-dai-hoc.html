@@ -7,30 +7,10 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
-<body>
 
-    <header class="header">
-        <div class="container">
-            <a href="index.html" class="logo">StuShare</a>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html">Trang Chủ</a></li>
-                    <li><a href="truong-dai-hoc.html">Trường Đại Học & Học Viện</a></li>
-                    <li><a href="#">Danh Mục</a></li>
-                    <li><a href="#">Giới Thiệu</a></li>
-                    <li><a href="#">Liên Hệ</a></li>
-                </ul>
-            </nav>
-        </div>
-     </header>
-    <nav class="breadcrumb">
-        <div class="container">
-            <ol>
-                <li><a href="index.html">Trang Chủ</a></li>
-                <li class="active">Trường Đại Học & Học Viện</li>
-            </ol>
-        </div>
-    </nav>
+<body> 
+
+    <div id="header-placeholder"></div>
 
     <main>
         <section class="page-header">
@@ -60,7 +40,7 @@
                         </div>
                     </a>
                     
-                    <a href="uet-subjects.html" class="university-card">
+                    <a href="truong-dai-hoc/uet-subjects.html" class="university-card">
                         <img src="https://upload.wikimedia.org/wikipedia/vi/thumb/b/bf/Logo_HUET.svg/186px-Logo_HUET.svg.png?20200610051238" alt="Logo trường" class="university-logo">
                         <div class="university-info">
                             <h3>Trường Đại học Công nghệ - Đại học Quốc gia Hà Nội</h3>
@@ -452,97 +432,41 @@
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-col">
-                <h3>StuShare</h3>
-                <p>Nền tảng chia sẻ tài liệu học tập, kết nối cộng đồng sinh viên Việt Nam.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Liên Kết Nhanh</h4>
-                <ul>
-                    <li><a href="#">Về chúng tôi</a></li>
-                    <li><a href="#">Câu hỏi thường gặp</a></li>
-                    <li><a href="#">Điều khoản dịch vụ</a></li>
-                    <li><a href="#">Chính sách bảo mật</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Theo Dõi Chúng Tôi</h4>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="copyright">
-            <p>&copy; 2025 StuShare. All Rights Reserved.</p>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 
     <script>
-        // Đợi cho toàn bộ nội dung trang web được tải xong
         document.addEventListener('DOMContentLoaded', function () {
-            
-            // Lấy ra ô input và tất cả các thẻ trường đại học
             const searchInput = document.getElementById('searchInput');
             const universityCards = document.querySelectorAll('.university-card');
             const universityGrids = document.querySelectorAll('.university-grid');
 
-            // Thêm sự kiện 'input' để theo dõi mỗi khi người dùng gõ chữ
             searchInput.addEventListener('input', function () {
-                // Lấy giá trị tìm kiếm, chuyển thành chữ thường và loại bỏ khoảng trắng thừa
                 const searchTerm = searchInput.value.toLowerCase().trim();
 
-                // Lặp qua từng thẻ trường đại học
                 universityCards.forEach(function (card) {
-                    // Lấy ra tên và tên viết tắt của trường, cũng chuyển thành chữ thường
                     const universityName = card.querySelector('h3').textContent.toLowerCase();
                     const universityAcronym = card.querySelector('p').textContent.toLowerCase();
 
-                    // Kiểm tra xem tên hoặc tên viết tắt có chứa từ khóa tìm kiếm không
                     if (universityName.includes(searchTerm) || universityAcronym.includes(searchTerm)) {
-                        card.style.display = 'flex'; // Nếu có, hiển thị thẻ
+                        card.style.display = 'flex';
                     } else {
-                        card.style.display = 'none'; // Nếu không, ẩn thẻ đi
+                        card.style.display = 'none';
                     }
                 });
 
-                // Xử lý ẩn/hiện tiêu đề khu vực (Miền Bắc, Trung, Nam)
                 universityGrids.forEach(function(grid) {
-                    // Tìm tiêu đề (h2) ngay phía trước của mỗi grid
                     const regionTitle = grid.previousElementSibling;
-                    
-                    // Lấy tất cả các thẻ đang được hiển thị bên trong grid này
                     const visibleCardsInGrid = grid.querySelectorAll('.university-card[style*="display: flex"]');
-                    
-                    // Nếu không có thẻ nào được hiển thị, ẩn luôn cả tiêu đề khu vực
                     if (visibleCardsInGrid.length === 0) {
                         regionTitle.style.display = 'none';
                     } else {
-                        regionTitle.style.display = 'block'; // Ngược lại, hiển thị tiêu đề
+                        regionTitle.style.display = 'block';
                     }
                 });
             });
         });
     </script>
-    
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const header = document.querySelector('.header');
-    const breadcrumb = document.querySelector('.breadcrumb');
 
-    function applyScrollState() {
-      const isScrolled = window.scrollY > 80;
-      if (header) header.classList.toggle('scrolled', isScrolled);
-      if (breadcrumb) breadcrumb.classList.toggle('compact', isScrolled);
-    }
-
-    applyScrollState(); // áp trạng thái ngay khi load (nếu mở giữa trang)
-    window.addEventListener('scroll', applyScrollState, { passive: true });
-  });
-</script>
-
+    <script src="assets/js/layout.js"></script>
 </body>
 </html>

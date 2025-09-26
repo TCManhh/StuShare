@@ -76,61 +76,6 @@ ul {
     white-space: nowrap;
 }
 
-.breadcrumb {
-    background-color: #f8f9fa;
-    border-bottom: 1px solid var(--border-color);
-    font-size: 0.9rem;
-    height: var(--breadcrumb-height);
-    display: flex;
-    align-items: center;
-}
-.breadcrumb .container {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-.breadcrumb ol {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    width: 100%;
-}
-.breadcrumb li {
-    display: flex;
-    align-items: center;
-    max-width: 250px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-.breadcrumb li a {
-    color: var(--primary-color);
-    display: block;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-.breadcrumb li a:hover {
-    text-decoration: underline;
-}
-.breadcrumb li::after {
-    content: '›';
-    margin: 0 10px;
-    color: #999;
-}
-.breadcrumb li:last-child {
-    max-width: 400px;
-    flex-shrink: 0;
-}
-.breadcrumb li:last-child::after {
-    content: '';
-}
-.breadcrumb li.active {
-    color: var(--text-color);
-    font-weight: 600;
-}
 
 /* --- Trang Các Trường (truong-dai-hoc.html) --- */
 .page-header {
@@ -504,50 +449,74 @@ h3 { font-size: 1.25rem; }
     color: var(--primary-dark);
 }
 
-/* --- Header --- */
+/* --- PHẦN 2: BỔ SUNG CSS MỚI --- */
+
+/* Header cố định ở trạng thái ban đầu */
 .header {
-    background: #fff;
-    height: var(--header-height);
-    display: flex;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    transition: all 0.3s ease;
-    border-bottom: 1px solid transparent;
+  background: #fff;
+  height: 75px; /* Chiều cao ban đầu */
+  display: flex;
+  align-items: center;
+  position: fixed; /* Giữ header luôn ở trên cùng */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: height 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng chuyển động mượt mà */
+  border-bottom: 1px solid transparent;
 }
+
+/* Thu nhỏ khi cuộn - Khi header có thêm class 'scrolled' */
 .header.scrolled {
-    --header-height: 65px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    border-bottom: 1px solid var(--border-color);
+  height: 60px; /* Chiều cao sau khi thu nhỏ */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  border-bottom: 1px solid #dee2e6;
 }
+
+/* Đẩy nội dung xuống để không bị header che mất */
+body { 
+  padding-top: 75px; /* Khoảng đệm bằng chiều cao ban đầu của header */
+}
+
+/* Nếu TRANG có breadcrumb nằm ngay dưới header,
+   dùng thêm dòng sau để chừa chỗ cả breadcrumb:
+   body { padding-top: calc(75px + 41px); }  */
+
+
+/* Các định dạng khác cho logo, menu... giữ nguyên như trong tệp của bạn */
 .header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
 }
+
 .header .logo {
     font-size: 1.8rem;
     font-weight: bold;
     color: var(--primary-color);
 }
+
 .header .main-nav ul {
     display: flex;
 }
+
 .header .main-nav ul li {
     margin-left: 30px;
 }
+
 .header .main-nav ul li a {
     color: var(--dark-color);
     font-weight: 500;
     position: relative;
     padding: 5px 0;
 }
+
 .header .main-nav ul li a.active,
 .header .main-nav ul li a:hover {
     color: var(--primary-color);
 }
+
 .header .main-nav ul li a::after {
     content: '';
     position: absolute;
@@ -558,6 +527,7 @@ h3 { font-size: 1.25rem; }
     background: var(--primary-color);
     transition: width 0.3s ease;
 }
+
 .header .main-nav ul li a:hover::after,
 .header .main-nav ul li a.active::after {
     width: 100%;
@@ -948,7 +918,7 @@ h3 { font-size: 1.25rem; }
 .form-fields input.input-error,
 .form-fields textarea.input-error {
     border-color: #D93025 !important; /* Màu đỏ của Google */
-    background-color: #fdf уют2e2;
+    background-color: #fde2e2;
 }
 
 /* Định dạng cho thông báo lỗi */
@@ -964,4 +934,82 @@ h3 { font-size: 1.25rem; }
 /* Lớp để hiển thị thông báo lỗi */
 .error-message.active {
     display: block;
+}
+
+body {
+    padding-top: 75px; /* Bằng chiều cao header */
+}
+
+/* File: style.css */
+/* DÁN ĐOẠN NÀY VÀO CUỐI FILE HOẶC THAY THẾ CHO ĐOẠN .breadcrumb CŨ */
+
+/* =================================================================== */
+/* --- CSS CHO BREADCRUMB (PHIÊN BẢN GỌN NHẸ) --- */
+/* =================================================================== */
+
+.breadcrumb {
+    background-color: #f8f9fa;
+    padding: 6px 0; /* Giảm chiều cao (padding) từ 12px xuống 8px */
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.85rem; /* Giảm cỡ chữ từ 0.9rem xuống 0.85rem */
+    width: 100%;
+}
+
+.breadcrumb ol {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.breadcrumb li {
+    display: flex;
+    align-items: center;
+    white-space: nowrap; /* Ngăn các mục bị xuống dòng đột ngột */
+}
+
+/* Dấu ngăn cách '›' */
+.breadcrumb li:not(:first-child)::before {
+    content: '›';
+    margin: 0 8px;
+    color: #999; /* Làm mờ dấu ngăn cách một chút */
+}
+
+.breadcrumb li a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.breadcrumb li a:hover {
+    text-decoration: underline;
+}
+
+/* Icon Home cho Trang chủ */
+.breadcrumb li:first-child a::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    content: "\f015"; /* Mã icon Home */
+    margin-right: 5px; /* Giảm khoảng cách icon */
+    font-size: 0.85rem; /* Chỉnh lại kích thước icon cho phù hợp */
+}
+
+/* Style cho mục hiện tại (không phải link) */
+.breadcrumb li.active {
+    color: var(--dark-color);
+    font-weight: 500; /* Giảm độ đậm để chữ thanh mảnh hơn */
+}
+
+/* Style cho dấu "..." khi rút gọn */
+.breadcrumb li.ellipsis {
+    color: #999;
+    padding: 0 5px;
+}
+
+/* Style cho icon Home khi đứng một mình */
+.breadcrumb li a.icon-only::before {
+    margin-right: 0;
+    font-size: 1.1rem;
 }

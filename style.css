@@ -58,10 +58,10 @@ ul {
     font-size: 1.8rem;
     font-weight: bold;
     color: var(--primary-color);
-    transition: font-size 0.3s ease;
+    transition: transform 0.3s ease;
 }
 .header.scrolled .logo {
-    font-size: 1.5rem;
+    transform: scale(0.85);
 }
 .header .main-nav {
     margin-left: auto;
@@ -475,16 +475,19 @@ a:hover {
     left: 0;
     width: 100%;
     z-index: 1000;
-    height: var(--header-height); /* Dùng biến để nhất quán */
+    padding-top: 15px;
+    padding-bottom: 15px;
     display: flex;
     align-items: center;
-    transition: height 0.3s ease, box-shadow 0.3s ease;
+    transition: padding-top 0.3s ease, padding-bottom 0.3s ease, box-shadow 0.3s ease;
     border-bottom: 1px solid transparent; /* Ban đầu trong suốt */
 }
 
 /* 2. Thu nhỏ khi cuộn chuột */
 .header.scrolled {
-    height: 60px; /* Chiều cao mới sau khi thu nhỏ */
+    padding-top: 5px;
+    padding-bottom: 5px;
+
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     border-bottom: 1px solid var(--border-color);
 }

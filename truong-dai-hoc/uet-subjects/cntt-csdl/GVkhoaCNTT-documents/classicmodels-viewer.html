@@ -1,61 +1,76 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tài liệu - GV Khoa Công Nghệ Thông Tin - StuShare</title>
-    <link rel="stylesheet" href="/StuShare/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClassicModels - CSDL - StuShare</title>
+  <link rel="stylesheet" href="/StuShare/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
-<body>
-    <!-- Thanh công cụ dùng chung -->
-    <div id="header-placeholder"></div>
-    <script>
-      fetch('/StuShare/header.html')
-        .then(res => res.text())
-        .then(data => {
-          document.getElementById('header-placeholder').innerHTML = data;
-        });
-    </script>
+<body class="has-fixed-breadcrumb">
+  <!-- Thanh công cụ dùng chung -->
+  <div id="header-placeholder"></div>
+  <script>
+    fetch('/StuShare/header.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+      });
+  </script>
 
-    <!-- Breadcrumb dùng chung -->
-    <div id="breadcrumb-placeholder"></div>
-    <script>
-      fetch('/StuShare/breadcrumb.html')
-        .then(res => res.text())
-        .then(data => {
-          document.getElementById('breadcrumb-placeholder').innerHTML = data;
-        });
-    </script>
+  <!-- Breadcrumb dùng chung -->
+  <div id="breadcrumb-placeholder"></div>
+  <script>
+    fetch('/StuShare/breadcrumb.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('breadcrumb-placeholder').innerHTML = data;
+      });
+  </script>
 
-    <main>
-        <section class="university-hero">
-            <div class="container">
-                <i class="fas fa-book-reader subject-hero-icon"></i>
-                <div class="university-hero-info">
-                    <h1>Tài liệu giảng dạy - GV Khoa Công Nghệ Thông Tin</h1>
-                    <p>Môn học: Cơ sở dữ liệu (Khoa Công nghệ Thông tin)</p>
-                </div>
-            </div>
-        </section>
+  <main>
 
-        <section class="document-list-container">
-            <div class="container">
-                <p style="text-align: center; padding: 2rem;">Nội dung trang xem "classicmodels" sẽ được hiển thị ở đây.</p>
-            </div>
-        </section>
-    </main>
+    <section class="document-viewer-section">
+      <div class="container">
+        <div class="document-viewer">
+          <!-- Thử nhúng trang học liệu -->
+          <iframe
+            src="https://www.mysqltutorial.org/getting-started-with-mysql/mysql-sample-database/"
+            width="100%"
+            height="600px"
+            loading="lazy"
+            referrerpolicy="no-referrer"
+          ></iframe>
+        </div>
+        <!-- <div class="iframe-fallback" style="display:none; text-align:center; margin-top:12px;">
+          Trang có thể chặn nhúng. Mở trực tiếp:
+          <a href="https://portal.uet.vnu.edu.vn/courses/2771/modules/items/107857" target="_blank" rel="noopener">Nhấn vào đây</a>
+        </div> -->
+      </div>
+    </section>
+  </main>
 
-    <!-- Phần cuối trang dùng chung -->
-    <div id="footer-placeholder"></div>
-    <script>
-      fetch('/StuShare/footer.html')
-        .then(res => res.text())
-        .then(data => {
-          document.getElementById('footer-placeholder').innerHTML = data;
-        });
-    </script>
+  <!-- Phần cuối trang dùng chung -->
+  <div id="footer-placeholder"></div>
+  <script>
+    fetch('/StuShare/footer.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+      });
+  </script>
 
-    <script src="/StuShare/assets/js/layout.js"></script>
+  <script src="/StuShare/assets/js/layout.js"></script>
+  <script>
+    // Hiển thị fallback nếu bị chặn bởi X-Frame-Options / CSP
+    window.addEventListener('load', () => {
+      const iframe = document.querySelector('iframe');
+      const fb = document.querySelector('.iframe-fallback');
+      setTimeout(() => {
+        try { void iframe.contentWindow.location.href; }
+        catch(e){ fb.style.display='block'; }
+      }, 1200);
+    });
+  </script>
 </body>
 </html>

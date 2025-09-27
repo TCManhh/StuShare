@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>EasyEDA - Tải phần mềm mô phỏng - StuShare</title>
+  <link rel="stylesheet" href="/StuShare/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    .document-viewer-section { padding: 2rem 0; }
+    .document-viewer { max-width: 900px; margin:0 auto; background:#fff; padding:16px 18px; border:1px solid #e2e6eb; border-radius:12px; box-shadow:0 4px 14px -4px rgba(0,0,0,.08); }
+    .document-viewer iframe { width:100%; height:560px; border:0; border-radius:6px; background:#fff; }
+    .ext-link-box { margin-top:18px; padding:14px 16px; border:1px solid #d9e2ec; border-radius:10px; background:#f8fbff; font-size:.95rem; line-height:1.5; }
+    .ext-link-box a { color:var(--primary-color); font-weight:600; }
+    .blocked-note { display:none; margin-top:14px; font-size:.9rem; color:#b03a2e; }
+  </style>
+</head>
+<body class="has-fixed-breadcrumb viewer-narrow">
+  <div id="header-placeholder"></div>
+  <div id="breadcrumb-placeholder"></div>
+
+  <main>
+    <section class="document-viewer-section">
+      <div class="document-viewer">
+        <h1 style="font-size:1.4rem;margin:0 0 14px;">Tải & Cài đặt EasyEDA</h1>
+
+        <!-- Thử nhúng trang tải EasyEDA (có thể bị chặn iframe) -->
+        <iframe src="https://drive.google.com/file/d/1rn4OVr1KzDkYs6GGAU9PH0LBFSrUW1R4/preview" width="640" height="480" allow="autoplay"></iframe>
+
+        <div class="ext-link-box">
+          <p><strong>Liên kết chính thức tải EasyEDA:</strong><br>
+            <a href="https://easyeda.com/page/download" target="_blank" rel="noopener">https://easyeda.com/page/download</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="/StuShare/assets/js/layout.js"></script>
+  <script>
+    // Kiểm tra iframe có bị chặn không
+    window.addEventListener('load', () => {
+      const f = document.getElementById('easyeda-frame');
+      const fb = document.getElementById('iframe-fallback');
+      setTimeout(() => {
+        try { void f.contentWindow.location.href; }
+        catch(e){ fb.style.display='block'; }
+      }, 1200);
+    });
+  </script>
+</body>
+</html>

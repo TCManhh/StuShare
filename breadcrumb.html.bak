@@ -1,9 +1,0 @@
-<nav class="breadcrumb">
-    <div class="container">
-        <ol>
-            <li><a href="index.html">Trang Chủ</a></li>
-            <li><a href="truong-dai-hoc.html">Trường Đại Học & Học Viện</a></li>
-            <li class="active">Đại học Công nghệ - ĐHQGHN</li>
-        </ol>
-    </div>
-</nav>

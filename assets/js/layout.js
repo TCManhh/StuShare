@@ -11,6 +11,16 @@ if (headerPlaceholder) {
             headerPlaceholder.innerHTML = data;
             initializeHeaderScrollEffect();
             setActiveNavLink(); // <<< GỌI HÀM MỚI Ở ĐÂY
+
+            // --- LOGIC CHO NÚT MENU MOBILE ---
+            const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+            const header = document.querySelector('.header');
+
+            if (mobileNavToggle && header) {
+                mobileNavToggle.addEventListener('click', function() {
+                    header.classList.toggle('mobile-nav-open');
+                });
+            }
         });
 }
 

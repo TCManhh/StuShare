@@ -42,10 +42,12 @@ a {
 h1, h2, h3 {
     color: var(--dark-color);
     margin-bottom: 15px;
+    font-weight: 700;
 }
 
-h1 { font-size: 2.5rem; }
-h2 { font-size: 2rem; text-align: center; }
+h1 { font-size: var(--font-size-h1); line-height: 1.2; }
+h2 { font-size: var(--font-size-h2); text-align: center; }
+h3 { font-size: var(--font-size-h3); }
 
 ul {
     list-style: none;
@@ -391,6 +393,14 @@ a.document-item:hover {
     --border-radius: 12px; /* Bo góc mềm mại hơn */
     --header-height: 75px;
     --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+     /* === BỔ SUNG CÁC BIẾN CỠ CHỮ LINH HOẠT VÀO ĐÂY === */
+    --font-size-h1: clamp(2rem, 1.2rem + 3.5vw, 3.5rem);      /* H1: từ 32px đến 56px */
+    --font-size-h2: clamp(1.8rem, 1.4rem + 2.5vw, 2.5rem);    /* H2: từ 28.8px đến 40px */
+    --font-size-h3: clamp(1.1rem, 0.9rem + 1vw, 1.3rem);      /* H3: từ 17.6px đến 20.8px */
+    --font-size-body: clamp(0.95rem, 0.9rem + 0.25vw, 1.05rem); /* Chữ thường: từ 15.2px đến 16.8px */
+    --font-size-large: clamp(1rem, 0.8rem + 1vw, 1.25rem);     /* Chữ lớn hơn (mô tả hero): từ 16px đến 20px */
+    --font-size-small: clamp(0.8rem, 0.75rem + 0.25vw, 0.9rem); /* Chữ nhỏ (tag, meta): từ 12.8px đến 14.4px */
 }
 
 body {
@@ -408,15 +418,17 @@ a:hover {
     color: var(--primary-dark);
 }
 
-h1, h2, h3 {
-    color: var(--dark-color);
-    margin-bottom: 15px;
-    font-weight: 700;
+/* Hero paragraph fluid size */
+.hero-section p {
+    font-size: var(--font-size-large);
+    margin-bottom: 40px;
+    opacity: 0.9;
 }
 
-h1 { font-size: 3rem; line-height: 1.2; }
-h2 { font-size: 2.25rem; text-align: center; }
-h3 { font-size: 1.25rem; }
+/* OPTIONAL: If you want hero H1 slightly larger than normal h1 */
+.hero-section h1 {
+    font-size: clamp(2.4rem, 1.6rem + 4vw, 4rem);
+}
 
 /* Nút bấm chung */
 .btn, .btn-primary, .btn-secondary, .btn-upload {
@@ -618,7 +630,7 @@ body {
     font-size: 3.5rem;
 }
 .hero-section p {
-    font-size: 1.25rem;
+    font-size: var(--font-size-large);
     margin-bottom: 40px;
     opacity: 0.9;
 }
@@ -1083,3 +1095,202 @@ body.viewer-wide .document-viewer { max-width: 1180px; }
 /* ============================================================= */
 /* KẾT THÚC PHẦN OVERRIDE VIEWER                                 */
 /* ============================================================= */
+/* =================================================================== */
+/* --- PHẦN 4: CSS CHO THIẾT BỊ DI ĐỘNG (RESPONSIVE) --- */
+/* =================================================================== */
+
+/* Áp dụng cho màn hình từ 768px trở xuống (máy tính bảng và điện thoại) */
+@media (max-width: 768px) {
+
+    /* --- 1. Chỉnh sửa Tổng thể & Font chữ --- */
+    html {
+        font-size: 75%;
+    }
+
+    .container {
+        padding: 0 15px; /* Giảm khoảng cách lề hai bên */
+    }
+
+    /* --- 2. Trang Chủ (index.html) --- */
+    
+    /* Điều chỉnh phần Hero */
+    .hero-section {
+        padding: 80px 0; /* Giảm khoảng cách trên-dưới */
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+    
+    /* Chuyển các mục "Tính Năng" thành 1 cột */
+    .features-section .container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    /* Chuyển lưới tài liệu thành 1 cột */
+    .document-bento-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto; /* Để chiều cao tự động */
+    }
+
+    /* Đảm bảo thẻ lớn không chiếm 2 hàng nữa */
+    .document-card.card-large {
+        grid-row: auto;
+    }
+
+    /* --- 3. Trang Danh sách trường (truong-dai-hoc.html) --- */
+
+    /* Chuyển danh sách trường thành 1 cột */
+    .university-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* --- 4. Trang Môn học & Giảng viên --- */
+
+    /* Chuyển danh sách môn học thành 1 cột */
+    .subject-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Chuyển danh sách giảng viên thành 1 cột */
+    .teacher-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .university-hero .container {
+        flex-direction: column; /* Xếp logo và tên trường theo chiều dọc */
+        text-align: center;
+        gap: 15px;
+    }
+}
+
+
+/* Áp dụng cho màn hình rất nhỏ từ 480px trở xuống (điện thoại) */
+@media (max-width: 480px) {
+    h1, .hero-section h1 {
+        font-size: 2rem; /* Giảm font chữ thêm cho màn hình nhỏ */
+    }
+    
+    /* Cho thanh tìm kiếm ở trang chủ xuống dòng đẹp hơn */
+    .search-bar {
+        flex-direction: column;
+        border-radius: 30px; /* Bo tròn đều các góc */
+    }
+
+    .search-bar input {
+        border-radius: 30px 30px 0 0; /* Bo góc trên */
+        text-align: center;
+    }
+
+    .search-bar button {
+        border-radius: 0 0 30px 30px; /* Bo góc dưới */
+    }
+    
+    .btn {
+        padding: 10px 20px; /* Giảm kích thước nút bấm */
+        font-size: 0.9rem;
+    }
+}
+/* =================================================================== */
+/* --- PHẦN 5: CSS CHO MENU MOBILE (THẢ XUỐNG & CĂN GIỮA NGANG) --- */
+/* =================================================================== */
+
+/* 1. Mặc định ẩn nút 3 gạch trên màn hình lớn */
+.mobile-nav-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1001; /* Luôn nằm trên cùng */
+}
+
+/* 2. Style khi chuyển sang giao diện mobile (768px trở xuống) */
+@media (max-width: 768px) {
+    /* 2.1. Hiển thị nút 3 gạch */
+    .mobile-nav-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30px;
+        height: 25px;
+        padding: 0;
+    }
+
+    .mobile-nav-toggle span {
+        width: 100%;
+        height: 3px;
+        background: var(--dark-color);
+        border-radius: 5px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    /* 2.2. Biến menu thành dạng thả xuống từ trên */
+    .main-nav {
+        position: fixed;
+        top: 0; 
+        left: 0;
+        width: 100%; 
+        height: auto; 
+        background-color: #fff;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        
+        /* Ẩn menu bằng cách đẩy nó lên trên */
+        transform: translateY(-100%); 
+        transition: transform 0.4s ease-in-out, visibility 0.4s;
+        visibility: hidden;
+        
+        padding-top: var(--header-height); 
+        padding-bottom: 20px;
+    }
+    
+    .header.scrolled + .main-nav {
+        padding-top: 60px;
+    }
+
+    .main-nav ul {
+    flex-direction: column;
+    width: 100%;
+    padding: 0; /* <<< ĐẢM BẢO CÓ DÒNG NÀY ĐỂ XÓA ĐỆM TRÁI */
+}
+
+    .main-nav ul li {
+    margin: 0;
+    width: 100%;
+    /* Bỏ text-align và dùng flexbox để căn giữa tuyệt đối */
+    display: flex;
+    justify-content: center;
+}
+
+    .main-nav ul li a {
+        display: block;
+        padding: 18px;
+        font-size: 1.1rem;
+        border-bottom: 1px solid var(--border-color);
+    }
+    
+    .main-nav ul li:last-child a {
+        border-bottom: none;
+    }
+    
+    .main-nav ul li a::after {
+        display: none;
+    }
+
+    /* 2.3. Khi menu được MỞ */
+    .header.mobile-nav-open .main-nav {
+        transform: translateY(0);
+        visibility: visible;
+    }
+
+    /* Biến nút 3 gạch thành dấu "X" */
+    .header.mobile-nav-open .mobile-nav-toggle span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    .header.mobile-nav-open .mobile-nav-toggle span:nth-child(2) {
+        opacity: 0;
+    }
+    .header.mobile-nav-open .mobile-nav-toggle span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
+}

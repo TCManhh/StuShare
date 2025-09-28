@@ -51,6 +51,7 @@ h3 { font-size: var(--font-size-h3); }
 
 ul {
     list-style: none;
+    padding: 0;
 }
 
 /* --- Các thành phần cũ --- */
@@ -1107,11 +1108,27 @@ body.viewer-wide .document-viewer { max-width: 1180px; }
 
     /* --- 1. Chỉnh sửa Tổng thể & Font chữ --- */
     html {
-        font-size: 75%;
+        font-size: 85%;
     }
 
     .container {
         padding: 0 15px; /* Giảm khoảng cách lề hai bên */
+    }
+
+    /* --- 1.1. Giảm chiều cao Header trên mobile --- */
+    body {
+        padding-top: 60px; /* Chiều cao header mới */
+    }
+    .header {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .header .logo {
+        font-size: 1.5rem; /* Giảm kích thước logo */
+    }
+    .header.scrolled {
+        padding-top: 5px; /* Giữ nguyên khi cuộn */
+        padding-bottom: 5px;
     }
 
     /* --- 2. Trang Chủ (index.html) --- */
@@ -1175,21 +1192,6 @@ body.viewer-wide .document-viewer { max-width: 1180px; }
         font-size: 2rem; /* Giảm font chữ thêm cho màn hình nhỏ */
     }
     
-    /* Cho thanh tìm kiếm ở trang chủ xuống dòng đẹp hơn */
-    .search-bar {
-        flex-direction: column;
-        border-radius: 30px; /* Bo tròn đều các góc */
-    }
-
-    .search-bar input {
-        border-radius: 30px 30px 0 0; /* Bo góc trên */
-        text-align: center;
-    }
-
-    .search-bar button {
-        border-radius: 0 0 30px 30px; /* Bo góc dưới */
-    }
-    
     .btn {
         padding: 10px 20px; /* Giảm kích thước nút bấm */
         font-size: 0.9rem;
@@ -1230,46 +1232,43 @@ body.viewer-wide .document-viewer { max-width: 1180px; }
 
     /* 2.2. Biến menu thành dạng thả xuống từ trên */
     .main-nav {
-        position: fixed;
-        top: 0; 
+        position: absolute; /* <<< THAY ĐỔI: từ fixed thành absolute */
+        top: 100%; /* <<< THAY ĐỔI: Bắt đầu ngay bên dưới header */
         left: 0;
-        width: 100%; 
-        height: auto; 
+        width: 100%;
+        height: auto;
         background-color: #fff;
         box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         
         /* Ẩn menu bằng cách đẩy nó lên trên */
-        transform: translateY(-100%); 
-        transition: transform 0.4s ease-in-out, visibility 0.4s;
+        transform: translateY(-10px); /* <<< THAY ĐỔI: Hiệu ứng trượt xuống nhẹ nhàng */
+        opacity: 0; /* <<< THÊM MỚI: Bắt đầu với trạng thái trong suốt */
+        transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out, visibility 0.4s;
         visibility: hidden;
         
-        padding-top: var(--header-height); 
-        padding-bottom: 20px;
+        padding-top: 0; /* <<< THAY ĐỔI: Không cần padding-top nữa */
+        padding-bottom: 0px; /* Giảm khoảng đệm dưới của cả menu */
     }
     
-    .header.scrolled + .main-nav {
-        padding-top: 60px;
+    .main-nav ul {
+        flex-direction: column;
+        width: 100%;
+        padding: 0; /* <<< ĐẢM BẢO CÓ DÒNG NÀY ĐỂ XÓA ĐỆM TRÁI */
     }
 
-    .main-nav ul {
-    flex-direction: column;
-    width: 100%;
-    padding: 0; /* <<< ĐẢM BẢO CÓ DÒNG NÀY ĐỂ XÓA ĐỆM TRÁI */
-}
-
     .main-nav ul li {
-    margin: 0;
-    width: 100%;
-    /* Bỏ text-align và dùng flexbox để căn giữa tuyệt đối */
-    display: flex;
-    justify-content: center;
+        margin: 0;
+        margin-left: 0 !important; /* Ghi đè margin từ desktop */
+        width: 100%; /* Đảm bảo LI chiếm toàn bộ chiều rộng */
 }
 
     .main-nav ul li a {
         display: block;
-        padding: 18px;
-        font-size: 1.1rem;
+        padding: 14px 0; /* Giảm khoảng đệm trên/dưới của mỗi mục */
+        font-size: 1rem; /* Giảm nhẹ cỡ chữ cho gọn hơn */
         border-bottom: 1px solid var(--border-color);
+        width: 100%; /* Để link tràn hết chiều ngang LI */
+        text-align: center; /* <<< THÊM DÒNG NÀY ĐỂ CĂN GIỮA CHỮ */
     }
     
     .main-nav ul li:last-child a {
@@ -1282,11 +1281,13 @@ body.viewer-wide .document-viewer { max-width: 1180px; }
 
     /* 2.3. Khi menu được MỞ */
     .header.mobile-nav-open .main-nav {
-        transform: translateY(0);
+        transform: translateY(0); /* <<< THAY ĐỔI: Trở về vị trí ban đầu */
+        opacity: 1; /* <<< THÊM MỚI: Hiện rõ ra */
         visibility: visible;
     }
 
-    /* Biến nút 3 gạch thành dấu "X" */
+    /* 2.4: Hiệu ứng nút 3 gạch thành dấu "X" */
+    /* Biến đổi mượt mà hơn */
     .header.mobile-nav-open .mobile-nav-toggle span:nth-child(1) {
         transform: rotate(45deg) translate(5px, 5px);
     }
@@ -1296,4 +1297,5 @@ body.viewer-wide .document-viewer { max-width: 1180px; }
     .header.mobile-nav-open .mobile-nav-toggle span:nth-child(3) {
         transform: rotate(-45deg) translate(7px, -7px);
     }
+
 }

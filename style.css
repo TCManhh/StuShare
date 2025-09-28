@@ -1447,3 +1447,147 @@ body.viewer-wide .document-viewer { max-width: 1180px; }
     padding-top: 120%; /* Tỷ lệ A4 (297 / 210) */
     border-radius: 4px; /* Bo góc nhẹ cho giống trang giấy */
 }
+
+/* =================================================================== */
+/* --- PHẦN 8: CẢI TIẾN GIAO DIỆN TRANG TRUONG-DAI-HOC.HTML --- */
+/* =================================================================== */
+
+/* 1. Cải tiến thanh tìm kiếm */
+.filter-bar .container {
+    max-width: 700px; /* Thu hẹp thanh tìm kiếm cho dễ nhìn */
+}
+.filter-bar {
+    padding: 25px 0;
+    background-color: var(--light-color); /* Đồng bộ màu nền */
+    border-bottom: 1px solid var(--border-color);
+}
+.filter-bar input {
+    font-size: 1.05rem;
+    padding: 15px 20px 15px 50px; /* Thêm padding trái cho icon */
+    border-radius: 50px; /* Bo tròn hoàn toàn */
+    border: 1px solid var(--border-color);
+    box-shadow: none;
+    transition: all 0.3s ease;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23888' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: 18px center;
+    background-size: 18px;
+}
+.filter-bar input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+
+/* 2. Cải tiến lưới hiển thị */
+.university-grid {
+    /* Sử dụng auto-fit để tự động căn chỉnh số cột */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px; /* Tăng khoảng cách */
+}
+
+/* 3. Thiết kế lại thẻ trường đại học */
+.university-card {
+    flex-direction: column; /* Chuyển sang layout dọc */
+    text-align: center;
+    padding: 25px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    position: relative;
+    overflow: hidden; /* Ẩn phần thừa của action-bar */
+}
+.university-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--box-shadow);
+    transform: translateY(-5px);
+}
+.university-logo {
+    width: 80px; /* Tăng kích thước logo */
+    height: 80px;
+    margin: 0 auto 20px auto; /* Căn giữa và tạo khoảng cách */
+    border-radius: 50%; /* Bo tròn logo */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    padding: 5px; /* Thêm padding nhỏ để logo không bị sát viền */
+    background-color: #fff;
+}
+.university-info h3 {
+    font-size: 1.1rem;
+    line-height: 1.4;
+    margin-bottom: 8px;
+    min-height: 45px; /* Giữ chiều cao cố định để các thẻ đều nhau */
+}
+.university-info p {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-color);
+    background-color: var(--light-color);
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+/* Thêm dòng chữ "Xem tài liệu" khi hover */
+.university-card::after {
+    content: 'Xem tài liệu →';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px;
+    font-weight: 500;
+    transform: translateY(100%); /* Ẩn ở dưới */
+    transition: transform 0.3s ease;
+}
+.university-card:hover::after {
+    transform: translateY(0); /* Hiện ra khi hover */
+}
+
+/* 4. Cải tiến khu vực kêu gọi đóng góp */
+.updating-section {
+    margin-top: 60px !important;
+    text-align: center;
+    background-color: var(--light-color) !important;
+    border: 2px dashed var(--border-color) !important;
+    border-radius: var(--border-radius) !important;
+    padding: 40px !important;
+    transition: all 0.3s ease;
+}
+.updating-section:hover {
+    border-color: var(--primary-color);
+    background-color: #f1f7ff !important;
+}
+.updating-section i {
+    color: var(--primary-color);
+}
+.updating-section .btn-contribute {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+    text-align: center;
+    background-color: var(--primary-color);
+    color: #fff;
+    text-decoration: none;
+}
+.updating-section .btn-contribute:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+}
+
+@media (max-width: 768px) {
+    .university-info h3 {
+        min-height: auto; /* Bỏ min-height trên mobile */
+    }
+}
+/* --- FIX: Đồng bộ màu icon cho nút đóng góp --- */
+.updating-section .btn-contribute i {
+    color: #fff;
+}

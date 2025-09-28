@@ -22,7 +22,7 @@
 
         <section class="filter-bar">
             <div class="container">
-                <input type="text" id="searchInput" placeholder="Tìm kiếm tên trường, ví dụ: Bách khoa, Tài chính, PTIT...">
+                <input type="text" id="searchInput" placeholder="Tìm kiếm tên trường, ví dụ: Bách khoa, Công nghệ, PTIT...">
             </div>
         </section>
 
@@ -50,19 +50,18 @@
                     <!-- Chưa có trường nào -->
                 </div>
 
-                <!-- Phần đang cập nhật và kêu gọi đóng góp -->
-                <div class="updating-section" style="margin:48px 0 0 0; text-align:center; padding:36px 18px; background:#f8fbff; border-radius:14px; border:1px solid #e3e6ea;">
+                <!-- Phần đang cập nhật và kêu gọi đóng góp (ĐÃ CẬP NHẬT) -->
+                <div class="updating-section">
                     <h3 style="font-size:1.35rem; color:var(--primary-color); margin-bottom:12px;">
                         <i class="fas fa-spinner fa-pulse" style="margin-right:8px;"></i>
-                        Các trường chưa có tài liệu đang được cập nhật!
+                        Các trường khác đang được cập nhật!
                     </h3>
-                    <p style="font-size:1.05rem; color:#444; margin-bottom:18px;">
-                        Bạn có tài liệu học tập của trường mình? <br>
-                        Hãy <a href="/StuShare/index.html#upload-section" style="color:var(--primary-color);font-weight:600;text-decoration:underline;">đóng góp ngay tại đây</a> để giúp cộng đồng sinh viên dễ dàng tìm kiếm và học tập hơn!
+                    <p style="font-size:1.05rem; color:#444; margin-bottom:25px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                        Bạn có tài liệu học tập của trường mình? Hãy chung tay xây dựng một cộng đồng lớn mạnh hơn cho sinh viên Việt Nam!
                     </p>
-                    <p style="font-size:.98rem; color:#666;">
-                        Đóng góp của bạn sẽ giúp kho tài liệu ngày càng phong phú và hữu ích cho mọi người.
-                    </p>
+                    <a href="/StuShare/index.html#upload-section" class="btn-contribute">
+                        <i class="fas fa-upload" style="margin-right: 8px;"></i> Đóng góp ngay
+                    </a>
                 </div>
             </div>
         </section>
@@ -77,7 +76,7 @@
             const universityGrids = document.querySelectorAll('.university-grid');
             const regionTitles = document.querySelectorAll('.region-title');
 
-            // --- HÀM LỌC ĐƯỢC TÁCH RIÊNG ---
+            // --- HÀM LỌC ĐƯỢỢC TÁCH RIÊNG ---
             function filterUniversities() {
                 const searchTerm = searchInput.value.toLowerCase().trim();
 

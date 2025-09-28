@@ -1356,7 +1356,7 @@ body.viewer-wide .document-viewer { max-width: 1180px; }
     flex-direction: column;
     gap: 24px; /* Khoảng cách giữa các trang tài liệu */
     width: 100%;
-    max-width: 820px; /* Giới hạn chiều rộng để dễ đọc */
+    max-width: 960px; /* Tăng chiều rộng để dễ đọc hơn */
     margin: 0 auto;
 }
 

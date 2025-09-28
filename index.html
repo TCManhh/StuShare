@@ -10,13 +10,6 @@
 <body>
     <!-- Thanh công cụ dùng chung -->
     <div id="header-placeholder"></div>
-    <script>
-      fetch('/StuShare/header.html')
-        .then(res => res.text())
-        .then(data => {
-          document.getElementById('header-placeholder').innerHTML = data;
-        });
-    </script>
 
     <main>
         <section class="hero-section">
@@ -147,7 +140,7 @@
             </div>
         </div>
 
-<script>
+<script> // Script cho form upload
 document.addEventListener('DOMContentLoaded', function() {
     // --- PHẦN UPLOAD FORM - GIỮ NGUYÊN ---
     const fileInput = document.getElementById('file-upload');
@@ -312,6 +305,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
-  <script src="assets/js/layout.js"></script>
+  <!-- Tải layout chung (header, footer, breadcrumb) -->
+  <script src="/StuShare/assets/js/layout.js"></script>
 </body>
 </html>

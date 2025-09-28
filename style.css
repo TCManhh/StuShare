@@ -1299,3 +1299,69 @@ body.viewer-wide .document-viewer { max-width: 1180px; }
     }
 
 }
+
+/* ============================================================= */
+/* --- PHẦN 6: CSS CHO TRÌNH CHIẾU VIDEO (VIDEO PLAYER) --- */
+/* ============================================================= */
+
+/* 1. Container chung cho các video */
+.video-player-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px; /* Khoảng cách giữa các video */
+    width: 100%;
+    height: 100%;
+}
+
+/* 2. Wrapper cho mỗi video để giữ tỷ lệ khung hình */
+.video-aspect-ratio-wrapper {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 56.25%; /* Tỷ lệ 16:9 (9 / 16 = 0.5625) */
+    background-color: #000; /* Màu nền đen trong lúc video tải */
+    border-radius: 8px;
+    overflow: hidden; /* Ẩn các phần thừa của iframe */
+}
+
+/* 3. Iframe của video */
+.video-aspect-ratio-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* 4. Điều chỉnh trên di động */
+@media (max-width: 768px) {
+    .video-player-container {
+        gap: 16px; /* Giảm khoảng cách giữa các video trên di động */
+    }
+
+    /* Khi có 2 video trở lên, giảm padding-top để video thứ 2 dễ nhìn thấy hơn */
+    .video-player-container .video-aspect-ratio-wrapper:not(:first-child) {
+         /* Bạn có thể thử nghiệm giá trị này */
+    }
+}
+
+/* ============================================================= */
+/* --- PHẦN 7: CSS CHO TRÌNH CHIẾU TÀI LIỆU TỶ LỆ A4 --- */
+/* ============================================================= */
+
+/* Container cho tài liệu A4, tương tự video-player-container */
+.document-a4-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px; /* Khoảng cách giữa các trang tài liệu */
+    width: 100%;
+    max-width: 820px; /* Giới hạn chiều rộng để dễ đọc */
+    margin: 0 auto;
+}
+
+/* Ghi đè padding-top của video-aspect-ratio-wrapper để có tỷ lệ A4 */
+.document-a4-container .video-aspect-ratio-wrapper {
+    padding-top: 141.42%; /* Tỷ lệ A4 (297 / 210) */
+    border-radius: 4px; /* Bo góc nhẹ cho giống trang giấy */
+}

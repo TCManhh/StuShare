@@ -3,23 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trình chiếu: Tuần 1 - Xác suất thống kê - StuShare</title>
+    <title>Giáo trình - Kiến trúc máy tính - StuShare</title>
     <link rel="stylesheet" href="/StuShare/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
-<body class="has-fixed-breadcrumb">
+<body class="has-fixed-breadcrumb viewer-narrow">
     <div id="header-placeholder"></div>
     <div id="breadcrumb-placeholder"></div>
 
     <main>
         <section class="document-viewer-section">
-            <div class="document-viewer">
-                <iframe src="https://drive.google.com/file/d/1gTXdrsNiyfrnjl9r8Gnaxy1lzUL0IO17/preview" width="640" height="480" allow="autoplay"></iframe>
-            </div>
-        </section>
-        <section class="document-viewer-section">
-            <div class="document-viewer">
-                <iframe src="https://drive.google.com/file/d/1agBzr3mQ-BECmdJVSIVGwhLAQ9X7Aev1/preview" width="640" height="480" allow="autoplay"></iframe>
+            <!-- Sử dụng container mới cho tài liệu A4 -->
+            <div class="document-a4-container">
+
+                <!-- Tài liệu phần 1 -->
+                <div class="video-aspect-ratio-wrapper">
+                    <iframe src="https://drive.google.com/file/d/1gTXdrsNiyfrnjl9r8Gnaxy1lzUL0IO17/preview" allow="autoplay" title="Giáo trình phần 1"></iframe>
+                </div>
+
+                <!-- Tài liệu phần 2 -->
+                <div class="video-aspect-ratio-wrapper">
+                    <iframe src="https://drive.google.com/file/d/1agBzr3mQ-BECmdJVSIVGwhLAQ9X7Aev1/preview" allow="autoplay" title="Giáo trình phần 2"></iframe>
+                </div>
+
             </div>
         </section>
     </main>
@@ -27,9 +33,5 @@
     <div id="footer-placeholder"></div>
 
     <script src="/StuShare/assets/js/layout.js"></script>
-    <script>
-      // (Tuỳ chọn) Nếu cần hiệu ứng riêng cho viewer sau khi DOM sẵn sàng
-      document.addEventListener('DOMContentLoaded', () => {});
-    </script>
 </body>
 </html>

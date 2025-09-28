@@ -7,9 +7,9 @@
   <link rel="stylesheet" href="/StuShare/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <style>
-    .document-viewer-section { padding: 2rem 0; }
-    .document-viewer { max-width: 900px; margin:0 auto; background:#fff; padding:16px 18px; border:1px solid #e2e6eb; border-radius:12px; box-shadow:0 4px 14px -4px rgba(0,0,0,.08); }
-    .document-viewer iframe { width:100%; height:560px; border:0; border-radius:6px; background:#fff; }
+    /* Điều chỉnh padding của section để phù hợp với các viewer khác */
+    .document-viewer-section { padding: 1.5rem 0; }
+    /* Các style cũ của .document-viewer được chuyển vào inline style của .document-a4-container bên dưới */
     .ext-link-box { margin-top:18px; padding:14px 16px; border:1px solid #d9e2ec; border-radius:10px; background:#f8fbff; font-size:.95rem; line-height:1.5; }
     .ext-link-box a { color:var(--primary-color); font-weight:600; }
     .blocked-note { display:none; margin-top:14px; font-size:.9rem; color:#b03a2e; }
@@ -24,7 +24,7 @@
 
   <main>
     <section class="document-viewer-section">
-      <div class="document-viewer">
+      <div class="document-a4-container" style="padding: 16px 18px; background:#fff; border:1px solid #e2e6eb; border-radius:12px; box-shadow:0 4px 14px -4px rgba(0,0,0,.08);">
         <h1 style="font-size:1.4rem;margin:0 0 14px;">Công cụ thực hành vẽ mạch</h1>
 
         <ul class="software-list">

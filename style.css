@@ -392,7 +392,7 @@ a.document-item:hover {
     --border-color: #dee2e6;
     --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     --border-radius: 12px; /* Bo góc mềm mại hơn */
-    --header-height: 75px;
+    --header-height: 65px; /* Giảm chiều cao header */
     --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
      /* === BỔ SUNG CÁC BIẾN CỠ CHỮ LINH HOẠT VÀO ĐÂY === */
@@ -476,8 +476,8 @@ a:hover {
     left: 0;
     width: 100%;
     z-index: 1000;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 10px; /* Giảm padding */
+    padding-bottom: 10px; /* Giảm padding */
     display: flex;
     align-items: center;
     transition: padding-top 0.3s ease, padding-bottom 0.3s ease, box-shadow 0.3s ease;
@@ -486,8 +486,8 @@ a:hover {
 
 /* 2. Thu nhỏ khi cuộn chuột */
 .header.scrolled {
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 8px; /* Điều chỉnh lại padding khi cuộn */
+    padding-bottom: 8px;
 
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     border-bottom: 1px solid var(--border-color);
@@ -511,7 +511,7 @@ body {
 }
 
 .header .logo {
-    font-size: 1.8rem;
+    font-size: 1.6rem; /* Giảm kích thước logo */
     font-weight: bold;
     color: var(--primary-color);
 }

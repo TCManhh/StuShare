@@ -86,13 +86,13 @@
             const searchInput = document.getElementById('subjectSearchInput');
             const subjectCards = document.querySelectorAll('.subject-card');
             const subjectGrids = document.querySelectorAll('.subject-grid');
+            const facultyTitles = document.querySelectorAll('.faculty-title');
 
-            searchInput.addEventListener('input', function () {
+            function filterSubjects() {
                 const searchTerm = searchInput.value.toLowerCase().trim();
 
                 subjectCards.forEach(function (card) {
-                    const subjectName = card.querySelector('h3').textContent.toLowerCase();
-                    const subjectCode = card.querySelector('p').textContent.toLowerCase();
+                    const subjectName = card.querySelector('h3').textContent.toLowerCase(); const subjectCode = card.querySelector('p').textContent.toLowerCase();
 
                     if (subjectName.includes(searchTerm) || subjectCode.includes(searchTerm)) {
                         card.style.display = 'flex';
@@ -102,16 +102,28 @@
                 });
 
                 subjectGrids.forEach(function(grid) {
-                    const facultyTitle = grid.previousElementSibling;
-                    const visibleCardsInGrid = grid.querySelectorAll('.subject-card[style*="display: flex"]');
-                    
-                    if (visibleCardsInGrid.length === 0) {
-                        facultyTitle.style.display = 'none';
-                    } else {
-                        facultyTitle.style.display = 'block';
+                    const facultyTitle = grid.previousElementSibling; if (facultyTitle && facultyTitle.classList.contains('faculty-title')) {
+                        const visibleCardsInGrid = grid.querySelectorAll('.subject-card[style*="display: flex"]');
+                        
+                        if (visibleCardsInGrid.length === 0 && searchTerm) {
+                            facultyTitle.style.display = 'none';
+                        } else {
+                            facultyTitle.style.display = 'block';
+                        }
                     }
                 });
-            });
+            }
+
+            // Đọc tham số từ URL khi trang tải
+            const urlParams = new URLSearchParams(window.location.search);
+            const searchQuery = urlParams.get('q');
+            if (searchQuery) {
+                searchInput.value = searchQuery;
+                filterSubjects();
+            }
+
+            // Gắn sự kiện tìm kiếm
+            searchInput.addEventListener('input', filterSubjects);
         });
     </script>
     <script>

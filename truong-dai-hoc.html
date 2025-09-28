@@ -75,12 +75,14 @@
             const searchInput = document.getElementById('searchInput');
             const universityCards = document.querySelectorAll('.university-card');
             const universityGrids = document.querySelectorAll('.university-grid');
+            const regionTitles = document.querySelectorAll('.region-title');
 
-            searchInput.addEventListener('input', function () {
+            // --- HÀM LỌC ĐƯỢC TÁCH RIÊNG ---
+            function filterUniversities() {
                 const searchTerm = searchInput.value.toLowerCase().trim();
 
                 universityCards.forEach(function (card) {
-                    const universityName = card.querySelector('h3').textContent.toLowerCase();
+                    const universityName = card.querySelector('h3').textContent.toLowerCase(); // Giữ nguyên
                     const universityAcronym = card.querySelector('p').textContent.toLowerCase();
 
                     if (universityName.includes(searchTerm) || universityAcronym.includes(searchTerm)) {
@@ -92,14 +94,26 @@
 
                 universityGrids.forEach(function(grid) {
                     const regionTitle = grid.previousElementSibling;
-                    const visibleCardsInGrid = grid.querySelectorAll('.university-card[style*="display: flex"]');
-                    if (visibleCardsInGrid.length === 0) {
-                        regionTitle.style.display = 'none';
-                    } else {
-                        regionTitle.style.display = 'block';
+                    if (regionTitle && regionTitle.classList.contains('region-title')) {
+                        const visibleCardsInGrid = grid.querySelectorAll('.university-card[style*="display: flex"]');
+                        if (visibleCardsInGrid.length === 0 && searchTerm) { // Chỉ ẩn nếu đang có tìm kiếm
+                            regionTitle.style.display = 'none';
+                        } else {
+                            regionTitle.style.display = 'block';
+                        }
                     }
                 });
-            });
+            }
+
+            // --- LOGIC MỚI: ĐỌC THAM SỐ TỪ URL ---
+            const urlParams = new URLSearchParams(window.location.search);
+            const searchQuery = urlParams.get('q');
+            if (searchQuery) {
+                searchInput.value = searchQuery; // Tự động điền vào ô tìm kiếm
+                filterUniversities(); // Và thực hiện lọc ngay
+            }
+
+            searchInput.addEventListener('input', filterUniversities);
         });
     </script>
 

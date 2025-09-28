@@ -18,9 +18,12 @@
                 <div class="hero-content">
                     <h1>Chia Sẻ Tri Thức<br>Kiến Tạo Tương Lai</h1>
                     <p>Nền tảng tìm kiếm và chia sẻ tài liệu học tập dành cho toàn&nbsp;thể&nbsp;sinh&nbsp;viên&nbsp;Việt&nbsp;Nam.</p>
-                    <div class="search-bar">
-                        <input type="text" placeholder="Tìm kiếm tài liệu, môn học, đề thi...">
-                        <button type="submit"><i class="fas fa-search"></i></button>
+                    <div class="search-wrapper">
+                        <div class="search-bar">
+                            <input type="text" id="main-search-input" placeholder="Tìm kiếm tài liệu, môn học, đề thi..." autocomplete="off">
+                            <button type="submit" id="main-search-button"><i class="fas fa-search"></i></button>
+                        </div>
+                        <div id="search-suggestions"></div>
                     </div>
                     <div class="hero-cta">
                         <span>Hoặc</span>
@@ -140,9 +143,117 @@
             </div>
         </div>
 
-<script> // Script cho form upload
+<script>
 document.addEventListener('DOMContentLoaded', function() {
-    // --- PHẦN UPLOAD FORM - GIỮ NGUYÊN ---
+    // =======================================================
+    // --- PHẦN 1: SCRIPT CHO THANH TÌM KIẾM VÀ GỢI Ý ---
+    // =======================================================
+    const searchInput = document.getElementById('main-search-input');
+    const searchButton = document.getElementById('main-search-button');
+    const suggestionsContainer = document.getElementById('search-suggestions');
+    let allDocuments = [];
+
+    // Tải dữ liệu tìm kiếm một lần
+    fetch('/StuShare/assets/js/search-data.json')
+        .then(response => response.json())
+        .then(data => {
+            allDocuments = data;
+        });
+
+    // Bản đồ icon
+    const iconMap = {
+        'powerpoint': 'fas fa-file-powerpoint', 'pdf': 'fas fa-file-pdf',
+        'word': 'fas fa-file-word', 'link': 'fas fa-link', 'video': 'fas fa-video',
+        'subject': 'fas fa-book'
+    };
+
+    // Hàm chuẩn hóa tiếng Việt (giữ nguyên)
+    function normalizeVietnamese(str) {
+        if (!str) return '';
+        return str.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/đ/g, "d");
+    }
+
+    // Hàm thực hiện chuyển trang khi nhấn nút hoặc Enter
+    function performSearch() {
+        const query = searchInput.value.trim();
+        if (query) {
+            window.location.href = `/StuShare/search-results.html?q=${encodeURIComponent(query)}`;
+        }
+    }
+    
+    // Hàm hiển thị gợi ý
+    function showSuggestions() {
+        const rawQuery = searchInput.value.trim();
+        const normalizedQuery = normalizeVietnamese(rawQuery);
+
+        if (!normalizedQuery) {
+            suggestionsContainer.style.display = 'none';
+            return;
+        }
+
+        // Thuật toán tìm kiếm và sắp xếp (tương tự trang search-results)
+        const results = allDocuments.map(doc => {
+            let score = 0;
+            const normalizedTitle = normalizeVietnamese(doc.title);
+            if (normalizedTitle.includes(normalizedQuery)) {
+                if (normalizedTitle === normalizedQuery) score += 10;
+                else if (normalizedTitle.startsWith(normalizedQuery)) score += 5;
+                else score += 3;
+            }
+            if (normalizeVietnamese(doc.keywords).includes(normalizedQuery)) score += 2;
+            if (normalizeVietnamese(doc.path).includes(normalizedQuery)) score += 1;
+            return { ...doc, score };
+        })
+        .filter(doc => doc.score > 0)
+        .sort((a, b) => b.score - a.score)
+        .slice(0, 6); // Lấy 6 kết quả hàng đầu
+
+        if (results.length > 0) {
+            suggestionsContainer.innerHTML = results.map(doc => {
+                const iconClass = iconMap[doc.type] || 'fas fa-file';
+                return `
+                    <a href="${doc.url}" class="suggestion-item">
+                        <i class="${iconClass} suggestion-icon"></i>
+                        <div class="suggestion-info">
+                            <span class="suggestion-title">${doc.title}</span>
+                            <span class="suggestion-path">${doc.path.replace(/>/g, '›')}</span>
+                        </div>
+                    </a>`;
+            }).join('');
+            suggestionsContainer.style.display = 'block';
+        } else {
+            suggestionsContainer.style.display = 'none';
+        }
+    }
+
+    // Gắn sự kiện
+    searchButton.addEventListener('click', performSearch);
+    searchInput.addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            performSearch();
+        }
+    });
+    searchInput.addEventListener('input', showSuggestions);
+
+    // Ẩn gợi ý khi click ra ngoài
+    document.addEventListener('click', function(event) {
+        const isClickInside = searchInput.contains(event.target) || suggestionsContainer.contains(event.target);
+        if (!isClickInside) {
+            suggestionsContainer.style.display = 'none';
+        }
+    });
+
+    // Ẩn gợi ý khi người dùng cuộn trang
+    window.addEventListener('scroll', function() {
+        if (suggestionsContainer.style.display === 'block') {
+            suggestionsContainer.style.display = 'none';
+        }
+    }, { passive: true });
+
+
+    // ==================================
+    // --- PHẦN 2: SCRIPT UPLOAD FORM ---
+    // ==================================
     const fileInput = document.getElementById('file-upload');
     const uploadForm = document.getElementById('upload-form');
     const statusDiv = document.getElementById('upload-status');

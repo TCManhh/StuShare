@@ -1437,12 +1437,13 @@ body.viewer-wide .document-viewer { max-width: 1180px; }
     flex-direction: column;
     gap: 24px; /* Khoảng cách giữa các trang tài liệu */
     width: 100%;
-    max-width: 960px; /* Tăng chiều rộng để dễ đọc hơn */
+    max-width: 1080px; /* Tăng chiều rộng để dễ đọc hơn */
+    max-width: 1200px; /* Tăng giá trị này để tài liệu rộng hơn nữa */
     margin: 0 auto;
 }
 
 /* Ghi đè padding-top của video-aspect-ratio-wrapper để có tỷ lệ A4 */
 .document-a4-container .video-aspect-ratio-wrapper {
-    padding-top: 141.42%; /* Tỷ lệ A4 (297 / 210) */
+    padding-top: 120%; /* Tỷ lệ A4 (297 / 210) */
     border-radius: 4px; /* Bo góc nhẹ cho giống trang giấy */
 }

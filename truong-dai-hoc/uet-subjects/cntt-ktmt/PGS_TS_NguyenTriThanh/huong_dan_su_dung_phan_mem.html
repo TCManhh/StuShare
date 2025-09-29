@@ -7,28 +7,37 @@
     <link rel="stylesheet" href="/StuShare/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
-<body class="has-fixed-breadcrumb viewer-narrow">
+<body class="has-fixed-breadcrumb">
     <div id="header-placeholder"></div>
     <div id="breadcrumb-placeholder"></div>
 
     <main>
         <section class="document-viewer-section">
-            <!-- Bỏ class "document-viewer" và thay bằng "video-player-container" để loại bỏ chiều cao cố định -->
-            <div class="video-player-container" style="max-width: 820px; margin: 0 auto;"> 
+            <!-- Sử dụng container mới cho trang trình chiếu nhiều video -->
+            <div class="video-viewer-container">
                 
-                <!-- Video thứ nhất -->
-                <div class="video-aspect-ratio-wrapper">
-                    <iframe src="https://drive.google.com/file/d/1bTZLe6T0yexB5U3W14M7TnPZ5ipETYOr/preview" allow="autoplay" title="Video hướng dẫn 1"></iframe>
+                <!-- --- VIDEO HƯỚNG DẪN 1 --- -->
+                <div>
+                    <h2 class="video-part-header">Hướng dẫn EasyEDA - Phần 1</h2>
+                    <div class="video-aspect-ratio-wrapper">
+                        <iframe src="https://drive.google.com/file/d/1bTZLe6T0yexB5U3W14M7TnPZ5ipETYOr/preview" allow="autoplay" title="Video hướng dẫn EasyEDA 1"></iframe>
+                    </div>
                 </div>
 
-                <!-- Video thứ hai -->
-                <div class="video-aspect-ratio-wrapper">
-                    <iframe src="https://drive.google.com/file/d/1KMaRwubXG-00n4xszRniPeK-adF3-Ke6/preview" allow="autoplay" title="Video hướng dẫn 2"></iframe>
+                <!-- --- VIDEO HƯỚNG DẪN 2 --- -->
+                <div>
+                    <h2 class="video-part-header">Hướng dẫn EasyEDA - Phần 2</h2>
+                    <div class="video-aspect-ratio-wrapper">
+                        <iframe src="https://drive.google.com/file/d/1KMaRwubXG-00n4xszRniPeK-adF3-Ke6/preview" allow="autoplay" title="Video hướng dẫn EasyEDA 2"></iframe>
+                    </div>
                 </div>
 
-                <!-- Video thứ ba -->
-                <div class="video-aspect-ratio-wrapper">
-                    <iframe src="https://drive.google.com/file/d/1pMhND3Vo84gahMbTYPa6iSVHI5A6GZfI/preview" allow="autoplay" title="Video hướng dẫn 3"></iframe>
+                <!-- --- VIDEO HƯỚNG DẪN 3 --- -->
+                <div>
+                    <h2 class="video-part-header">Hướng dẫn EasyEDA - Phần 3</h2>
+                    <div class="video-aspect-ratio-wrapper">
+                        <iframe src="https://drive.google.com/file/d/1pMhND3Vo84gahMbTYPa6iSVHI5A6GZfI/preview" allow="autoplay" title="Video hướng dẫn EasyEDA 3"></iframe>
+                    </div>
                 </div>
 
             </div>
@@ -38,9 +47,5 @@
     <div id="footer-placeholder"></div>
 
     <script src="/StuShare/assets/js/layout.js"></script>
-    <script>
-      // (Tuỳ chọn) Nếu cần hiệu ứng riêng cho viewer sau khi DOM sẵn sàng
-      document.addEventListener('DOMContentLoaded', () => {});
-    </script>
 </body>
 </html>

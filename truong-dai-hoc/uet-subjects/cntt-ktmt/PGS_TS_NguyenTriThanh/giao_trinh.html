@@ -7,23 +7,29 @@
     <link rel="stylesheet" href="/StuShare/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
-<body class="has-fixed-breadcrumb viewer-narrow">
+<body class="has-fixed-breadcrumb">
     <div id="header-placeholder"></div>
     <div id="breadcrumb-placeholder"></div>
 
     <main>
         <section class="document-viewer-section">
-            <!-- Sử dụng container mới cho tài liệu A4 -->
-            <div class="document-a4-container">
+            <!-- Sử dụng container chung cho trình xem tài liệu A4 -->
+            <div class="document-a4-viewer-container">
 
-                <!-- Tài liệu phần 1 -->
-                <div class="video-aspect-ratio-wrapper">
-                    <iframe src="https://drive.google.com/file/d/1gTXdrsNiyfrnjl9r8Gnaxy1lzUL0IO17/preview" allow="autoplay" title="Giáo trình phần 1"></iframe>
+                <!-- --- TÀI LIỆU PHẦN 1 --- -->
+                <div>
+                    <h2 class="document-part-header">Giáo trình 1</h2>
+                    <div class="document-a4-page-wrapper">
+                        <iframe src="https://drive.google.com/file/d/1gTXdrsNiyfrnjl9r8Gnaxy1lzUL0IO17/preview" allow="autoplay" title="Giáo trình phần 1"></iframe>
+                    </div>
                 </div>
 
-                <!-- Tài liệu phần 2 -->
-                <div class="video-aspect-ratio-wrapper">
-                    <iframe src="https://drive.google.com/file/d/1agBzr3mQ-BECmdJVSIVGwhLAQ9X7Aev1/preview" allow="autoplay" title="Giáo trình phần 2"></iframe>
+                <!-- --- TÀI LIỆU PHẦN 2 --- -->
+                <div>
+                    <h2 class="document-part-header">Giáo trình 2</h2>
+                    <div class="document-a4-page-wrapper">
+                        <iframe src="https://drive.google.com/file/d/1agBzr3mQ-BECmdJVSIVGwhLAQ9X7Aev1/preview" allow="autoplay" title="Giáo trình phần 2"></iframe>
+                    </div>
                 </div>
 
             </div>

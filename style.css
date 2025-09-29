@@ -1591,3 +1591,163 @@ body.viewer-wide .document-viewer { max-width: 1180px; }
 .updating-section .btn-contribute i {
     color: #fff;
 }
+/* =================================================================== */
+/* --- PHẦN 9: CSS CHO TRÌNH CHIẾU SLIDE (PRESENTATION) --- */
+/* =================================================================== */
+
+/* 1. Container chính cho slide, cho phép chiều rộng lớn */
+.presentation-container {
+    width: 100%;
+    max-width: 1280px; /* Chiều rộng tối đa cho màn hình lớn */
+    margin: 0 auto;    /* Căn giữa */
+    padding: 0 20px;   /* Thêm khoảng đệm hai bên */
+    box-sizing: border-box;
+}
+
+/* 2. Wrapper giữ đúng tỷ lệ khung hình */
+.presentation-wrapper {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 56.25%; /* Tỷ lệ 16:9 mặc định cho desktop (9 / 16 = 0.5625) */
+    background-color: #000;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: padding-top 0.3s ease; /* Hiệu ứng chuyển đổi mượt mà */
+}
+
+/* 3. Iframe sẽ luôn lấp đầy wrapper */
+.presentation-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* 4. Responsive cho thiết bị di động (màn hình dưới 768px) */
+@media (max-width: 768px) {
+    .presentation-container {
+        padding: 0 10px; /* Giảm khoảng đệm trên di động */
+    }
+    
+    .document-viewer-section {
+        padding: 1rem 0; /* Giảm khoảng trống trên/dưới */
+    }
+
+    /* 
+     * ĐÂY LÀ PHẦN TĂNG CHIỀU CAO TRÊN DI ĐỘNG THEO YÊU CẦU CỦA BẠN.
+     * Chúng ta đổi tỷ lệ từ 16:9 thành 4:3 để slide cao hơn.
+     */
+    .presentation-wrapper {
+        padding-top: 90%; /* Tỷ lệ 4:3 (3 / 4 = 0.75) */
+    }
+}
+
+/* =================================================================== */
+/* --- PHẦN 10: CSS CHO TRÌNH CHIẾU TÀI LIỆU A4 (PDF, DOCX) --- */
+/* =================================================================== */
+
+/* 1. Container chính, giới hạn chiều rộng để dễ đọc */
+.document-a4-viewer-container {
+    width: 100%;
+    max-width: 900px; /* Chiều rộng lý tưởng để đọc văn bản */
+    margin: 0 auto;   /* Căn giữa */
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* 2. Wrapper mô phỏng một trang giấy A4 */
+/* Trong PHẦN 10: CSS CHO TRÌNH CHIẾU TÀI LIỆU A4 (PDF, DOCX) */
+
+.document-a4-page-wrapper {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 141.4%;
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 40px; /* <<< THÊM DÒNG NÀY VÀO */
+}
+
+/* 3. Iframe sẽ lấp đầy trang giấy */
+.document-a4-page-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* 4. Responsive cho thiết bị di động */
+@media (max-width: 768px) {
+    .document-a4-viewer-container {
+        padding: 0 10px; /* Giảm padding trên di động */
+    }
+
+    .document-a4-page-wrapper {
+        /* Bỏ viền và bóng đổ trên di động để giao diện gọn gàng hơn */
+        border: none;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .document-viewer-section {
+        padding: 0.5rem 0; /* Giảm khoảng trống trên/dưới */
+    }
+}
+/* =================================================================== */
+/* --- PHẦN 11: CSS BỔ SUNG CHO TRANG NHIỀU TÀI LIỆU --- */
+/* =================================================================== */
+
+.document-part-header {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    color: var(--dark-color);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* =================================================================== */
+/* --- PHẦN 12: CSS CHO TRANG TRÌNH CHIẾU NHIỀU VIDEO --- */
+/* =================================================================== */
+
+/* 1. Container chung cho trang video, rộng hơn A4 để xem tốt hơn */
+.video-viewer-container {
+    width: 100%;
+    max-width: 1100px; /* Chiều rộng tốt ưu cho việc xem video */
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* 2. Tiêu đề cho mỗi phần video */
+.video-part-header {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    color: var(--dark-color);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* 3. Thêm khoảng cách bên dưới mỗi video player */
+.video-viewer-container .video-aspect-ratio-wrapper {
+    margin-bottom: 40px;
+}
+
+/* 4. Responsive cho thiết bị di động */
+@media (max-width: 768px) {
+    .video-viewer-container {
+        padding: 0 10px;
+    }
+}

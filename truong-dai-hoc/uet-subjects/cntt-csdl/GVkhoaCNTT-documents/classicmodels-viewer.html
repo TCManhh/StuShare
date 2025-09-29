@@ -15,23 +15,12 @@
   <div id="breadcrumb-placeholder"></div>
 
   <main>
-
     <section class="document-viewer-section">
-      <div class="container">
-        <div class="document-viewer">
-          <!-- Thử nhúng trang học liệu -->
-          <iframe
-            src="https://www.mysqltutorial.org/getting-started-with-mysql/mysql-sample-database/"
-            width="100%"
-            height="600px"
-            loading="lazy"
-            referrerpolicy="no-referrer"
-          ></iframe>
+      <!-- Sử dụng cấu trúc trình chiếu chung để iframe luôn tối ưu -->
+      <div class="presentation-container">
+        <div class="presentation-wrapper">
+          <iframe src="https://www.mysqltutorial.org/getting-started-with-mysql/mysql-sample-database/" loading="lazy" referrerpolicy="no-referrer" title="MySQL Sample Database"></iframe>
         </div>
-        <!-- <div class="iframe-fallback" style="display:none; text-align:center; margin-top:12px;">
-          Trang có thể chặn nhúng. Mở trực tiếp:
-          <a href="https://portal.uet.vnu.edu.vn/courses/2771/modules/items/107857" target="_blank" rel="noopener">Nhấn vào đây</a>
-        </div> -->
       </div>
     </section>
   </main>

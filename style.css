@@ -511,9 +511,22 @@ body {
 }
 
 .header .logo {
-    font-size: 1.6rem; /* Giảm kích thước logo */
-    font-weight: bold;
-    color: var(--primary-color);
+    /* Thay đổi để phù hợp với logo dạng ảnh */
+    display: flex;
+    align-items: center; /* Bỏ height cố định, để nó linh hoạt */
+    transition: transform 0.3s ease;
+}
+.header .logo img {
+    /* Kích thước logo sẽ phụ thuộc vào chiều cao của thanh công cụ */
+    width: 155px; /* Chiều cao ban đầu của logo */
+    height: auto; /* Giữ đúng tỷ lệ ảnh */
+    transition: height 0.3s ease; /* Thêm hiệu ứng chuyển động mượt mà cho chiều cao */
+}
+
+/* Khi header được cuộn, logo sẽ nhỏ lại */
+.header.scrolled .logo img {
+    height: 35px; /* Chiều cao nhỏ hơn khi cuộn trang */
+    width: auto; /* Giữ đúng tỷ lệ ảnh */
 }
 
 .header .main-nav ul {
@@ -565,6 +578,20 @@ body {
     gap: 40px;
 }
 .footer h3 {
+    /* Giữ lại cho các tiêu đề khác, nhưng không áp dụng cho logo nữa */
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+.footer-logo {
+    display: block;
+    width: 222px; /* Chiều rộng tương tự header */
+    margin-bottom: 15px;
+}
+.footer-logo img {
+    width: 100%;
+    height: auto;
+}
+.footer h4 {
     color: var(--primary-color);
     font-size: 1.5rem;
 }
@@ -1007,7 +1034,7 @@ body {
 }
 
 body {
-    padding-top: 75px; /* Bằng chiều cao header */
+    padding-top: var(--header-height); /* Sửa lại để khớp với chiều cao header (65px) */
 }
 
 /* File: style.css */

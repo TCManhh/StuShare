@@ -1786,6 +1786,39 @@ body.viewer-wide .document-viewer { max-width: 1180px; }
         padding: 0 10px;
     }
 }
+
+/* =================================================================== */
+/* --- PHẦN 13: CSS CHO NÚT HÀNH ĐỘNG TRANG VIEWER --- */
+/* =================================================================== */
+.viewer-actions {
+    text-align: center;
+    margin-top: 30px;
+    padding-bottom: 20px;
+}
+
+.viewer-actions .btn-primary {
+    background-color: #ffc107; /* Vàng ánh kim */
+    color: #212529; /* Màu chữ tối */
+    border: 2px solid #e0a800;
+    box-shadow: 0 0 10px rgba(255, 193, 7, 0.5); /* Bóng đổ vàng */
+    transition: all 0.3s ease;
+}
+
+.viewer-actions .btn-primary:hover {
+    background-color: #e0a800;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 193, 7, 0.7); /* Bóng đổ mạnh hơn khi hover */
+}
+
+.viewer-actions .btn-primary i {
+    color: #212529 !important; /* Màu icon tối */
+}
+.viewer-actions .btn-primary:hover i {
+    color: #fff !important; /* Màu icon sáng khi hover */
+}
+}
+}
     display: flex;
     align-items: center;
     padding: 12px 20px 12px 50px;

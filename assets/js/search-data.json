@@ -4,42 +4,42 @@
         "type": "powerpoint",
         "url": "/StuShare/truong-dai-hoc/uet-subjects/cntt-csdl/GVkhoaCNTT-documents/c1-viewer.html",
         "path": "UET > Cơ sở dữ liệu > GV Khoa CNTT",
-        "keywords": "c1 mo dau"
+        "keywords": "c1 mo dau chuong 1 co so du lieu csdl"
     },
     {
         "title": "C2_1.pptx",
         "type": "powerpoint",
         "url": "/StuShare/truong-dai-hoc/uet-subjects/cntt-csdl/GVkhoaCNTT-documents/c2-1-viewer.html",
         "path": "UET > Cơ sở dữ liệu > GV Khoa CNTT",
-        "keywords": "c2 mo hinh du lieu thuc the lien ket er"
+        "keywords": "c2 chuong 2 mo hinh du lieu thuc the lien ket er"
     },
     {
         "title": "C2_2.pptx",
         "type": "powerpoint",
         "url": "/StuShare/truong-dai-hoc/uet-subjects/cntt-csdl/GVkhoaCNTT-documents/c2-2-viewer.html",
         "path": "UET > Cơ sở dữ liệu > GV Khoa CNTT",
-        "keywords": "c2 mo hinh du lieu thuc the lien ket er"
+        "keywords": "c2 chuong 2 mo hinh du lieu thuc the lien ket er"
     },
     {
         "title": "TH_CSDL_Jul_2025.pdf",
         "type": "pdf",
         "url": "/StuShare/truong-dai-hoc/uet-subjects/cntt-csdl/GVkhoaCNTT-documents/thuchanh-csdl-viewer.html",
         "path": "UET > Cơ sở dữ liệu > GV Khoa CNTT",
-        "keywords": "thuc hanh co so du lieu"
+        "keywords": "thuc hanh co so du lieu csdl"
     },
     {
         "title": "classicmodels",
         "type": "link",
         "url": "/StuShare/truong-dai-hoc/uet-subjects/cntt-csdl/GVkhoaCNTT-documents/classicmodels-viewer.html",
         "path": "UET > Cơ sở dữ liệu > GV Khoa CNTT",
-        "keywords": "thuc hanh co so du lieu mysql"
+        "keywords": "thuc hanh co so du lieu csdl mysql sample database"
     },
     {
         "title": "[TH] Template Nộp Bài Tập.docx",
         "type": "word",
         "url": "/StuShare/truong-dai-hoc/uet-subjects/cntt-csdl/GVkhoaCNTT-documents/th-template-viewer.html",
         "path": "UET > Cơ sở dữ liệu > GV Khoa CNTT",
-        "keywords": "thuc hanh nop bai tap"
+        "keywords": "thuc hanh nop bai tap template mau"
     },
     {
         "title": "Mô tả DB classicmodels.pdf",
@@ -53,21 +53,21 @@
         "type": "powerpoint",
         "url": "/StuShare/truong-dai-hoc/uet-subjects/cntt-xstk/le-sy-vinh-documents/xac-suat-thong-ke-week-1-viewer.html",
         "path": "UET > Xác suất thống kê > GS. Lê Sỹ Vinh",
-        "keywords": "xstk bien co xac suat"
+        "keywords": "xstk tuan 1 bien co xac suat"
     },
     {
         "title": "Tuần 2: Biến cố và xác suất của biến cố (P2)",
         "type": "powerpoint",
         "url": "/StuShare/truong-dai-hoc/uet-subjects/cntt-xstk/le-sy-vinh-documents/xac-suat-thong-ke-week-2-viewer.html",
         "path": "UET > Xác suất thống kê > GS. Lê Sỹ Vinh",
-        "keywords": "xstk bien co xac suat"
+        "keywords": "xstk tuan 2 bien co xac suat"
     },
     {
         "title": "Tuần 3: Đại lượng ngẫu nhiên rời rạc",
         "type": "powerpoint",
         "url": "/StuShare/truong-dai-hoc/uet-subjects/cntt-xstk/le-sy-vinh-documents/xac-suat-thong-ke-week-3-viewer.html",
         "path": "UET > Xác suất thống kê > GS. Lê Sỹ Vinh",
-        "keywords": "xstk dai luong ngau nhien roi rac"
+        "keywords": "xstk tuan 3 dai luong ngau nhien roi rac"
     },
     {
         "title": "Giáo trình Kiến trúc máy tính",

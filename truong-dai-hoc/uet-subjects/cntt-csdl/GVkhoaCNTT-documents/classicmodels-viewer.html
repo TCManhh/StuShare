@@ -16,7 +16,7 @@
             <div class="presentation-container">
                 <div class="iframe-controls">
                     <button class="iframe-nav-btn" id="iframe-home" title="Về trang chủ của website"><i class="fas fa-home"></i></button>
-                    <button class="iframe-nav-btn" id="iframe-reload" title="Tải lại trang hiện tại"><i class="fas fa-redo"></i></button>
+                    <a href="#" id="iframe-open-new-tab" class="iframe-nav-btn" target="_blank" rel="noopener noreferrer" title="Mở trong tab mới"><i class="fas fa-external-link-alt"></i></a>
                 </div>
                 <div class="presentation-wrapper">
                     <iframe id="website-iframe" src="https://www.mysqltutorial.org/mysql-sample-database.aspx" loading="lazy" referrerpolicy="no-referrer" allowfullscreen title="CSDL Classicmodels"></iframe>
@@ -31,10 +31,14 @@
         document.addEventListener('DOMContentLoaded', function() {
             const iframe = document.getElementById('website-iframe');
             const homeBtn = document.getElementById('iframe-home');
-            const reloadBtn = document.getElementById('iframe-reload');
+            const openNewTabBtn = document.getElementById('iframe-open-new-tab');
             const originalSrc = iframe.src;
+
+            // Nút Home: Tải lại địa chỉ gốc của iframe
             homeBtn.addEventListener('click', () => { iframe.src = originalSrc; });
-            reloadBtn.addEventListener('click', () => { iframe.src = iframe.src; });
+
+            // Nút Mở tab mới: Gán link của iframe cho nút
+            openNewTabBtn.href = originalSrc;
         });
     </script>
 </body>

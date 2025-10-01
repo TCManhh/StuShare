@@ -3222,8 +3222,28 @@ body.viewer-wide .document-viewer { max-width: 1180px; }
      * Chúng ta đổi tỷ lệ từ 16:9 thành 4:3 để slide cao hơn.
      */
     .presentation-wrapper {
-        padding-top: 90%; /* Tỷ lệ 4:3 (3 / 4 = 0.75) */
+        padding-top: 120%; /* Tăng chiều cao hơn nữa cho trải nghiệm duyệt web tốt hơn */
     }
+}
+
+/* =================================================================== */
+/* --- PHẦN 15: CSS CHO GHI CHÚ TRONG DANH SÁCH TÀI LIỆU --- */
+/* =================================================================== */
+
+.document-note {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px 10px 50px;
+    font-size: 0.95rem;
+    color: var(--text-color);
+    background-color: #f0f5ff; /* Màu nền xanh nhạt */
+    border-left: 4px solid var(--primary-color);
+    margin: 10px 0;
+}
+
+.document-note i {
+    margin-right: 12px;
+    color: var(--primary-color);
 }
 
 /* =================================================================== */

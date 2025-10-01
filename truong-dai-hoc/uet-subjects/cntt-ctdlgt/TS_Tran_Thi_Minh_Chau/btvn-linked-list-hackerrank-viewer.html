@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trang web sách Algorithms 4th Ed - StuShare</title>
+  <title>Bài tập về nhà: Linked List (HackerRank) - CTDL&GT - StuShare</title>
+  <meta name="description" content="Luyện tập các bài toán về Danh sách liên kết (Linked List) trên nền tảng HackerRank. Tài liệu tham khảo cho môn Cấu trúc dữ liệu và giải thuật.">
   <link rel="stylesheet" href="/StuShare/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
@@ -14,14 +15,13 @@
   <main>
     <section class="document-viewer-section">
       <div class="presentation-container"> 
-        <!-- THANH ĐIỀU KHIỂN MỚI -->
         <div class="iframe-controls">
             <button class="iframe-nav-btn" id="iframe-home" title="Về trang chủ của website"><i class="fas fa-home"></i></button>
             <a href="#" id="iframe-open-new-tab" class="iframe-nav-btn" target="_blank" rel="noopener noreferrer" title="Mở trong tab mới"><i class="fas fa-external-link-alt"></i></a>
         </div>
 
         <div class="presentation-wrapper">
-          <iframe id="website-iframe" src="https://algs4.cs.princeton.edu/home/" loading="lazy" referrerpolicy="no-referrer" allowfullscreen title="Trang web sách Algorithms 4th Ed"></iframe>
+          <iframe id="website-iframe" src="https://www.hackerrank.com/domains/data-structures?filters%5Bsubdomains%5D%5B%5D=linked-lists" loading="lazy" referrerpolicy="no-referrer" allowfullscreen title="BTVN linked list"></iframe>
         </div>
       </div>
     </section>
@@ -35,11 +35,7 @@
         const homeBtn = document.getElementById('iframe-home');
         const openNewTabBtn = document.getElementById('iframe-open-new-tab');
         const originalSrc = iframe.src;
-
-        // Nút Home: Tải lại địa chỉ gốc của iframe
         homeBtn.addEventListener('click', () => { iframe.src = originalSrc; });
-
-        // Nút Mở tab mới: Gán link của iframe cho nút
         openNewTabBtn.href = originalSrc;
     });
   </script>

@@ -222,5 +222,152 @@
         "url": "/StuShare/truong-dai-hoc/uet-subjects/cntt-ctdlgt/TS_Tran_Thi_Minh_Chau/bai-tap-elementary-mergesort-viewer.html",
         "path": "UET > Cấu Trúc Dữ Liệu và Giải Thuật > TS. Trần Thị Minh Châu",
         "keywords": "bai tap elementary sorts mergesort sap xep co ban sap xep tron ctdlgt"
+    },
+    {
+        "title": "Môn học: Lập trình hướng đối tượng",
+        "type": "subject",
+        "url": "/StuShare/truong-dai-hoc/uet-subjects/cntt-lthdt.html",
+        "path": "UET > Khoa Công nghệ Thông tin",
+        "keywords": "mon hoc lap trinh huong doi tuong int2204 oop"
+    },
+    {
+        "title": "Giảng viên: TS. Nguyễn Đức Anh",
+        "type": "teacher",
+        "url": "/StuShare/truong-dai-hoc/uet-subjects/cntt-lthdt/TS_Nguyen_Duc_Anh.html",
+        "path": "UET > Lập trình hướng đối tượng",
+        "keywords": "giang vien ts nguyen duc anh lap trinh huong doi tuong oop"
+    },
+    {
+        "title": "0.1 - Policy.pdf",
+        "type": "pdf",
+        "url": "/StuShare/truong-dai-hoc/uet-subjects/cntt-lthdt/TS_Nguyen_Duc_Anh/0.1-Policy-viewer.html",
+        "path": "UET > Lập trình hướng đối tượng > TS. Nguyễn Đức Anh",
+        "keywords": "policy quy dinh mon hoc lthdt oop int2204"
+    },
+    {
+        "title": "0 - Project Management Programs.pdf",
+        "type": "pdf",
+        "url": "/StuShare/truong-dai-hoc/uet-subjects/cntt-lthdt/TS_Nguyen_Duc_Anh/0-Project-Management-Programs-viewer.html",
+        "path": "UET > Lập trình hướng đối tượng > TS. Nguyễn Đức Anh",
+        "keywords": "project management programs quan ly du an lthdt oop"
+    },
+    {
+        "title": "0.2 - Project Management Programs.pdf",
+        "type": "pdf",
+        "url": "/StuShare/truong-dai-hoc/uet-subjects/cntt-lthdt/TS_Nguyen_Duc_Anh/0.2-Project-Management-Programs-viewer.html",
+        "path": "UET > Lập trình hướng đối tượng > TS. Nguyễn Đức Anh",
+        "keywords": "project management programs quan ly du an lthdt oop"
+    },
+    {
+        "title": "0.3 - GitHub.pdf",
+        "type": "pdf",
+        "url": "/StuShare/truong-dai-hoc/uet-subjects/cntt-lthdt/TS_Nguyen_Duc_Anh/0.3-GitHub-viewer.html",
+        "path": "UET > Lập trình hướng đối tượng > TS. Nguyễn Đức Anh",
+        "keywords": "github huong dan git lthdt oop"
+    },
+    {
+        "title": "1-Giới thiệu Java_modified.pdf",
+        "type": "pdf",
+        "url": "/StuShare/truong-dai-hoc/uet-subjects/cntt-lthdt/TS_Nguyen_Duc_Anh/1-Gioi-thieu-Java-modified-viewer.html",
+        "path": "UET > Lập trình hướng đối tượng > TS. Nguyễn Đức Anh",
+        "keywords": "gioi thieu java lthdt oop int2204"
+    },
+    {
+        "title": "2.2_KhaiNiem_HuongDoiTuong_modified.pdf",
+        "type": "pdf",
+        "url": "/StuShare/truong-dai-hoc/uet-subjects/cntt-lthdt/TS_Nguyen_Duc_Anh/2.2-KhaiNiem-HuongDoiTuong-modified-viewer.html",
+        "path": "UET > Lập trình hướng đối tượng > TS. Nguyễn Đức Anh",
+        "keywords": "khai niem huong doi tuong oop lthdt int2204"
+    },
+    {
+        "title": "2.1- JDK JVM JRE JIT.pdf",
+        "type": "pdf",
+        "url": "/StuShare/truong-dai-hoc/uet-subjects/cntt-lthdt/TS_Nguyen_Duc_Anh/2.1-JDK-JVM-JRE-JIT-viewer.html",
+        "path": "UET > Lập trình hướng đối tượng > TS. Nguyễn Đức Anh",
+        "keywords": "jdk jvm jre jit java lthdt oop int2204"
+    },
+    {
+        "title": "3_LopDoiTuong_Java_modified.pdf",
+        "type": "pdf",
+        "url": "/StuShare/truong-dai-hoc/uet-subjects/cntt-lthdt/TS_Nguyen_Duc_Anh/3-LopDoiTuong-Java-modified-viewer.html",
+        "path": "UET > Lập trình hướng đối tượng > TS. Nguyễn Đức Anh",
+        "keywords": "lop doi tuong class object java lthdt oop int2204"
+    },
+    {
+        "title": "4_HieuThem_Java-1.pdf",
+        "type": "pdf",
+        "url": "/StuShare/truong-dai-hoc/uet-subjects/cntt-lthdt/TS_Nguyen_Duc_Anh/4-HieuThem-Java-1-viewer.html",
+        "path": "UET > Lập trình hướng đối tượng > TS. Nguyễn Đức Anh",
+        "keywords": "hieu them java 1 lthdt oop int2204"
+    },
+    {
+        "title": "5_HieuThem_Java-2.pdf",
+        "type": "pdf",
+        "url": "/StuShare/truong-dai-hoc/uet-subjects/cntt-lthdt/TS_Nguyen_Duc_Anh/5-HieuThem-Java-2-viewer.html",
+        "path": "UET > Lập trình hướng đối tượng > TS. Nguyễn Đức Anh",
+        "keywords": "hieu them java 2 lthdt oop int2204"
+    },
+    {
+        "title": "6-OOP_ThuaKe.pdf",
+        "type": "pdf",
+        "url": "/StuShare/truong-dai-hoc/uet-subjects/cntt-lthdt/TS_Nguyen_Duc_Anh/6-OOP_ThuaKe-viewer.html",
+        "path": "UET > Lập trình hướng đối tượng > TS. Nguyễn Đức Anh",
+        "keywords": "oop thua ke inheritance java lthdt int2204"
+    },
+    {
+        "title": "7-OOP_Dahinh.pdf",
+        "type": "pdf",
+        "url": "/StuShare/truong-dai-hoc/uet-subjects/cntt-lthdt/TS_Nguyen_Duc_Anh/7-OOP_Dahinh-viewer.html",
+        "path": "UET > Lập trình hướng đối tượng > TS. Nguyễn Đức Anh",
+        "keywords": "oop da hinh polymorphism java lthdt int2204"
+    },
+    {
+        "title": "8 - Exceptions v2.pdf",
+        "type": "pdf",
+        "url": "/StuShare/truong-dai-hoc/uet-subjects/cntt-lthdt/TS_Nguyen_Duc_Anh/8-Exceptions-v2-viewer.html",
+        "path": "UET > Lập trình hướng đối tượng > TS. Nguyễn Đức Anh",
+        "keywords": "exceptions xu ly ngoai le java lthdt oop int2204"
+    },
+    {
+        "title": "9 - IOStreams v2.pdf",
+        "type": "pdf",
+        "url": "/StuShare/truong-dai-hoc/uet-subjects/cntt-lthdt/TS_Nguyen_Duc_Anh/9-IOStreams-v2-viewer.html",
+        "path": "UET > Lập trình hướng đối tượng > TS. Nguyễn Đức Anh",
+        "keywords": "io streams luong vao ra java lthdt oop int2204"
+    },
+    {
+        "title": "10 - Generic v4.pdf",
+        "type": "pdf",
+        "url": "/StuShare/truong-dai-hoc/uet-subjects/cntt-lthdt/TS_Nguyen_Duc_Anh/10-Generic-v4-viewer.html",
+        "path": "UET > Lập trình hướng đối tượng > TS. Nguyễn Đức Anh",
+        "keywords": "generic java lthdt oop int2204"
+    },
+    {
+        "title": "11_Data structures-15-8 v3.pdf",
+        "type": "pdf",
+        "url": "/StuShare/truong-dai-hoc/uet-subjects/cntt-lthdt/TS_Nguyen_Duc_Anh/11-Data-structures-viewer.html",
+        "path": "UET > Lập trình hướng đối tượng > TS. Nguyễn Đức Anh",
+        "keywords": "data structures cau truc du lieu java lthdt oop int2204"
+    },
+    {
+        "title": "Design Patterns-new2.pdf",
+        "type": "pdf",
+        "url": "/StuShare/truong-dai-hoc/uet-subjects/cntt-lthdt/TS_Nguyen_Duc_Anh/Design-Patterns-viewer.html",
+        "path": "UET > Lập trình hướng đối tượng > TS. Nguyễn Đức Anh",
+        "keywords": "design patterns mau thiet ke java lthdt oop int2204"
+    },
+    {
+        "title": "13-Mot so ngôn ngữ OOP-new.pdf",
+        "type": "pdf",
+        "url": "/StuShare/truong-dai-hoc/uet-subjects/cntt-lthdt/TS_Nguyen_Duc_Anh/13-Mot-so-ngon-ngu-OOP-viewer.html",
+        "path": "UET > Lập trình hướng đối tượng > TS. Nguyễn Đức Anh",
+        "keywords": "mot so ngon ngu oop c++ python lthdt int2204"
+    },
+    {
+        "title": "14-Ôn tập.pdf",
+        "type": "pdf",
+        "url": "/StuShare/truong-dai-hoc/uet-subjects/cntt-lthdt/TS_Nguyen_Duc_Anh/14-On-tap-viewer.html",
+        "path": "UET > Lập trình hướng đối tượng > TS. Nguyễn Đức Anh",
+        "keywords": "on tap cuoi ky lthdt oop int2204"
     }
 ]

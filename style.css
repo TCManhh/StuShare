@@ -209,41 +209,39 @@ ul {
     gap: 20px;
 }
 .subject-card {
-    display: flex;
-    align-items: center;
+    display: block;
     background: #fff;
-    padding: 20px;
+    padding: 25px;
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    color: inherit;
-    border: 1px solid #eee;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    color: var(--dark-color);
+    border: 1px solid var(--border-color);
 }
 .subject-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(74, 144, 226, 0.2);
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.15);
+    border-color: var(--primary-color);
 }
-.subject-icon {
-    font-size: 2rem;
+.subject-card i {
+    font-size: 2.5rem;
     color: var(--primary-color);
-    margin-right: 15px;
-    width: 40px;
-    text-align: center;
+    margin-bottom: 15px;
 }
-.subject-info h3 {
+.subject-card h3 {
     font-size: 1.1rem;
-    color: var(--dark-color);
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
-.subject-info .subject-code {
+.subject-card .subject-code {
     font-size: 0.9rem;
-    color: var(--text-color);
-    font-family: 'Courier New', Courier, monospace;
+    color: var(--primary-color);
+    font-weight: 600;
 }
 
 /* --- Trang Giảng Viên (csdl-cntt-teachers.html) --- */
 .subject-hero-icon {
-    font-size: 4rem;
+    font-size: 4rem; /* Khôi phục icon lớn ở hero section */
     color: var(--primary-color);
 }
 .teachers-list {
@@ -251,8 +249,8 @@ ul {
 }
 .teacher-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
 }
 .teacher-card {
     display: block;
@@ -1785,6 +1783,106 @@ body.viewer-wide .document-viewer { max-width: 1180px; }
     .video-viewer-container {
         padding: 0 10px;
     }
+
+/* =================================================================== */
+/* --- PHẦN 16: CSS CHO TRANG DANH MỤC TÀI LIỆU MÔN HỌC --- */
+/* =================================================================== */
+
+.document-categories {
+    padding: 40px 0 80px 0;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.category-card {
+    display: block;
+    background: #fff;
+    padding: 30px 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    color: var(--dark-color);
+    border: 1px solid var(--border-color);
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.15);
+    border-color: var(--primary-color);
+}
+
+.category-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.category-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.category-card p {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    line-height: 1.5;
+}
+
+.category-card.coming-soon {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* =================================================================== */
+/* --- PHẦN 17: CSS CHO DANH MỤC TÀI LIỆU (LAYOUT NGANG) --- */
+/* =================================================================== */
+
+.category-card-horizontal {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    color: var(--dark-color);
+    border: 1px solid var(--border-color);
+}
+
+.category-card-horizontal:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.15);
+    border-color: var(--primary-color);
+}
+
+.category-card-horizontal .category-icon {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-right: 20px;
+    width: 45px;
+    text-align: center;
+}
+
+.category-card-horizontal .category-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+.category-card-horizontal .category-info p {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    line-height: 1.5;
+}
+
+.category-card-horizontal.coming-soon {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
 }
 
 /* =================================================================== */
@@ -1878,8 +1976,8 @@ body.viewer-wide .document-viewer { max-width: 1180px; }
     margin-right: 8px;
     color: #28a745; /* Màu xanh lá cây cho icon ổ khóa */
 }
-}
-}
+
+.iframe-address-bar .lock-icon {
     display: flex;
     align-items: center;
     padding: 12px 20px 12px 50px;

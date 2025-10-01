@@ -369,5 +369,12 @@
         "url": "/StuShare/truong-dai-hoc/uet-subjects/cntt-lthdt/TS_Nguyen_Duc_Anh/14-On-tap-viewer.html",
         "path": "UET > Lập trình hướng đối tượng > TS. Nguyễn Đức Anh",
         "keywords": "on tap cuoi ky lthdt oop int2204"
+    },
+    {
+        "title": "Slide Bài giảng: Lập trình hướng đối tượng",
+        "type": "subject",
+        "url": "/StuShare/truong-dai-hoc/uet-subjects/cntt-lthdt/cntt-lthdt-slides.html",
+        "path": "UET > Lập trình hướng đối tượng",
+        "keywords": "slide bai giang lap trinh huong doi tuong oop int2204"
     }
 ]

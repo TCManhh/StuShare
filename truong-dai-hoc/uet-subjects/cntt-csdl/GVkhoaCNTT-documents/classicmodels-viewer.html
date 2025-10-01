@@ -1,33 +1,41 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ClassicModels - CSDL - StuShare</title>
-  <link rel="stylesheet" href="/StuShare/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trình chiếu: CSDL Classicmodels - StuShare</title>
+    <link rel="stylesheet" href="/StuShare/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body class="has-fixed-breadcrumb">
-  <!-- Thanh công cụ dùng chung -->
-  <div id="header-placeholder"></div>
+    <div id="header-placeholder"></div>
+    <div id="breadcrumb-placeholder"></div>
 
-  <!-- Breadcrumb dùng chung -->
-  <div id="breadcrumb-placeholder"></div>
+    <main>
+        <section class="document-viewer-section">
+            <div class="presentation-container">
+                <div class="iframe-controls">
+                    <button class="iframe-nav-btn" id="iframe-home" title="Về trang chủ của website"><i class="fas fa-home"></i></button>
+                    <button class="iframe-nav-btn" id="iframe-reload" title="Tải lại trang hiện tại"><i class="fas fa-redo"></i></button>
+                </div>
+                <div class="presentation-wrapper">
+                    <iframe id="website-iframe" src="https://www.mysqltutorial.org/mysql-sample-database.aspx" loading="lazy" referrerpolicy="no-referrer" allowfullscreen title="CSDL Classicmodels"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
 
-  <main>
-    <section class="document-viewer-section">
-      <!-- Sử dụng cấu trúc trình chiếu chung để iframe luôn tối ưu -->
-      <div class="presentation-container">
-        <div class="presentation-wrapper">
-          <iframe src="https://www.mysqltutorial.org/getting-started-with-mysql/mysql-sample-database/" loading="lazy" referrerpolicy="no-referrer" allowfullscreen title="MySQL Sample Database"></iframe>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Phần cuối trang dùng chung -->
-  <div id="footer-placeholder"></div>
-
-  <script src="/StuShare/assets/js/layout.js"></script>
+    <div id="footer-placeholder"></div>
+    <script src="/StuShare/assets/js/layout.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const iframe = document.getElementById('website-iframe');
+            const homeBtn = document.getElementById('iframe-home');
+            const reloadBtn = document.getElementById('iframe-reload');
+            const originalSrc = iframe.src;
+            homeBtn.addEventListener('click', () => { iframe.src = originalSrc; });
+            reloadBtn.addEventListener('click', () => { iframe.src = iframe.src; });
+        });
+    </script>
 </body>
 </html>

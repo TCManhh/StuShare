@@ -2,21 +2,14 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>Môn học - Đại học Công nghệ (UET) - StuShare</title>
-    <link rel="stylesheet" href="/StuShare/style.css">
+    <link rel="stylesheet" href="/StuShare/style.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body class="has-fixed-breadcrumb">
 
     <div id="header-placeholder"></div>
-    <script>
-      fetch('/StuShare/header.html')
-        .then(res => res.text())
-        .then(data => {
-          document.getElementById('header-placeholder').innerHTML = data;
-        });
-    </script>
 
     <div id="breadcrumb-placeholder"></div>
 
@@ -77,13 +70,7 @@
     </main>
 
     <div id="footer-placeholder"></div>
-    <script>
-      fetch('/StuShare/footer.html')
-        .then(res => res.text())
-        .then(data => {
-          document.getElementById('footer-placeholder').innerHTML = data;
-        });
-    </script>
+
 
     <script>
         // Chức năng tìm kiếm môn học
@@ -131,21 +118,6 @@
             searchInput.addEventListener('input', filterSubjects);
         });
     </script>
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        const header = document.querySelector('.header');
-        const breadcrumb = document.querySelector('.breadcrumb');
-
-        function applyScrollState() {
-          const isScrolled = window.scrollY > 80;
-          if (header) header.classList.toggle('scrolled', isScrolled);
-          if (breadcrumb) breadcrumb.classList.toggle('compact', isScrolled);
-        }
-
-        applyScrollState(); 
-        window.addEventListener('scroll', applyScrollState, { passive: true });
-      });
-    </script>
-    <script src="/StuShare/assets/js/layout.js"></script>
+   <script src="/StuShare/assets/js/layout.js"></script> 
 </body>
 </html>

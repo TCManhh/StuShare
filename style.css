@@ -2583,12 +2583,6 @@ body {
 .form-fields textarea {
     resize: vertical;
 }
-
-/* =================================================================== */
-/* --- CSS CHO POPUP THÔNG BÁO THÀNH CÔNG --- */
-/* =================================================================== */
-
-/* Lớp phủ nền mờ */
 .popup-overlay {
     position: fixed;
     top: 0;
@@ -3448,4 +3442,5 @@ body.viewer-wide .document-viewer { max-width: 1180px; }
     .video-viewer-container {
         padding: 0 10px;
     }
+}
 }

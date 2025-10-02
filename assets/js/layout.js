@@ -1,9 +1,9 @@
 // File: assets/js/layout.js
 
 document.addEventListener('DOMContentLoaded', function() {
-
+ 
     // --- 1. Tải Header ---
-const headerPlaceholder = document.getElementById('header-placeholder');
+ const headerPlaceholder = document.getElementById('header-placeholder');
 if (headerPlaceholder) {
     fetch('/StuShare/header.html')
         .then(response => response.text())
@@ -23,7 +23,7 @@ if (headerPlaceholder) {
             }
         });
 }
-
+ 
     // --- 2. Tải Footer --- (Giữ nguyên)
     const footerPlaceholder = document.getElementById('footer-placeholder');
     if (footerPlaceholder) {
@@ -33,7 +33,7 @@ if (headerPlaceholder) {
                 footerPlaceholder.innerHTML = data;
             });
     }
-    
+   
     // --- 3. Tải Breadcrumb (PHẦN NÂNG CẤP) ---
     const breadcrumbPlaceholder = document.getElementById('breadcrumb-placeholder');
     if (breadcrumbPlaceholder) {
@@ -41,7 +41,7 @@ if (headerPlaceholder) {
             .then(response => response.text())
             .then(data => {
                 breadcrumbPlaceholder.innerHTML = data;
-                
+               
                 // Rất quan trọng: Chạy đoạn script nằm bên trong file breadcrumb.html
                 // vì innerHTML không tự chạy script.
                 const scriptTag = breadcrumbPlaceholder.querySelector('script');
@@ -53,9 +53,9 @@ if (headerPlaceholder) {
             });
     }
 
-});
+ });
 
-// --- Hàm xử lý hiệu ứng header --- (Giữ nguyên)
+ // --- Hàm xử lý hiệu ứng header --- (Giữ nguyên)
 function initializeHeaderScrollEffect() {
     const header = document.querySelector('.header');
     if (!header) return;
@@ -75,26 +75,26 @@ function initializeHeaderScrollEffect() {
 /* DÁN HÀM NÀY VÀO CUỐI FILE assets/js/layout.js */
 
 /**
- * Hàm này tìm trang hiện tại và thêm class 'active'
+ * Hàm này tìm trang hiện tại và thêm class 'active' 
  * vào link tương ứng trên thanh công cụ (header).
  */
 function setActiveNavLink() {
     const currentPath = window.location.pathname;
-    const navLinks = document.querySelectorAll('.main-nav a');
+  const navLinks = document.querySelectorAll('.main-nav a');
 
-    navLinks.forEach(link => {
-        // Lấy đường dẫn của link (loại bỏ phần domain nếu có)
-        const linkPath = new URL(link.href).pathname;
+  navLinks.forEach(link => {
+ // Lấy đường dẫn của link (loại bỏ phần domain nếu có)
+  const linkPath = new URL(link.href).pathname;
 
-        // Xử lý đặc biệt cho Trang Chủ
-        if (linkPath === '/StuShare/index.html' || linkPath === '/StuShare/') {
+ // Xử lý đặc biệt cho Trang Chủ
+  if (linkPath === '/StuShare/index.html' || linkPath === '/StuShare/') {
             if (currentPath === '/StuShare/index.html' || currentPath === '/StuShare/') {
                 link.classList.add('active');
             }
         }
-        // Xử lý cho các trang con khác
-        else if (currentPath.startsWith(linkPath)) {
+ // Xử lý cho các trang con khác
+  else if (currentPath.startsWith(linkPath)) {
             link.classList.add('active');
-        }
+ }
     });
 }

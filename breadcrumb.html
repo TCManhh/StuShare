@@ -6,10 +6,9 @@
 
 <script>
 (function() {
-    // Bảng tra cứu tên (giữ nguyên)
-    const map = {
-        "StuShare": "Trang chủ",
-        "index.html": "Trang chủ",
+  // Bảng tra cứu tên (giữ nguyên)
+    const map = { "StuShare": "Trang chủ",
+  "index.html": "Trang chủ",
         "truong-dai-hoc": "Tài Liệu Trường Đại học & Học viện",
         "truong-dai-hoc.html": "Tài Liệu Trường Đại học & Học viện",
         "uet-subjects.html": "Trường Đại học Công nghệ",
@@ -20,6 +19,8 @@
         "cntt-ctdlgt": "Cấu Trúc Dữ Liệu và Giải Thuật",
         "cntt-lthdt.html": "Lập trình hướng đối tượng",
         "cntt-lthdt": "Lập trình hướng đối tượng",
+        "slides.html": "Slide Bài giảng",
+        "slides": "Slide Bài giảng",
         "cntt-lthdt-slides.html": "Slide Bài giảng",
         "cntt-lthdt-slides": "Slide Bài giảng",
         "TS_Nguyen_Duc_Anh.html": "TS. Nguyễn Đức Anh",
@@ -82,7 +83,7 @@
         "cntt-xstk.html": "Xác suất thống kê",
         "cntt-xstk": "Xác suất thống kê",
         "csdl-cntt-teachers.html": "Giảng viên",
-        "c1-viewer.html": "C1.pptx",
+         "c1-viewer.html": "C1.pptx",
         "c1-viewer": "C1.pptx",
         "c2-1-viewer.html": "C2_1.pptx",
         "c2-1-viewer": "C2_1.pptx",
@@ -131,51 +132,64 @@
         "bai_tap_tuan_3": "Bài tập tuần 3"
     };
 
-    const breadcrumbList = document.getElementById('breadcrumb-list');
-    let pathSegments = window.location.pathname.replace(/^\/+|\/+$/g, '').split('/');
+  const breadcrumbList = document.getElementById('breadcrumb-list');
+  let pathSegments = window.location.pathname.replace(/^\/+|\/+$/g, '').split('/');
     
     if (pathSegments[0] === 'StuShare') {
-        pathSegments.shift(); 
+        pathSegments.shift();
     }
     
-    let cumulativePath = '/StuShare';
+  let cumulativePath = '/StuShare';
 
     pathSegments.forEach((segment, index) => {
-        const isLast = index === pathSegments.length - 1;
+  const isLast = index === pathSegments.length - 1;
         
         if (!segment) return;
         
-        const name = map[segment] || segment.replace('.html', '').replace(/-/g, ' ');
-        const listItem = document.createElement('li');
+  const name = map[segment] || segment.replace('.html', '').replace(/-/g, ' ');
+  const listItem = document.createElement('li');
         
         if (isLast) {
             listItem.classList.add('active');
-            listItem.textContent = name;
+  listItem.textContent = name;
         } else {
             const link = document.createElement('a');
             
             // --- LOGIC SỬA LỖI TẠO LINK ---
-            let linkHref = cumulativePath + '/' + segment;
+            let linkHref = cumulativePath + '/' + segment; // Bắt đầu bằng đường dẫn thư mục
             
-            // Nếu segment không chứa dấu '.', giả định nó là file và cần đuôi .html
-            if (!segment.includes('.')) {
+            // Nếu segment không có đuôi, và có một tệp .html tương ứng trong map, hãy trỏ đến tệp .html đó.
+            if (!segment.includes('.') && map[segment + '.html']) {
                 linkHref += '.html';
             }
+
+            // --- FIX: Xử lý đặc biệt cho 'slides' ---
+            if (segment === 'slides') {
+                linkHref = cumulativePath + '/slides.html';
+            } 
             
             // Xử lý riêng cho trang chủ
-            if (name === 'Trang chủ' || segment === 'index.html') {
+ if (name === 'Trang chủ' || segment === 'index.html') {
                 linkHref = '/StuShare/index.html';
             }
 
-            link.href = linkHref;
+  link.href = linkHref;
             link.textContent = name;
             listItem.appendChild(link);
         }
         
         // Cập nhật đường dẫn cho vòng lặp tiếp theo
-        cumulativePath += '/' + segment;
+  cumulativePath += '/' + segment;
         
         breadcrumbList.appendChild(listItem);
+    }); 
+
+    // --- PHẦN SỬA LỖI ---
+    // Đoạn mã này sẽ tìm tất cả các link trên trang và sửa lại href
+    // Chúng ta cần đảm bảo nó chỉ chạy cho các link trong breadcrumb
+    const breadcrumbLinks = breadcrumbList.querySelectorAll('a');
+    breadcrumbLinks.forEach(link => {
+        // Logic sửa link (nếu cần) có thể được thêm vào đây trong tương lai
     });
 })();
 </script>

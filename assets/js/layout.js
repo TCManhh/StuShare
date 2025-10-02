@@ -4,8 +4,8 @@ document.addEventListener('DOMContentLoaded', function() {
  
     // --- 1. Tải Header ---
  const headerPlaceholder = document.getElementById('header-placeholder');
-if (headerPlaceholder) {
-    fetch('/StuShare/header.html')
+ if (headerPlaceholder) {
+    fetch('/header.html')
         .then(response => response.text())
         .then(data => {
             headerPlaceholder.innerHTML = data;
@@ -27,7 +27,7 @@ if (headerPlaceholder) {
     // --- 2. Tải Footer --- (Giữ nguyên)
     const footerPlaceholder = document.getElementById('footer-placeholder');
     if (footerPlaceholder) {
-        fetch('/StuShare/footer.html')
+        fetch('/footer.html')
             .then(response => response.text())
             .then(data => {
                 footerPlaceholder.innerHTML = data;
@@ -37,7 +37,7 @@ if (headerPlaceholder) {
     // --- 3. Tải Breadcrumb (PHẦN NÂNG CẤP) ---
     const breadcrumbPlaceholder = document.getElementById('breadcrumb-placeholder');
     if (breadcrumbPlaceholder) {
-        fetch('/StuShare/breadcrumb.html')
+        fetch('/breadcrumb.html')
             .then(response => response.text())
             .then(data => {
                 breadcrumbPlaceholder.innerHTML = data;
@@ -83,12 +83,12 @@ function setActiveNavLink() {
   const navLinks = document.querySelectorAll('.main-nav a');
 
   navLinks.forEach(link => {
- // Lấy đường dẫn của link (loại bỏ phần domain nếu có)
+  // Lấy đường dẫn của link (loại bỏ phần domain nếu có)
   const linkPath = new URL(link.href).pathname;
 
  // Xử lý đặc biệt cho Trang Chủ
-  if (linkPath === '/StuShare/index.html' || linkPath === '/StuShare/') {
-            if (currentPath === '/StuShare/index.html' || currentPath === '/StuShare/') {
+  if (linkPath === '/index.html' || linkPath === '/') {
+            if (currentPath === '/index.html' || currentPath === '/') {
                 link.classList.add('active');
             }
         }

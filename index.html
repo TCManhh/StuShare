@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StuHub - Chia Sẻ Tri Thức, Kiến Tạo Tương Lai</title> 
-    <link rel="stylesheet" href="/StuShare/style.css">
+    <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
@@ -58,7 +58,7 @@
                 <h2>Khám Phá Tài Liệu Mới</h2>
                 <div class="document-bento-grid">
                     <!-- Tài liệu nổi bật 1: Bài giảng Mergesort -->
-                    <a href="/StuShare/truong-dai-hoc/uet-subjects/cntt-ctdlgt/slides/TS_Tran_Thi_Minh_Chau/bai-giang-mergesort-viewer.html" class="document-card card-large">
+                    <a href="/truong-dai-hoc/uet-subjects/cntt-ctdlgt/slides/TS_Tran_Thi_Minh_Chau/bai-giang-mergesort-viewer.html" class="document-card card-large">
                         <div class="document-card-content">
                             <div>
                                 <div class="document-icon ppt"><i class="fas fa-file-powerpoint"></i></div>
@@ -75,7 +75,7 @@
                         </div>
                     </a>
                      <!-- Tài liệu nổi bật 2: Bài tập Stack & Queue -->
-                     <a href="/StuShare/truong-dai-hoc/uet-subjects/cntt-ctdlgt/slides/TS_Tran_Thi_Minh_Chau/bai-tap-stack-queue-viewer.html" class="document-card">
+                     <a href="/truong-dai-hoc/uet-subjects/cntt-ctdlgt/slides/TS_Tran_Thi_Minh_Chau/bai-tap-stack-queue-viewer.html" class="document-card">
                          <div class="document-card-content">
                             <div class="document-icon doc"><i class="fas fa-edit"></i></div>
                             <div class="document-info">
@@ -86,7 +86,7 @@
                         </div>
                     </a>
                      <!-- Tài liệu nổi bật 3: Sách Algorithms 4th Ed -->
-                     <a href="/StuShare/truong-dai-hoc/uet-subjects/cntt-ctdlgt/slides/TS_Tran_Thi_Minh_Chau/tuan-1-viewer.html" class="document-card">
+                     <a href="/truong-dai-hoc/uet-subjects/cntt-ctdlgt/slides/TS_Tran_Thi_Minh_Chau/tuan-1-viewer.html" class="document-card">
                         <div class="document-card-content">
                            <div class="document-icon pdf"><i class="fas fa-file-pdf"></i></div>
                            <div class="document-info">
@@ -98,7 +98,7 @@
                    </a>
                 </div>
                  <div class="view-all-link">
-                    <a href="/StuShare/truong-dai-hoc.html" class="btn btn-secondary">Xem tất cả tài liệu <i class="fas fa-arrow-right"></i></a>
+                    <a href="/truong-dai-hoc.html" class="btn btn-secondary">Xem tất cả tài liệu <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </section>
@@ -157,8 +157,8 @@ document.addEventListener('DOMContentLoaded', function() {
     let allDocuments = [];
 
     // Tải dữ liệu tìm kiếm một lần
-    fetch('/StuShare/assets/js/search-data.json')
-        .then(response => response.json())
+    fetch('/assets/js/search-data.json')
+  .then(response => response.json())
         .then(data => {
             allDocuments = data;
         });
@@ -180,7 +180,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function performSearch() {
         const query = searchInput.value.trim();
         if (query) {
-            window.location.href = `/StuShare/search-results.html?q=${encodeURIComponent(query)}`;
+            window.location.href = `/search-results.html?q=${encodeURIComponent(query)}`;
         }
     }
     
@@ -420,6 +420,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
   <!-- Tải layout chung (header, footer, breadcrumb) --> 
-  <script src="/StuShare/assets/js/layout.js"></script> 
+  <script src="/assets/js/layout.js"></script> 
 </body>
 </html>

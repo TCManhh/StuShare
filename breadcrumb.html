@@ -6,8 +6,8 @@
 
 <script>
 (function() {
-  // Bảng tra cứu tên (giữ nguyên)
-    const map = { "StuShare": "Trang chủ",
+ // Bảng tra cứu tên (giữ nguyên)
+    const map = { "": "Trang chủ",
   "index.html": "Trang chủ",
         "truong-dai-hoc": "Tài Liệu Trường Đại học & Học viện",
         "truong-dai-hoc.html": "Tài Liệu Trường Đại học & Học viện",
@@ -135,22 +135,18 @@
   const breadcrumbList = document.getElementById('breadcrumb-list');
   let pathSegments = window.location.pathname.replace(/^\/+|\/+$/g, '').split('/');
     
-    if (pathSegments[0] === 'StuShare') {
-        pathSegments.shift();
-    }
-    
-  let cumulativePath = '/StuShare';
+  let cumulativePath = '';
 
-    pathSegments.forEach((segment, index) => {
+  pathSegments.forEach((segment, index) => {
   const isLast = index === pathSegments.length - 1;
         
         if (!segment) return;
         
   const name = map[segment] || segment.replace('.html', '').replace(/-/g, ' ');
   const listItem = document.createElement('li');
-        
-        if (isLast) {
-            listItem.classList.add('active');
+  
+  if (isLast) {
+   listItem.classList.add('active');
   listItem.textContent = name;
         } else {
             const link = document.createElement('a');
@@ -169,14 +165,14 @@
             } 
             
             // Xử lý riêng cho trang chủ
- if (name === 'Trang chủ' || segment === 'index.html') {
-                linkHref = '/StuShare/index.html';
+  if (name === 'Trang chủ' || segment === 'index.html') {
+                linkHref = '/index.html';
             }
 
   link.href = linkHref;
             link.textContent = name;
             listItem.appendChild(link);
-        }
+   }
         
         // Cập nhật đường dẫn cho vòng lặp tiếp theo
   cumulativePath += '/' + segment;

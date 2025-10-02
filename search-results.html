@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kết Quả Tìm Kiếm - StuShare</title> 
-    <link rel="stylesheet" href="/StuShare/style.css">
+    <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         /* CSS dành riêng cho trang kết quả tìm kiếm */
@@ -101,7 +101,7 @@
 
     <div id="footer-placeholder"></div>
 
-    <script src="/StuShare/assets/js/layout.js"></script>
+    <script src="/assets/js/layout.js"></script>
     <script>
     document.addEventListener('DOMContentLoaded', async function () {
         const searchInput = document.getElementById('searchInput');
@@ -116,7 +116,7 @@
         };
 
         // 1. Tải dữ liệu tìm kiếm
-        const response = await fetch('/StuShare/assets/js/search-data.json');
+        const response = await fetch('/assets/js/search-data.json');
         const allDocuments = await response.json();
 
         /**

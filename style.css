@@ -29,7 +29,7 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1620px;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -84,8 +84,8 @@ ul {
 .page-header {
     background-color: var(--primary-color);
     color: white;
-    text-align: center;
-    padding: 50px 0;
+    text-align: center; 
+    padding: 50px 0; 
 }
 .page-header h1 { color: white; }
 .filter-bar {
@@ -101,7 +101,7 @@ ul {
     border: 1px solid var(--border-color);
 }
 .university-list {
-    padding: 40px 0 80px 0;
+    padding: 40px 0 80px 0; 
 }
 .region-title, .faculty-title, .section-title {
     text-align: center;
@@ -201,7 +201,7 @@ ul {
     color: var(--text-color);
 }
 .subjects-list {
-    padding: 40px 0 80px 0;
+    padding: 40px 0 80px 0; 
 }
 .subject-grid {
     display: grid;
@@ -245,7 +245,7 @@ ul {
     color: var(--primary-color);
 }
 .teachers-list {
-    padding: 40px 0 80px 0;
+    padding: 40px 0 80px 0; 
 }
 .teacher-grid {
     display: grid;
@@ -283,7 +283,7 @@ ul {
 
 /* --- Trang Tài Liệu Giảng Viên (nguyenvana-documents.html) --- */
 .document-list-container {
-    padding: 40px 0 80px 0;
+    padding: 40px 0 80px 0; 
 }
 .document-section {
     background-color: #fff;
@@ -643,6 +643,7 @@ body {
     color: #fff;
     text-align: center;
     padding: 120px 0;
+    padding: 80px 0;
     position: relative;
     display: flex;
     align-items: center;
@@ -659,7 +660,7 @@ body {
 .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
 }
 .hero-section h1 {
@@ -883,7 +884,7 @@ body {
     text-align: center;
 }
 #upload-section .container {
-    max-width: 700px;
+    max-width: 800px;
 }
 .upload-section h2 {
     color: var(--dark-color);
@@ -1217,12 +1218,6 @@ body.viewer-wide .document-viewer { max-width: 1180px; }
     }
 
     /* --- 2. Trang Chủ (index.html) --- */
-    
-    /* Điều chỉnh phần Hero */
-    .hero-section {
-        padding: 80px 0; /* Giảm khoảng cách trên-dưới */
-    }
-
     .hero-content p {
         font-size: 1.1rem;
     }
@@ -1240,59 +1235,44 @@ body.viewer-wide .document-viewer { max-width: 1180px; }
      .features-section, .documents-section, .upload-section {
         padding: 60px 0; /* Giảm padding cho các section */
     }
-
-    /* Chuyển lưới tài liệu thành 1 cột */
-    .document-bento-grid {
-        grid-template-columns: 1fr;
-        grid-auto-rows: auto; /* Để chiều cao tự động */
-    }
-
-    /* Đảm bảo thẻ lớn không chiếm 2 hàng nữa */
-    .document-card.card-large {
-        grid-row: auto;
-    }
-
-    /* Tối ưu Upload Box */
     .upload-box {
         padding: 30px 20px;
     }
 
     /* --- 3. Trang Danh sách trường (truong-dai-hoc.html) --- */
-
-    /* Chuyển danh sách trường thành 1 cột */
-    .university-grid {
-        grid-template-columns: 1fr;
-    }
-
-    /* --- 4. Trang Môn học & Giảng viên --- */
-
-    /* Chuyển danh sách môn học thành 1 cột */
-    .subject-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    /* Chuyển danh sách giảng viên thành 1 cột */
-    .teacher-grid {
-        grid-template-columns: 1fr;
-    }
-
     .university-hero .container {
         flex-direction: column; /* Xếp logo và tên trường theo chiều dọc */
         text-align: center;
         gap: 15px;
     }
-}
 
+    /* Điều chỉnh kích thước tiêu đề trường trên mobile */
+    .university-hero-info h1 {
+        font-size: 1.8rem;
+        line-height: 1.3;
+    }
+
+    /* Tăng kích thước tiêu đề trang danh sách trường */
+    .page-header h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+
+    /* Đồng bộ kích thước các tiêu đề section khác */
+    .region-title, .faculty-title, .section-title {
+        font-size: 1.5rem; 
+        margin-bottom: 20px; /* Giảm khoảng cách dưới tiêu đề */
+    }
+
+    .page-header p {
+        font-size: 1rem; /* Tăng kích thước font cho dòng mô tả */
+    }
+}
 
 /* Áp dụng cho màn hình rất nhỏ từ 480px trở xuống (điện thoại) */
 @media (max-width: 480px) {
     h1, .hero-section h1 {
         font-size: 2rem; /* Giảm font chữ thêm cho màn hình nhỏ */
-    }
-    
-    /* Giảm chiều cao ảnh bìa trên điện thoại */
-    .hero-section {
-        padding: 50px 0;
     }
 
     .btn {
@@ -1487,7 +1467,7 @@ body.viewer-wide .document-viewer { max-width: 1180px; }
 
 /* 1. Cải tiến thanh tìm kiếm */
 .filter-bar .container {
-    max-width: 700px; /* Thu hẹp thanh tìm kiếm cho dễ nhìn */
+    max-width: 800px; /* Thu hẹp thanh tìm kiếm cho dễ nhìn */
 }
 .filter-bar {
     padding: 25px 0;
@@ -1631,7 +1611,7 @@ body.viewer-wide .document-viewer { max-width: 1180px; }
 /* 1. Container chính cho slide, cho phép chiều rộng lớn */
 .presentation-container {
     width: 100%;
-    max-width: 1280px; /* Chiều rộng tối đa cho màn hình lớn */
+    max-width: 1600px; /* Chiều rộng tối đa cho màn hình lớn */
     margin: 0 auto;    /* Căn giữa */
     padding: 0 20px;   /* Thêm khoảng đệm hai bên */
     box-sizing: border-box;
@@ -1686,7 +1666,7 @@ body.viewer-wide .document-viewer { max-width: 1180px; }
 /* 1. Container chính, giới hạn chiều rộng để dễ đọc */
 .document-a4-viewer-container {
     width: 100%;
-    max-width: 900px; /* Chiều rộng lý tưởng để đọc văn bản */
+    max-width: 960px; /* Chiều rộng lý tưởng để đọc văn bản */
     margin: 0 auto;   /* Căn giữa */
     padding: 0 20px;
     box-sizing: border-box;
@@ -1756,7 +1736,7 @@ body.viewer-wide .document-viewer { max-width: 1180px; }
 /* 1. Container chung cho trang video, rộng hơn A4 để xem tốt hơn */
 .video-viewer-container {
     width: 100%;
-    max-width: 1100px; /* Chiều rộng tốt ưu cho việc xem video */
+    max-width: 1280px; /* Chiều rộng tốt ưu cho việc xem video */
     margin: 0 auto;
     padding: 0 20px;
     box-sizing: border-box;
@@ -1884,6 +1864,132 @@ body.viewer-wide .document-viewer { max-width: 1180px; }
     cursor: not-allowed;
 }
 }
+
+/* =================================================================== */
+/* --- PHẦN 18: TỐI ƯU HÓA KHOẢNG TRẮNG CHO DI ĐỘNG --- */
+/* =================================================================== */
+
+@media (max-width: 768px) {
+    /* Giảm padding cho các container và section chính */
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .page-header,
+    .features-section,
+    .documents-section,
+    .upload-section,
+    .document-list-container,
+    .teachers-list,
+    .subjects-list,
+    .university-list,
+    .document-categories {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .footer {
+        padding: 40px 0 0;
+        margin-top: 60px;
+    }
+
+    .hero-section {
+        padding: 60px 0;
+    }
+
+    /* Giảm padding cho các card */
+    .university-card,
+    .subject-card,
+    .teacher-card,
+    .document-card,
+    .category-card,
+    .category-card-horizontal {
+        padding: 20px;
+    }
+
+    /* Giảm khoảng cách (gap) trong grid */
+    .university-grid,
+    .teacher-grid,
+    .category-grid {
+        gap: 20px;
+    }
+
+    .subject-grid {
+        gap: 15px;
+    }
+
+    .document-bento-grid {
+        gap: 20px;
+    }
+    
+    /* --- TỐI ƯU: Hiển thị 3 cột môn học/trường trên tablet --- */
+    .university-grid,
+    .subject-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 cột trên tablet */
+    }
+
+
+
+    /* Giảm margin cho tiêu đề */
+    .region-title, .faculty-title, .section-title {
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+
+    /* Giảm padding cho các thành phần khác */
+    .filter-bar {
+        padding: 20px 0;
+    }
+
+    .document-section .section-header {
+        padding: 12px 15px;
+    }
+
+    .document-item {
+        padding: 10px 15px 10px 40px;
+    }
+
+    .upload-box {
+        padding: 40px 20px;
+    }
+    /* FIX: Loại bỏ khoảng trống thừa giữa thanh tìm kiếm và tiêu đề đầu tiên trên các trang danh sách (trường, môn học,...) */
+    .university-list > .container > .region-title:first-of-type,
+    .subjects-list > .container > .faculty-title:first-of-type,
+    .teachers-list > .container > .section-title:first-of-type {
+        margin-top: 0;
+    }
+}
+
+
+@media (max-width: 480px) {
+    /* Giảm padding hơn nữa cho màn hình điện thoại nhỏ */
+    .page-header,
+    .features-section,
+    .documents-section,
+    .upload-section,
+    .document-list-container,
+    .teachers-list,
+    .subjects-list,
+    .university-list,
+    .document-categories {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    /* Tối ưu layout grid cho điện thoại nhỏ */
+    .university-grid,
+    .subject-grid {
+        grid-template-columns: repeat(2, 1fr); /* Hiển thị 2 cột trên điện thoại */
+    }
+
+}
+
+
+/* =================================================================== */
+/* --- PHẦN 18: TỐI ƯU HÓA KHOẢNG TRẮNG CHO DI ĐỘNG --- */
+/* =================================================================== */
+
 
 /* =================================================================== */
 /* --- PHẦN 13: CSS CHO NÚT HÀNH ĐỘNG TRANG VIEWER --- */
@@ -2880,40 +2986,7 @@ body.viewer-wide .document-viewer { max-width: 1180px; }
         padding: 60px 0; /* Giảm padding cho các section */
     }
 
-    /* Chuyển lưới tài liệu thành 1 cột */
-    .document-bento-grid {
-        grid-template-columns: 1fr;
-        grid-auto-rows: auto; /* Để chiều cao tự động */
-    }
-
-    /* Đảm bảo thẻ lớn không chiếm 2 hàng nữa */
-    .document-card.card-large {
-        grid-row: auto;
-    }
-
-    /* Tối ưu Upload Box */
-    .upload-box {
-        padding: 30px 20px;
-    }
-
-    /* --- 3. Trang Danh sách trường (truong-dai-hoc.html) --- */
-
-    /* Chuyển danh sách trường thành 1 cột */
-    .university-grid {
-        grid-template-columns: 1fr;
-    }
-
     /* --- 4. Trang Môn học & Giảng viên --- */
-
-    /* Chuyển danh sách môn học thành 1 cột */
-    .subject-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    /* Chuyển danh sách giảng viên thành 1 cột */
-    .teacher-grid {
-        grid-template-columns: 1fr;
-    }
 
     .university-hero .container {
         flex-direction: column; /* Xếp logo và tên trường theo chiều dọc */
@@ -2932,6 +3005,12 @@ body.viewer-wide .document-viewer { max-width: 1180px; }
     /* Giảm chiều cao ảnh bìa trên điện thoại */
     .hero-section {
         padding: 50px 0;
+    }
+
+    /* Trên màn hình rất nhỏ, quay về 1 cột cho dễ nhìn */
+    /* SỬA LỖI: Giữ 2 cột trên điện thoại nhỏ, chỉ teacher-grid về 1 cột */
+    .teacher-grid {
+        grid-template-columns: 1fr; /* Giảng viên về 1 cột cho dễ đọc tên */
     }
 
     .btn {
@@ -3442,5 +3521,4 @@ body.viewer-wide .document-viewer { max-width: 1180px; }
     .video-viewer-container {
         padding: 0 10px;
     }
-}
 }
